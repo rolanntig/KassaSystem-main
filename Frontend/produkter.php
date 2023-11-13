@@ -51,9 +51,8 @@
                     ?>
                 </div>
             </form>
-            <h1 class="mb-4 mt-3 text-center">Produkter</h1>
             <?php 
-            include '../Backend/Product_view';
+                include '../Backend/Product_view.php';
             ?>
         </div>
     </div>

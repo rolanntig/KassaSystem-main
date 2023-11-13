@@ -1,7 +1,7 @@
 <?php 
 include "../Backend/credentials.php";
 ?>       
-
+<h1 class="mb-4 mt-3 text-center">Produkter</h1>
 <table id="produkterKvar" class="table">
     <thead>
         <tr>
