@@ -1,0 +1,61 @@
+#logo {
+  height: 3em;
+}
+.navbar {
+  font-family: Source code pro;
+  background-color: rgb(121, 70, 146);
+}
+
+.nav-text {
+  margin-left: 4em;
+}
+
+.nav-link{
+  padding:10px;
+}
+
+.nav-link:hover{
+  background-color: rgb(204, 151, 202);
+  border-radius: 10px;
+}
+
+/* .bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+} */
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+#barbutton {
+  background-color: #2e4154;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.show3 {
+  display: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.ItemAdded{
+  display: none;
+}
