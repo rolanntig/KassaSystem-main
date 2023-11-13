@@ -21,7 +21,7 @@
     <div class="container">
         <div class="bg-white p-3 br1em">
             <h1 class="mb-4 mt-3 text-center">Registrera produkt</h1>
-            <form action="#"class="d-flex justify-content-center w-100" method="POST">
+            <form action="#"class="d-flex justify-content-center w-100" method="post">
                 <div class="form-group col-8">
                     <label>Produkt</label>
                     <input name="product"type="text" class="form-control mb-3">
@@ -34,11 +34,10 @@
                     <label>Barcode</label>
                     <input name="barcode" type="text" class="form-control mb-3">
                     <!-- add Event Handler For Enter Key-->
-                    <button name="submit" type="submit" class="btn text-white mt-2 mb-2">Registrera varan</button>
-                    
+                    <input name="submit" type="submit" class="btn text-white mt-2 mb-2">
+
                     <?php
                         include "../Backend/credentials.php";
-                        $conn = new mysqli($server, $username, $password, $dbname,$port);
                                             
                         //Registering a product
                         if(isset($_POST['submit'])){
@@ -48,7 +47,8 @@
                             $expire     = $_POST['expire'];
                             $barcode    = $_POST['barcode'];
 
-                            $sqlquery = "INSERT INTO Products (product_name, product_info, expire_date, price, barcode,amount,category) VALUES ('$product', '-', '$expire', '$price', '$barcode','$amount','-')";
+                            $sqlquery = "INSERT INTO Products (product_name, product_info, expire_date, price, barcode,amount,category) 
+                            VALUES ('$product', '-', '$expire', '$price', '$barcode','$amount','-')";
                             try {
                                 if ($conn->query($sqlquery)) {
                                     //echo "<script>alert('Produkt registrerad')</script>";
@@ -98,7 +98,6 @@
                     </tr>
                 </thead>
                 <?php
-                    include "../Backend/credentials.php";
                     try {
                         $sqlGetProduct = 'SELECT * FROM Products';
                         $products= mysqli_query($conn, $sqlGetProduct);
