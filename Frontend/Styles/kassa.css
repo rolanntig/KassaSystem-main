@@ -27,7 +27,7 @@
 /* item container */
 .itemContainer{
   height: 90%;
-  overflow: scroll;
+  overflow-y: scroll;
   width: 90%;
   display: flex;
   flex-wrap: wrap;
@@ -40,12 +40,25 @@
   border-radius: 20px;
 }
 /* barcode form */
-.barcodeDiv{
+.categoryDiv{
   width: 100%;
   display: flex;
   justify-content: center ;
 }
 /* barcode */
-#barcode{
-  width: 90%;
+#category{
+  width:80%;
+}
+
+/* scrollbar design  */
+::-webkit-scrollbar{
+  width: 12px;
+  visibility: hidden;
+}
+
+/* scrollbar thumb design  */
+::-webkit-scrollbar-thumb{
+  width: 10px;
+  background-color: rgba(0, 0, 0, 0.463);
+  border-radius: 20px;
 }

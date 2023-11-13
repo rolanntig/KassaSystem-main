@@ -14,7 +14,7 @@
 		<div class="leftDiv">
 			<!-- container where items show -->
 			<div class="itemContainer">
-			<div class="barcodeDiv">
+			<div class="categoryDiv">
 				<select name="category" id="category">
 					<option value="">Allt</option>
 					<option value="dryck">Dryck</option>
