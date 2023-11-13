@@ -22,19 +22,28 @@
         <div class="bg-white p-3 br1em">
             <h1 class="mb-4 mt-3 text-center">Registrera produkt</h1>
             <form action="#"class="d-flex justify-content-center w-100" method="post">
-                <div class="form-group col-8">
-                    <label>Produkt</label>
-                    <input name="product"type="text" class="form-control mb-3">
-                    <label>Antal</label>
-                    <input name="amount" type="number" class="form-control mb-3">
-                    <label>Pris</label>
-                    <input name="price" type="text" class="form-control mb-3">
-                    <label>Bäst Före</label>
-                    <input name="expire" type="datetime-local" class="form-control mb-3">
-                    <label>Barcode</label>
-                    <input name="barcode" type="text" class="form-control mb-3">
+            <div class="form-group col-8">
+                <div class="parent1">
+                    <div class="div1"><label>Produkt:</label>
+                    <input name="product"type="text" class="form-control mb-3" required> </div>
+                    <div class="div2"><label>Antal:</label>
+                    <input name="amount" type="number" class="form-control mb-3" required> </div>
+                    <div class="div3"><label>Pris:</label>
+                    <input name="price" type="number" class="form-control mb-3" required> </div>
+                    <div class="div4"><label>Bäst Före:</label>
+                    <input name="expire" type="datetime-local" class="form-control mb-3"> </div>
+                    <div class="div5"><label>Barcode:</label>
+                    <input name="barcode" type="text" class="form-control mb-3"required> </div>
+                    <div class="div6">
+                        <label for="typ">Typ:</label>
+                    <select name="typ" id="typ" class="form-control mb-3">
+                    <option value="drink">Dricka</option>
+                    <option value="snacks">Snacks</option>
+                    <option value="food">Mat</option>
+                    </select></div> 
+                    <div class="div7"> <button name="submit" type="submit" class="btn text-white col-sm-7">Registrera varan</button></div>
+                    </div>
                     <!-- add Event Handler For Enter Key-->
-                    <input name="submit" type="submit" class="btn text-white mt-2 mb-2">
 
                     <?php
                         include "../Backend/credentials.php";
