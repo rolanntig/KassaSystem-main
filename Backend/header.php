@@ -1,30 +1,13 @@
 <?php
-   echo " <div id='bar'>  
-            <nav class='navbar navbar-expand-sm sticky-top'>
-                <ul style='list-style: none;'>
-                    <li>
-                        <a href=''><img src='../Resources/nti_logo_white.svg' alt='Logo'></a>
-                    </li>
-                </ul>
-                <ul class='navbar-nav ml-auto '>
-                    <li class='nav-item nav-text'>
-                        <a class='nav-link text-white m-3' href='admin.php'>Admin</a>
-                    </li>
-                    <li class='nav-item nav-text'>
-                        <a class='nav-link text-white m-3' href='kassa.php'>Kassa</a>
-                    </li>
-                    <li class='nav-item nav-text'>
-                        <a class='nav-link text-white m-3' href='produkter.php'>Produkter</a>
-                    </li>
-                    <li class='nav-item nav-text'>
-                        <a class='nav-link text-white m-3 mr-5' href='rapport.php'>Rapport</a>
-                    </li>
-                    <!--
-                    <li class='nav-item nav-text'>
-                        <a class='nav-link text-white m-3 mr-5' href='checkout.php'><i class='fa fa-cart-plus' aria-hidden='true'></i></a>
-                    </li>
-                    -->
-                </ul> 
-            </nav> 
-        </div>"
+   echo '
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto" id="nav-items">
+                <li class="nav-item"><a class="nav-link" href="//ÄNDRA TILL RÄTT ID">Admin</a></li>
+                <li class="nav-item"><a class="nav-link" href="//ÄNDRA TILL RÄTT ID">Produkt</a></li>
+                <li class="nav-item"><a class="nav-link" href="//ÄNDRA TILL RÄTT ID">Rapport</a></li>
+                <li class="nav-item"><a class="nav-link" href="//ÄNDRA TILL RÄTT ID">Kassa</a></li>
+            </ul>
+        </div>
+    </nav>'
 ?>
