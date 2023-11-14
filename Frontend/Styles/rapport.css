@@ -33,3 +33,7 @@
 #summary-manad:hover {
   background-color: rgb(204, 151, 202);
 }
+
+a:link {
+  text-decoration: none;
+}
