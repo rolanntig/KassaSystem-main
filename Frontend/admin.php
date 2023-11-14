@@ -98,88 +98,14 @@
 		<a href="rapport.php">
 			<div class="bg-white border d-flex justify-content-around align-items-center p-3" id="Rapport">
 				<div class="col-5 text-center p-3 my-auto fs-2" id="summary-idag">
-					<!-- Kod för dag -->
-					<!-- <?php
-							// include "../Backend/getSummary.php";
-							?> -->
-					<!--Kod från rapport sidan-->
 					<?php
-					// include "../Backend/databaseHandler.php";
-
-					// $totalamounttodayq = "SELECT product_name, amount_sold from Payment where payment_date = CURDATE()";
-					// $totalamountdayswishq = "SELECT product_name, amount_sold from Payment where payment_date = CURDATE() and payment_method = 'Swish'";
-					// $totalamountdaykontantq = "SELECT product_name, amount_sold from Payment where payment_date = CURDATE() and payment_method = 'Kontant'";
-
-
-					try {
-						function getDailySum($paymentMethod, $getdailySum = false)
-						{
-							$sqlGetReport = "SELECT product_name, amount_sold from Payment where payment_date = CURDATE()";
-							if (!$getdailySum) {
-								$sqlGetReport = $sqlGetReport . " AND payment_method = '$paymentMethod'";
-							}
-							$sqlGetReport = DatabaseHandler::fetchData($sqlGetReport, DatabaseHandler::dbconnect());
-							return (mysqli_fetch_assoc($sqlGetReport));
-						}
-						//$totalSum = getDailySum("", true); //INTE AKTUELL DÅ EJ FINNS!!!
-						$amountCash = getDailySum('Kontant');
-						if ($amountCash == "") {
-							$amountCash = "0";
-						}
-
-						$amountSwish = getDailySum('Swish');
-						if ($amountSwish == "") {
-							$amountSwish = "0";
-						}
-
-						// FEL!!! (men temporärt)
-						echo "<div class='mb-4'><h2>Idag</h2></div>"
-							. "<div class='mb-4'>" //. "<h1>Summa: " . $totalSum["amount_sold"] . " kr</h1>"
-							. "<p>Swish: " . $amountSwish . " kr</p>"
-							. "<p>Kontanter: " . $amountCash . " kr</p></div>";
-					} catch (\Throwable $th) {
-						console($th->getMessage());
-						console($th->getLine());
-					}
-
+						include "../Backend/getRapport.php";
+						getDailyRapport();
 					?>
 				</div>
 				<div class="col-5 text-center p-3 my-auto fs-2" id="summary-manad">
-					<!-- Kod för månad -->
-
-					<!--Kod från rapport sidan-->
 					<?php
-					try {
-						function getsummary($month, $paymentMethod, $getMonthlySum)
-						{
-							$sqlGetReport = "SELECT product_name, amount_sold FROM Payment WHERE monthname($month) = MONTHNAME(CURRENT_DATE) ";
-							if ($getMonthlySum == false) {
-								$sqlGetReport = $sqlGetReport . " AND payment_method = '$paymentMethod'";
-							}
-							$sqlGetReport = DatabaseHandler::fetchData($sqlGetReport, DatabaseHandler::dbconnect());
-							return (mysqli_fetch_assoc($sqlGetReport));
-						}
-						//$totalSuma = getsummary("payment_date", "", true); //EJ AKTUELL DÅ DEN EJ FINNS!!!
-						$amountCash = getsummary('payment_date', 'Kontant', false);
-						$amountSwisha = getsummary('payment_date', 'Swish', false);
-
-						if ($amountCash == "") {
-							$amountCash = "0";
-						}
-
-						if ($amountSwisha == "") {
-							$amountSwisha = "0";
-						}
-
-						// FEL!!! (men temporärt)
-						echo "<div class='mb-4'><h2>Denna månad</h2></div>"
-							. "<div class='mb-4'>" //. "<h1>Summa: " . $totalSuma["amount_sold"] . " kr</h1>"
-							. "<p>Swish: " . $amountSwisha['amount_sold'] . " kr</p>"
-							. "<p>Kontanter: " . $amountCash . " kr</p></div>";
-					} catch (\Throwable $th) {
-						console($th->getMessage());
-						console($th->getLine());
-					}
+					getMonthlyRapport();
 					?>
 				</div>
 			</div>
