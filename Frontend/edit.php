@@ -50,6 +50,6 @@
     $newExpire = $_POST['newExpire'];
     $newType = $_POST['newType'];
     $barcode = $_POST['barcode'];
-    include '../Backend/update.php';
+    include '../Backend/updateProdukt.php';
     } ?>
 
