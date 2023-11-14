@@ -5,12 +5,18 @@ include "../Backend/credentials.php";
 if (isset($_GET['search'])) {
     $search = $_GET['search'];
 
-    // Perform a query to fetch products based on the search query
-    // Modify this query according to your database structure
+    //Gets the product thats searched for
     $sqlGetProduct = "SELECT * FROM Products WHERE product_name LIKE '%$search%'";
 } else {
     // If no search query, display all products
     $sqlGetProduct = 'SELECT * FROM Products';
+}
+
+if (isset($_GET['filter'])) {
+    $filter = $_GET['filter'];
+
+    //Gets product by their category
+    $sqlGetProduct = "SELECT * FROM Products WHERE category LIKE '$filter'";
 }
 
 try {
