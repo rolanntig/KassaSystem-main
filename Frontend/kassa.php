@@ -41,7 +41,33 @@
 		</div>
 		<!-- right container -->
 		<div class="rightDiv">
+			<div class="cart">
 
+			</div>
+			<div class="payment">
+				<form action="#">
+					<div>
+						<label for="swish">Swish</label>
+						<input type="radio" name="swish" id="swish">
+					</div>
+					<div>
+						<label for="kontant">Kontant</label>
+						<input type="radio" name="swish" id="kontant">
+					</div>
+				</form>
+				<div id="swish">
+
+					<p>något annat</p>
+
+
+				</div>
+				<div id="kontant">
+
+					<p>spelar ingen roll</p>
+
+				</div>
+			</div>
+			
 		</div>
 	</div>
 	<script src="../Scripts/selectCategory.js"></script>

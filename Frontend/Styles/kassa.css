@@ -24,6 +24,8 @@
   height: 100%;
   background-color: blue;
 }
+
+/* LEFT DIV START LEFT DIV START LEFT DIV START LEFT DIV START LEFT DIV START LEFT DIV START LEFT DIV START  */
 /* item container */
 .itemContainer{
   height: 90%;
@@ -39,17 +41,19 @@
   background-color: blue;
   border-radius: 20px;
 }
-/* barcode form */
-.categoryDiv{
-  width: 100%;
-  display: flex;
-  justify-content: center ;
+/* LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END  */
+
+/* RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START  */
+.cart{
+  height: 40%;
 }
-/* barcode */
-#category{
-  width:80%;
+.payment{
+  height: 60%;
 }
 
+/* RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END  */
+
+/* SCROLLBAR START SCROLLBAR START SCROLLBAR START SCROLLBAR START SCROLLBAR START SCROLLBAR START  */
 /* scrollbar design  */
 ::-webkit-scrollbar{
   width: 12px;
@@ -62,3 +66,21 @@
   background-color: rgba(0, 0, 0, 0.463);
   border-radius: 20px;
 }
+/* SCROLLBAR END SCROLLBAR END SCROLLBAR END SCROLLBAR END SCROLLBAR END SCROLLBAR END  */
+
+/* SELECT START SELECT START SELECT START SELECT START SELECT START SELECT START SELECT START  */
+
+/* catecory div */
+.categoryDiv{
+  width: 100%;
+  display: flex;
+  justify-content: center ;
+}
+/* category */
+#category{
+  width:80%;
+  max-height: 30px;
+  text-align: center;
+}
+
+/* SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END  */
