@@ -1,6 +1,7 @@
 <?php
 function connectToDb($sql)
 {
+    // Connects to the database for fetching data
     $server = "mysql.jawad.se";
     $username = "kassa";
     $password = "cGZZ2.I2mYPE*T@p";
@@ -27,66 +28,90 @@ function connectToDb($sql)
     $conn->close();
 }
 
-function getDailyRapport()
+function getDailyRapport($payMethod = "both")
 {
     $total = 0;
-    $swishTotal = 0;
-    $kontantTotal = 0;
+    $totalAmount = 0;
+    $string = "";
     $day = date("d");
     $month = date("m");
     $year = date("Y");
 
-    $array = connectToDb("SELECT product_name, amount_sold, payment_method FROM Payment WHERE DAY(payment_date) = '$day' AND MONTH(payment_date) = '$month' AND YEAR(payment_date) = '$year'");
+    // Checks for payment method and selects all in database if there is a method chosen
+    if ($payMethod != "both") {
+        $array = connectToDb("SELECT * FROM Payment WHERE payment_method = '$payMethod' AND DAY(payment_date) = '$day' AND MONTH(payment_date) = '$month' AND YEAR(payment_date) = '$year'");
+    } else {
+        $array = connectToDb("SELECT * FROM Payment WHERE DAY(payment_date) = '$day' AND MONTH(payment_date) = '$month' AND YEAR(payment_date) = '$year'");
+    }
     if ($array != false) {
         foreach ($array as $row) {
+            $string .= "<tr>";
             $amountSold = $row['amount_sold'];
             $prodName = $row['product_name'];
-            $data = connectToDb("SELECT product_name, price FROM Products WHERE product_name = '$prodName'");
+            $data = connectToDb("SELECT * FROM Products WHERE product_name = '$prodName'");
             foreach ($data as $product) {
-                $total += ($product['price'] * $amountSold);
-                switch ($row['payment_method']) {
-                    case "Swish":
-                        $swishTotal += ($product['price'] * $amountSold);
-                        break;
-                    case "Kontant":
-                        $kontantTotal += ($product['price'] * $amountSold);
-                        break;
-                }
+                $totalPerProduct = ($product['price'] * $amountSold);
+                $total += $totalPerProduct;
+                $totalAmount += $amountSold;
+
+                // Code for admin page, might be applicable here so saving it for now
+                // switch ($row['payment_method']) {
+                //     case "Swish":
+                //         $swishTotal += ($product['price'] * $amountSold);
+                //         break;
+                //     case "Kontant":
+                //         $kontantTotal += ($product['price'] * $amountSold);
+                //         break;
+                // }
+
+                // Adds a large string with data for printing later. (date neds fixing) 
+                $string .= "<td>" . $product['product_name'] . "</td><td>" . $totalPerProduct . " kr</td><td>" . $row['amount_sold'] . " st</td><td>" . $row['payment_date'] . "</td></tr>";
             }
         }
     }
-    echo "<div class='mb-4'><h2>Denna dag</h2></div>"
-    . "<div class='mb-4'><h1>Summa: " . $total . " kr</h1>"
-    . "<p>Swish: " . $swishTotal . " kr</p>"
-    . "<p>Kontanter: " . $kontantTotal . " kr</p></div>";
+    return "$string<tr><td>Allting</td><td>$total kr</td><td>$totalAmount st</td><td></td>";
 }
 
-function getMonthlyRapport()
+function getMonthlyRapport($payMethod = "both")
 {
     $total = 0;
-    $swishTotal = 0;
-    $kontantTotal = 0;
+    $totalAmount = 0;
+    $string = "";
     $month = date("m");
     $year = date("Y");
-    $array = connectToDb("SELECT product_name, amount_sold, payment_method FROM Payment WHERE MONTH(payment_date) = '$month' AND YEAR(payment_date) = '$year'");
-    foreach ($array as $row) {
-        $amountSold = $row['amount_sold'];
-        $prodName = $row['product_name'];
-        $data = connectToDb("SELECT product_name, price FROM Products WHERE product_name = '$prodName'");
-        foreach ($data as $product) {
-            $total += ($product['price'] * $amountSold);
-            switch ($row['payment_method']) {
-                case "Swish":
-                    $swishTotal += ($product['price'] * $amountSold);
-                    break;
-                case "Kontant":
-                    $kontantTotal += ($product['price'] * $amountSold);
-                    break;
+
+    // Checks for payment method and selects all in database if there is a method chosen
+    if ($payMethod != "both") {
+        $array = connectToDb("SELECT * FROM Payment WHERE payment_method = '$payMethod' AND MONTH(payment_date) = '$month' AND YEAR(payment_date) = '$year'");
+    } else {
+        $array = connectToDb("SELECT * FROM Payment WHERE MONTH(payment_date) = '$month' AND YEAR(payment_date) = '$year'");
+    }
+
+    if ($array != false) {
+        foreach ($array as $row) {
+            $string .= "<tr>";
+            $amountSold = $row['amount_sold'];
+            $prodName = $row['product_name'];
+            $data = connectToDb("SELECT * FROM Products WHERE product_name = '$prodName'");
+            foreach ($data as $product) {
+                $totalPerProduct = ($product['price'] * $amountSold);
+                $total += $totalPerProduct;
+                $totalAmount += $amountSold;
+
+                // Code for admin page, might be applicable here so saving it for now
+                // switch ($row['payment_method']) {
+                //     case "Swish":
+                //         $swishTotal += ($product['price'] * $amountSold);
+                //         break;
+                //     case "Kontant":
+                //         $kontantTotal += ($product['price'] * $amountSold);
+                //         break;
+                // }
+
+                // Adds a large string with data for printing later. (date neds fixing) 
+                $string .= "<td>" . $product['product_name'] . "</td><td>" . $totalPerProduct . " kr</td><td>" . $row['amount_sold'] . " st</td><td>" . $row['payment_date'] . "</td></tr>";
             }
         }
     }
-    echo "<div class='mb-4'><h2>Denna månad</h2></div>"
-        . "<div class='mb-4'><h1>Summa: " . $total . " kr</h1>"
-        . "<p>Swish: " . $swishTotal . " kr</p>"
-        . "<p>Kontanter: " . $kontantTotal . " kr</p></div>";
+    return "$string<tr><td>Allting</td><td>$total kr</td><td>$totalAmount st</td><td></td>";
 }
