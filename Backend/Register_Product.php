@@ -21,11 +21,11 @@
             header("Refresh:2; url=#");
             // if barcode doesnt exist the code continues 
         } else{ 
-            $sql = "INSERT INTO Products (product_name, product_info, expire_date, price, barcode,amount,category) 
-            VALUES ('$product', '-', '$expire', '$price', '$barcode','$amount','-')";
+            $sql = "INSERT INTO Products (product_name, product_info, expire_date, price, barcode, amount, category) 
+            VALUES ('$product', '-', '$expire', '$price', '$barcode','$amount','$type')";
         try {
             if ($conn->query($sql)) {
-                //echo "<script>alert('Produkt registrerad')</script>";
+                // Shows a text on the site if the "produkt registering" was success or failed 
                 echo "<div class='card border-0 shadow rounded-3 br1em mt-2 text-center bg-success text-white w-50 mx-auto align-middle'>
                             <p class='p-2 pt-4'>
                                 Produkt registrerad

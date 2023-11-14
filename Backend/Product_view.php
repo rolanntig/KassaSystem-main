@@ -6,6 +6,7 @@ include "../Backend/credentials.php";
     <thead>
         <tr>
             <th scope="col">Produkt</th>
+            <th scope="col">Typ</th>
             <th scope="col">Antal</th>
             <th scope="col">Pris</th>
             <th scope="col">Bäst före</th>
@@ -20,6 +21,7 @@ include "../Backend/credentials.php";
             while($row = mysqli_fetch_assoc($products)){
                 echo '<tr>';
                 echo '<td>'.$row['product_name'].'</td>';
+                echo '<td>'.$row['category'].'</td>';
                 echo '<td>'.$row['amount'].'</td>';
                 echo '<td>'.$row['price'].' kr </td>';
                 echo '<td>'.$row['expire_date'].'</td>';

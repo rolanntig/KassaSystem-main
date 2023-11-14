@@ -34,28 +34,27 @@
                     <input name="expire" type="datetime-local" class="form-control mb-3"> </div>
                     <div class="div5"><label>Barcode:</label>
                     <input name="barcode" type="text" class="form-control mb-3" required> </div>
+
                     <div class="div6">
                         <label for="type">Typ:</label>
                         <select name="type" id="type" class="form-control mb-3" required>
-                        <option value="" disabled selected>Vilken typ av produkt det är det?</option>
-                        <option value="drink">Dricka</option>
-                        <option value="snacks">Snacks</option>
-                        <option value="food">Mat</option>
-                    </select>
+                            <option value="" disabled selected>Vilken typ av produkt det är det?</option>
+                            <option value="drink">Dricka</option>
+                            <option value="snacks">Snacks</option>
+                            <option value="food">Mat</option>
+                        </select>
                     </div> 
                     <div class="div7"> <button name="submit" type="submit" class="btn text-white col-sm-7">Registrera varan</button></div>
                     </div>
-                    <!-- add Event Handler For Enter Key-->
-
                     <?php
-                        include "../Backend/credentials.php";
-                                            
+                        include "../Backend/credentials.php";                  
                         //Registering a product
                         $product    = $_POST['product'];
                         $amount     = $_POST['amount'];
                         $price      = $_POST['price'];
                         $expire     = $_POST['expire'];
                         $barcode    = $_POST['barcode'];
+                        $type       = $_POST['type'];
                         if (isset($_POST['submit'])){
                             include '../Backend/Register_Product.php';
                         }
@@ -63,6 +62,7 @@
                 </div>
             </form>
             <?php 
+            //includes the php code to view the products
                 include '../Backend/Product_view.php';
             ?>
         </div>
