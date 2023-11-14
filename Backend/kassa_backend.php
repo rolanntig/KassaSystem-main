@@ -3,6 +3,9 @@
     if(!isset($_SESSION['cart']) && !is_array($_SESSION['cart'])){
         $_SESSION['cart'] = array();
     }
+    if(!isset($_SESSION['cash']) && !is_array($_SESSION['cash'])){
+        $_SESSION['cash'] = array();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,22 +33,18 @@ $data = $result->fetch_all(MYSQLI_ASSOC);
         <!-- Makes a foreach to make a tr ad td for every index in the array -->
     <?php 
     foreach($data as $row): ?>
-    <tr>
+    <td>
             <!-- Uses php in the td to show every data in the index -->
-        <td>
+        <tr>
         <button type="submit" name="item" value="<?= htmlspecialchars($row['barcode']) ?>">
             <img src="https://placehold.co/50X50" alt="test">
+            <div>
+                <h7><u><?= htmlspecialchars($row['product_name']) ?></u></h7>
+                <p><?= htmlspecialchars($row['price']) ?> kr</p>
+            </div>
         </button>
-        </td>
-        <td><?= htmlspecialchars($row['ID']) ?></td>
-        <td><?= htmlspecialchars($row['product_name']) ?></td>
-        <td><?= htmlspecialchars($row['product_info']) ?></td>
-        <td><?= str_split($row['expire_date'], 10)[0];?></td>
-        <td><?= htmlspecialchars($row['price']) ?></td>
-        <td><?= htmlspecialchars($row['barcode']) ?></td>
-        <td><?= htmlspecialchars($row['amount']) ?></td>
-        <td><?= htmlspecialchars($row['category']) ?></td>
-    </tr>
+        </tr>
+    </td>
         <!-- Ends the foreach -->
     <?php endforeach ?>
         <!-- Delete button in the view function -->
@@ -56,17 +55,22 @@ $data = $result->fetch_all(MYSQLI_ASSOC);
             $data = $result->fetch_all(MYSQLI_ASSOC);
             //show only object_id, name and wish
             array_push($_SESSION['cart'],$data[0]['product_name']);
-            $count = 1;
-            echo sizeof($_SESSION['cart']) ." " ." size" ."<br>" ;
-            echo(array_count_values($_SESSION['cart'])); 
-            echo "<br>";
-            print_r($_SESSION['cart']);
-            echo "<br>";
-            //foreach($_SESSION['cart'] as $info):
-            //    echo '<tr>';
-            //        print $info . "<br>";
-            //    echo '</tr>';
-            //endforeach;
+            array_push($_SESSION['cash'],$data[0]['price']);
+            echo sizeof($_SESSION['cart']) ." " ." size";
+            $endCart = array_count_values($_SESSION['cart']); 
+            $endPrice = array_count_values($_SESSION['cash']); 
+            foreach($endCart as $key=>$val):
+                echo '<tr>';
+                    echo  "<br>" .$key ." " .$val;
+                echo '</tr>';
+            endforeach;
+            foreach($endPrice as $key=>$val):
+                echo '<tr>';
+                    $price = $key * $val;
+                    echo "<br>" ."<br>" .$key ."*" .$val;
+                    echo "<br>" .$price ."kr" ."<br>";
+                echo '</tr>';
+            endforeach;
         }
     ?>
     </table>
