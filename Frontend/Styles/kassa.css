@@ -65,7 +65,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.347);
   margin-bottom: 10px;
   border-radius: 10px;
@@ -73,7 +73,10 @@
 }
 /* items inside of cart */
 .cartItem:first-child{
-  margin-top: 50px;
+  margin-top: 5px;
+}
+.cartItem:last-child{
+  margin-bottom: 5px;
 }
 
 .cartItem{
