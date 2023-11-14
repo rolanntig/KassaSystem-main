@@ -6,25 +6,14 @@
     if(!isset($_SESSION['cash']) && !is_array($_SESSION['cash'])){
         $_SESSION['cash'] = array();
     }
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="../Styles/kassa.css"> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-</head>
-<body>
-<?php
+
     // include the config.php file to get connected to the Database
-include 'credentials.php';
+    include 'credentials.php';
 
     // sends a query to the Products table thru the connection($conn)
-        // Then fetch all the data thru the query as multiple array based on rows
-$result = mysqli_query($conn,"SELECT * FROM Products");
-$data = $result->fetch_all(MYSQLI_ASSOC);
+    // Then fetch all the data thru the query as multiple array based on rows
+    $result = mysqli_query($conn,"SELECT * FROM Products");
+    $data = $result->fetch_all(MYSQLI_ASSOC);
 ?>
 
 <!-- Only html table as this file will be included in the index page -->
@@ -36,7 +25,7 @@ $data = $result->fetch_all(MYSQLI_ASSOC);
 
             <!-- Uses php in the td to show every data in the index -->
             <div>
-        <button type="submit" name="item" value="<?= htmlspecialchars($row['barcode']) ?>">
+        <button type="submit" name="item" value="<?= htmlspecialchars($row['barcode']) ?>"  class="<?= htmlspecialchars($row['category']) ?>">
             <img src="https://placehold.co/50X50" alt="test">
 
         </button></br>

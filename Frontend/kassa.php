@@ -15,11 +15,11 @@
 			<!-- container where items show -->
 			<div class="itemContainer">
 			<div class="categoryDiv">
-				<select name="category" id="category">
+				<select name="category" id="category" >
 					<option value="">Allt</option>
-					<option value="dryck">Dryck</option>
+					<option value="drink">Dryck</option>
 					<option value="snacks">Snacks</option>
-					<option value="mat">Mat</option>
+					<option value="food">Mat</option>
 					<option value="verktyg">Verktyg</option>
 				</select>
 			</div>
