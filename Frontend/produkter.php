@@ -20,6 +20,7 @@
     <?php include "../Backend/header.php" ?>
     <div class="container">
         <div class="bg-white p-3 br1em">
+        <?php include "../Backend/produktNav.php" ?>
             <h1 class="mb-4 mt-3 text-center">Registrera produkt</h1>
             <form action="#"class="d-flex justify-content-center w-100" method="post">
             <div class="form-group col-8">
