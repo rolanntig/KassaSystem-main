@@ -42,7 +42,7 @@
                             <option value="drink">Dricka</option>
                             <option value="snacks">Snacks</option>
                             <option value="food">Mat</option>
-                            <option value="vertyg">Vertyg</option>
+                            <option value="verktyg">Verktyg</option>
                         </select>
                     </div> 
                     <div class="div7"> <button name="submit" type="submit" class="btn text-white col-sm-7">Registrera varan</button></div>
