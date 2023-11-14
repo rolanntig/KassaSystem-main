@@ -4,7 +4,10 @@
     error_reporting(E_ALL | E_STRICT);
                     
     include '../Backend/credentials.php';
+    
+    // DO NOT USE CONSOLE.PHP OVER AND OVER! IT KEEPS RE-DECLAIRING!!!!
     include '../Backend/console.php';
+
     include '../Backend/databaseHandler.php';
     
 
