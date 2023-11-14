@@ -7,7 +7,7 @@
         $_SESSION['cash'] = array();
     }
 
-    // include the config.php file to get connected to the Database
+    // include the credentials.php file to get connected to the Database
     include 'credentials.php';
 
     // sends a query to the Products table thru the connection($conn)
@@ -22,19 +22,14 @@
         <!-- Makes a foreach to make a tr ad td for every index in the array -->
     <?php 
     foreach($data as $row): ?>
-
             <!-- Uses php in the td to show every data in the index -->
-            <div>
+        <div>
         <button type="submit" name="item" value="<?= htmlspecialchars($row['barcode']) ?>"  class="<?= htmlspecialchars($row['category']) ?>">
             <img src="https://placehold.co/50X50" alt="test">
-
         </button></br>
-        
                 <h7><u><?= htmlspecialchars($row['product_name']) ?></u></h7>
                 <p><?= htmlspecialchars($row['price']) ?> kr</p>
         </div>
-
-
         <!-- Ends the foreach -->
     <?php endforeach ?>
         <!-- Delete button in the view function -->
@@ -52,5 +47,3 @@
     ?>
 
 </form>
-</body>
-</html>
