@@ -33,3 +33,20 @@
 #summary-manad:hover {
   background-color: rgb(204, 151, 202);
 }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin: auto;
+}
+
+table h2 {
+    text-align:center;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
