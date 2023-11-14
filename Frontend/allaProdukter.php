@@ -10,9 +10,43 @@
     <link rel="stylesheet" type="text/css" href="./Styles/kassa.css"> 
     <title>Produkter</title>
 </head>
-<body>
+<body> 
 <?php include "../Backend/header.php" ?>
 <?php include "../Backend/produktNav.php" ?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-3 p-2 g-col-6">
+            <form action="" method="GET" class="form-inline">
+                <div class="input-group">
+                    <div class="input-group mb-3">
+                    <input type="text" name="search" class="form-control" placeholder="Search for products">
+                    </div>
+                    <!-- Dropdown for filtering -->
+                    <select name="filter" class="custom-select">
+                        <option value="" disabled selected>filter</option>
+                        <option value="drink">Dricka</option>
+                        <option value="snacks">Snacks</option>
+                        <option value="food">Mat</option>
+                        <option value="verktyg">Verktyg</option>
+                    </select>
+                    <!--Filter button -->
+                    <button type="submit" class="btn btn-outline-secondary  "><i class="fas fa-filter"></i> Filter</button>
+                    <!--Reset button -->
+                    <button type="button" class="btn btn-outline-secondary" onclick="resetForm()"><i class="fas fa-sync"></i>Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // JavaScript function to reset the form
+    function resetForm() {
+        document.querySelector('form').reset();
+        // Reset the URL to remove query parameters
+        window.location.href = window.location.pathname; 
+    }
+</script>
 <?php 
             //includes the php code to view the products
                 include '../Backend/Product_view.php';
