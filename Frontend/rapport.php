@@ -40,7 +40,8 @@ $monthName = date('F', strtotime("$currentYear-$currentMonth-01"));
 // Skapa en lista med år att visa i rullgardinsmenyn
 $yearList = range(date('Y') - 5, date('Y') + 5);
 
-$tableType = isset($_GET['table_type']) ? $_GET['table_type'] : 'month'; // För att hålla reda på vilken typ av tabell som visas.
+// För att hålla reda på vilken typ av tabell som visas. Den visar vilken tabell som ska visas först.
+$tableType = isset($_GET['table_type']) ? $_GET['table_type'] : 'month'; 
 
 // Om användaren väljer dagstabell
 if ($tableType == 'day') {
@@ -50,12 +51,13 @@ if ($tableType == 'day') {
     // Hämta dagens namn baserat på den aktiva dagen
     $dayName = date('l', strtotime("$currentYear-$currentMonth-$activeDay"));
 
-    // Här visar den en tabell för försäljningsrapporten inom den aktiva dagen
+    // Här visar den en tabell för försäljningsrapporten inom den aktiva dagen. $dayName och $activeDay visar den aktiva dagen.
+    // Dropdowns knapparna ligger i en tabell i th-taggen.
     echo '
     <table border="1">
         <tr>
             <th colspan="3">
-                <h3 class="header_report">' . $dayName . ' - ' . $activeDay .'</h3>
+                 <h3 class="header_report">' . $dayName . ' - ' . $activeDay .'</h3> 
             </th>
             <th><div class="dropdown">
         <button class="dropbtn">Betalnings alternativ</button>
@@ -86,7 +88,8 @@ if ($tableType == 'day') {
 // Om användaren väljer månadsstabell
 if ($tableType == 'month') {
 
-// Här visar den en tabell för försäljningsrapporten inom den aktiva månaden
+// Här visar den en tabell för försäljningsrapporten inom den aktiva månaden.$monthName och $currentYear visar den aktiva 
+// månaden och året. Dropdowns knapparna ligger i en tabell i th-taggen.
 echo '
 <table border="1">
 
@@ -119,9 +122,6 @@ echo '
 }
 
 ?>
-
-
-
     
 </body>
 
