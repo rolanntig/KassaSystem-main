@@ -1,7 +1,11 @@
 <?php
+
+    if (!function_exists('console')) {
     function console($data) {
-        if (!empty($data)) {
-            echo '<script>'.'console.log("'.$data.'")'.";</script>";
-        }
+        echo '<script>'.'console.log("'.$data.'")'.";</script>";
+
     }
+
+}
+
 ?>
