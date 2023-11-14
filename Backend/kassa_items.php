@@ -26,9 +26,9 @@
         <div>
         <button type="submit" name="item" value="<?= htmlspecialchars($row['barcode']) ?>"  class="<?= htmlspecialchars($row['category']) ?>">
             <img src="https://placehold.co/50X50" alt="test">
-        </button></br>
-                <h7><u><?= htmlspecialchars($row['product_name']) ?></u></h7>
-                <p><?= htmlspecialchars($row['price']) ?> kr</p>
+            <h7><u><?= htmlspecialchars($row['product_name']) ?></u></h7>
+            <p><?= htmlspecialchars($row['price']) ?> kr</p>
+        </button>
         </div>
         <!-- Ends the foreach -->
     <?php endforeach ?>
@@ -36,13 +36,7 @@
     <?php 
         $id = $_POST['item'];
         if ( isset($_POST['item'])){
-            $result = mysqli_query($conn,"SELECT * FROM Products WHERE `barcode`='$id'");
-            $data = $result->fetch_all(MYSQLI_ASSOC);
-            //show only object_id, name and wish
-            array_push($_SESSION['cart'],$data[0]['product_name']);
-            array_push($_SESSION['cash'],$data[0]['price']);
-            $endCart = array_count_values($_SESSION['cart']); 
-            $endPrice = array_count_values($_SESSION['cash']); 
+           include 'Backend/kassa_cart.php';
         }
     ?>
 
