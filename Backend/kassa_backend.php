@@ -58,17 +58,8 @@ $data = $result->fetch_all(MYSQLI_ASSOC);
             array_push($_SESSION['cart'],$data[0]['product_name']);
             $count = 1;
             echo sizeof($_SESSION['cart']) ." " ." size" ."<br>" ;
-                for($i = 0; $i < sizeof($_SESSION['cart']); $i++){
-                    for($j = $i+1; $j < sizeof($_SESSION['cart']); $j++){
-                        if($_SESSION['cart'][$i] === $_SESSION['cart'][$j]){
-                            $count++;
-                            echo $i ."<br>";
-                            echo $j ."<br>";
-                            echo $_SESSION['cart'][$i] ."<br>";
-                            echo $_SESSION['cart'][$j] ."<br>";
-                        }
-                    }
-                }
+            echo(array_count_values($_SESSION['cart'])); 
+            echo "<br>";
             print_r($_SESSION['cart']);
             echo "<br>";
             //foreach($_SESSION['cart'] as $info):
