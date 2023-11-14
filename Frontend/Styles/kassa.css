@@ -68,6 +68,9 @@
   height: 60%;
   width: 90%;
 }
+#kontantDiv{
+  display: none;
+}
 
 /* RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END  */
 
