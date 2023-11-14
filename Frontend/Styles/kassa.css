@@ -2,13 +2,7 @@
   margin:0;
   padding: 0;
 }
-a{
-  text-decoration: none;
-  
-}
-a:visited{
-  color: rgba(0, 0, 0, 0.347);
-}
+
 /* main container */
 .fullDiv{
   width: 100%;
@@ -48,16 +42,20 @@ a:visited{
   background-color: rgba(0, 0, 0, 0.347);
   padding: 15px 0;
 }
+
 /* Images inside of item container */
-.itemContainer>a>img{
+.itemContainer>button{
   border: solid 1px;
   background-color: rgba(0, 0, 0);
   border-radius: 20px;
   width: 150px;
   height: 200px;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END  */
+/* LEFT DIV END LEFT DIV END LEFT DIVEND LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END  */
 
 /* RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START  */
 /* cart */
@@ -71,13 +69,18 @@ a:visited{
   background-color: rgba(0, 0, 0, 0.347);
   margin-bottom: 10px;
   border-radius: 10px;
+  overflow-y: scroll;
 }
 /* items inside of cart */
+.cartItem:first-child{
+  margin-top: 50px;
+}
+
 .cartItem{
   width: 55%;
   padding: 10px 5px;
   text-align: center;
-  margin: 1px 0 1px 0;
+  margin: 0px 0 1px 0;
   border-radius: 5px;
   overflow-wrap:break-word;
   border: solid 1px;
@@ -109,6 +112,9 @@ a:visited{
   display: none;
 }
 
+#kontantDiv, #swishDiv{
+  height: 93%;
+}
 /* RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END  */
 
 /* SCROLLBAR START SCROLLBAR START SCROLLBAR START SCROLLBAR START SCROLLBAR START SCROLLBAR START  */
