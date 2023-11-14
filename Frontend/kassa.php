@@ -42,6 +42,11 @@
 		<!-- right container -->
 		<div class="rightDiv">
 			<div class="cart">
+				<div class="cartItem">COLA</div>
+				<div class="cartItem">COLA</div>
+				<div class="cartItem">COLA</div>
+				<div class="cartItem">COLA</div>
+				<div class="cartItem">COLA</div>
 
 			</div>
 			<div class="payment">
@@ -55,13 +60,13 @@
 						<input type="radio" name="swish" id="kontant">
 					</div>
 				</form>
-				<div id="swish">
+				<div id="swishDiv">
 
 					<p>något annat</p>
 
 
 				</div>
-				<div id="kontant">
+				<div id="kontantDiv">
 
 					<p>spelar ingen roll</p>
 
