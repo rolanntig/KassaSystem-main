@@ -11,6 +11,7 @@ include "../Backend/credentials.php";
             <th scope="col">Pris</th>
             <th scope="col">Bäst före</th>
             <th scope="col">Barcode</th>
+            <th scope="col">Ta bort</th>
         </tr>
     </thead>
     <?php
@@ -26,8 +27,20 @@ include "../Backend/credentials.php";
                 echo '<td>'.$row['price'].' kr </td>';
                 echo '<td>'.$row['expire_date'].'</td>';
                 echo '<td>'.$row['barcode'].'</td>';
+                echo '<td>' 
+                .'<form action="" method="POST">'
+                .'<button type="submit" class="btn btn-danger" value="'.$row['ID'] .'" name="del" id="del-btn"> 
+                    Delete'
+                .'</button>'
+                .'</form>'
+                .'</td>';
                 echo '</tr>';
                 }
+                $id = $_POST['del'];
+                echo $id;
+            if ( isset($_POST['del'])){
+                include 'delete.php';
+            }
                         
             mysqli_close($conn);
             } catch (\Throwable $th) {
