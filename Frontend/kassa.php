@@ -44,7 +44,7 @@
 			<div class="cart">
 				<div class="cartItem">COLA</div>
 				<div class="cartItem">COLA</div>
-				<div class="cartItem">COLA</div>
+				<div class="cartItem"><p>COLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p></div>
 				<div class="cartItem">COLA</div>
 				<div class="cartItem">COLA</div>
 
@@ -53,7 +53,7 @@
 				<form action="#">
 					<div>
 						<label for="swish">Swish</label>
-						<input type="radio" name="swish" id="swish">
+						<input type="radio" name="swish" id="swish" checked>
 					</div>
 					<div>
 						<label for="kontant">Kontant</label>
