@@ -22,7 +22,6 @@
     <title>Admin</title>
 </head>
 <body>
-  <?php include "../Backend/header.php" ?>
 	<div class="container">
   		<div id="justify-content">
   			<div class="bg-white border" id="Registrera-Kassör">

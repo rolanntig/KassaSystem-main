@@ -21,7 +21,6 @@
     <title>Kassa</title>
 </head>
 <body>
-	 <?php include "../Backend/header.php" ?>
   	<div class="container">
 	  	<div class="container mb-5 bg-white br1em" style="height: 70vh;">
 		  	<!--produkter div-->

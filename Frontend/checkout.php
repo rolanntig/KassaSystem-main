@@ -18,7 +18,6 @@
     <title>Varukorg</title>
 </head>
 <body>
-    <?php include "../Backend/header.php" ?>
     <div class="container">
         <div class="bg-white p-1 br1em">
             <section class="pt-1 pb-2">

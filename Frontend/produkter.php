@@ -17,7 +17,6 @@
     <title>Produkter</title>
 </head>
 <body>
-    <?php include "../Backend/header.php" ?>
     <div class="container">
         <div class="bg-white p-3 br1em">
             <h1 class="mb-4 mt-3 text-center">Registrera produkt</h1>
