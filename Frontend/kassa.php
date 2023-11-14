@@ -31,11 +31,21 @@
 		<!-- right container -->
 		<div class="rightDiv">
 			<div class="cart">
-				<div class="cartItem">COLA</div>
-				<div class="cartItem">COLA</div>
-				<div class="cartItem"><p>COLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p></div>
-				<div class="cartItem">COLA</div>
-				<div class="cartItem">COLA</div>
+				<div class="cartItem">COLA (23kr)*3 </div>
+				<div class="cartItem">Fanta (23kr)*3 </div>
+				<div class="cartItem">cookie (23kr)*3 </div>
+				<div class="cartItem">cheeto (23kr)*3 </div>
+				<div class="cartItem">cheeto (23kr)*3 </div>
+				<div class="cartItem">cheeto (23kr)*3 </div>
+				<div class="cartItem">cheeto (23kr)*3 </div>
+				<div class="cartItem">cheeto (23kr)*3 </div>
+				<div class="cartItem">cheeto (23kr)*3 </div>
+				<div class="cartItem">cheeto (23kr)*3 </div>
+				<div class="cartItem">cheeto (23kr)*3 </div>
+				<div class="cartItem">cheeto (23kr)*3 </div>
+				<div class="cartItem">cheeto (23kr)*3 </div>
+				<div class="cartItem">cheeto (23kr)*3 </div>
+				<div class="cartItem">cheeto (23kr)*3 </div>
 
 			</div>
 			<div class="payment">
@@ -52,12 +62,22 @@
 					</div>
 					<div id="swishDiv">
 
-						<p>något annat</p>
+						<div>
+							Totalt: minst 50kr
+						</div>
 
 					</div>
 					<div id="kontantDiv">
 						
-						<p>adkjaldkjalkd</p>
+						<div>
+							Totalt: minst 50kr
+						</div>
+						<div>
+							Ger: 80kr
+						</div>
+						<div>
+							tillbaka:30kr
+						</div>
 
 					</div>
 				</form>

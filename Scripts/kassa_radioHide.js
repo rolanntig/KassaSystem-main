@@ -15,9 +15,9 @@ function radioChangeHandler() {
   // Check which radio button is selected
   if (swishRadio.checked) {
     kontantDiv.style.display = "none";
-    swishDiv.style.display = "block";
+    swishDiv.style.display = "flex";
   } else if (kontantRadio.checked) {
     swishDiv.style.display = "none";
-    kontantDiv.style.display = "block";
+    kontantDiv.style.display = "flex";
   }
 }
