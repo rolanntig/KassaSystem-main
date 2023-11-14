@@ -11,6 +11,7 @@ include "../Backend/credentials.php";
             <th scope="col">Pris</th>
             <th scope="col">Bäst före</th>
             <th scope="col">Barcode</th>
+            <th scope="col">Ta bort</th>
         </tr>
     </thead>
     <?php
