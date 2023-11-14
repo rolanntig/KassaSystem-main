@@ -76,12 +76,11 @@
 /* RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START  */
 /* cart */
 .cart{
-  height: 35%;
+  height: 55%;
   width: 92.5%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.347);
   margin-bottom: 10px;
   border-radius: 10px;
@@ -106,7 +105,7 @@
 }
 /* payment div */
 .payment{
-  height: 60%;
+  height: 34.4%;
   width: 92.5%;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.347);
@@ -126,13 +125,24 @@
   align-items: center;
   height: 7%;
 }
+#buttonDiv>div{
+  margin-top: 5px;
+  text-align: center;
+}
 /* kontantDiv */
 #kontantDiv{
   display: none;
 }
+#swishDiv
+{
+  display: flex;
 
+}
 #kontantDiv, #swishDiv{
   height: 93%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 /* RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END  */
 
