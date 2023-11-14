@@ -1,3 +1,4 @@
+// Get containers for swish and kontant methods
 const swishDiv = document.getElementById('swishDiv');
 const kontantDiv = document.getElementById('kontantDiv');
 
