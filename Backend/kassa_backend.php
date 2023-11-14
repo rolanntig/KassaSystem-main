@@ -29,51 +29,62 @@ $data = $result->fetch_all(MYSQLI_ASSOC);
 
 <!-- Only html table as this file will be included in the index page -->
 <form action="" method="POST">
-    <table>
-        <!-- Makes a foreach to make a tr ad td for every index in the array -->
+    <!-- Makes a foreach to make a tr ad td for every index in the array -->
+    <div>
     <?php 
     foreach($data as $row): ?>
-    <td>
             <!-- Uses php in the td to show every data in the index -->
-        <tr>
-        <button type="submit" name="item" value="<?= htmlspecialchars($row['barcode']) ?>">
-            <img src="https://placehold.co/50X50" alt="test">
-            <div>
-                <h7><u><?= htmlspecialchars($row['product_name']) ?></u></h7>
-                <p><?= htmlspecialchars($row['price']) ?> kr</p>
-            </div>
-        </button>
-        </tr>
-    </td>
-        <!-- Ends the foreach -->
+            <button type="submit" name="item" value="<?= htmlspecialchars($row['barcode']) ?>">
+                <img src="https://placehold.co/50X50" alt="test">
+                <div>
+                    <h7><u><?= htmlspecialchars($row['product_name']) ?></u></h7>
+                    <p><?= htmlspecialchars($row['price']) ?> kr</p>
+                </div>
+            </button>
+    <!-- Ends the foreach -->
     <?php endforeach ?>
-        <!-- Delete button in the view function -->
+    </div>
+    <br>
+    <div class="d-flex flex-row">
     <?php 
         $id = $_POST['item'];
         if ( isset($_POST['item'])){
             $result = mysqli_query($conn,"SELECT * FROM Products WHERE `barcode`='$id'");
             $data = $result->fetch_all(MYSQLI_ASSOC);
-            //show only object_id, name and wish
             array_push($_SESSION['cart'],$data[0]['product_name']);
             array_push($_SESSION['cash'],$data[0]['price']);
-            echo sizeof($_SESSION['cart']) ." " ." size";
+
+            $finalPrice = 0;
             $endCart = array_count_values($_SESSION['cart']); 
-            $endPrice = array_count_values($_SESSION['cash']); 
-            foreach($endCart as $key=>$val):
+            $endPrice = array_count_values($_SESSION['cash']);
+
+            echo '<div class="p-2">';
+            echo '<table class="table">';
+            foreach($endCart as $key => $val){
                 echo '<tr>';
-                    echo  "<br>" .$key ." " .$val;
+                echo '<td>';
+                echo $key;
+                echo '</td>';
                 echo '</tr>';
-            endforeach;
-            foreach($endPrice as $key=>$val):
+            }
+            echo '</table>';
+            echo '</div>';
+            echo '<div class="p-2">';
+            echo '<table class="table">';
+            foreach($endPrice as $key => $val){
                 echo '<tr>';
-                    $price = $key * $val;
-                    echo "<br>" ."<br>" .$key ."*" .$val;
-                    echo "<br>" .$price ."kr" ."<br>";
+                echo '<td>';
+                $finalPrice += $key * $val;
+                echo $key * $val;
+                echo '</td>';
                 echo '</tr>';
-            endforeach;
+            }
+            echo '</table>';
+            echo '</div>';
         }
     ?>
     </table>
+    </div>
     <form action="" method="POST">
     <button name="close">
         Empty Cart
