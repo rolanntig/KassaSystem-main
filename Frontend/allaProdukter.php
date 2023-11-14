@@ -12,8 +12,13 @@
 </head>
 <body> 
 <?php include "../Backend/header.php" ?>
-<?php include "../Backend/produktNav.php" ?>
 <div class="container">
+<div class="bg-white p-3 br1em">
+<?php include "../Backend/produktNav.php" ?>    
+<h1 class="text-center">Produkter</h1>
+<form method="post" enctype="multipart/form-data" class="d-flex justify-content-center w-100"class="my-4 p-4 border">
+<div class="form-group col-8">
+            <div>
     <div class="row">
         <div class="col-md-6 offset-md-3 mt-3 p-2 g-col-6">
             <form action="" method="GET" class="form-inline">
@@ -37,8 +42,8 @@
             </form>
         </div>
     </div>
-</div>
-
+</div> 
+        </form>
 <script>
     // JavaScript function to reset the form
     function resetForm() {
