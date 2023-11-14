@@ -97,6 +97,6 @@ $data = $result->fetch_all(MYSQLI_ASSOC);
             print_r($_SESSION['cart']);
         }
     ?>
-</form>
+    </form>
 </body>
 </html>

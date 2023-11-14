@@ -86,6 +86,38 @@
   border-radius: 10px;
   overflow-y: scroll;
 }
+
+.cart-items:nth-child(1){
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 10;
+  flex-shrink: 1;
+}
+
+.cart-items:nth-child(2){
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
+.Empty-btn{
+  display: flex;
+  justify-content: center;
+}
+
+.cart-contain:nth-child(1){
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
+.cart-contain:nth-child(2){
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
 /* items inside of cart */
 .cartItem:first-child{
   margin-top: 5px;

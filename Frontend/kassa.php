@@ -31,22 +31,26 @@
 		<!-- right container -->
 		<div class="rightDiv">
 			<div class="cart">
-				<div class="cartItem">COLA (23kr)*3 </div>
-				<div class="cartItem">Fanta (23kr)*3 </div>
-				<div class="cartItem">cookie (23kr)*3 </div>
-				<div class="cartItem">cheeto (23kr)*3 </div>
-				<div class="cartItem">cheeto (23kr)*3 </div>
-				<div class="cartItem">cheeto (23kr)*3 </div>
-				<div class="cartItem">cheeto (23kr)*3 </div>
-				<div class="cartItem">cheeto (23kr)*3 </div>
-				<div class="cartItem">cheeto (23kr)*3 </div>
-				<div class="cartItem">cheeto (23kr)*3 </div>
-				<div class="cartItem">cheeto (23kr)*3 </div>
-				<div class="cartItem">cheeto (23kr)*3 </div>
-				<div class="cartItem">cheeto (23kr)*3 </div>
-				<div class="cartItem">cheeto (23kr)*3 </div>
-				<div class="cartItem">cheeto (23kr)*3 </div>
-
+			<?php 
+        		$id = $_POST['item'];
+        		if ( isset($_POST['item'])){
+        		   include '../Backend/kassa_cart.php';
+        		}
+    			?>
+			</div>
+			<div class="Empty-btn">
+			<form action="" method="POST">
+    			<button name="close">
+    			    Empty Cart
+    			</button>
+    			</form>
+    			<?php 
+    			    if(isset($_POST['close'])){
+    			        session_destroy();
+    			        unset($_SESSION['cart']);
+    			        print_r($_SESSION['cart']);
+    			    }
+    			?>
 			</div>
 			<div class="payment">
 				<form action="#" id="swishKonForm">

@@ -32,12 +32,4 @@
         </div>
         <!-- Ends the foreach -->
     <?php endforeach ?>
-        <!-- Delete button in the view function -->
-    <?php 
-        $id = $_POST['item'];
-        if ( isset($_POST['item'])){
-           include 'Backend/kassa_cart.php';
-        }
-    ?>
-
 </form>
