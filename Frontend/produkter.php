@@ -36,12 +36,13 @@
                     <input name="barcode" type="text" class="form-control mb-3" required> </div>
                     <div class="div6">
                         <label for="type">Typ:</label>
-                    <select name="type" id="type" class="form-control mb-3" required>
-                    <option>Vilken typ av produkt det är det?</option>
-                    <option value="drink">Dricka</option>
-                    <option value="snacks">Snacks</option>
-                    <option value="food">Mat</option>
-                    </select></div> 
+                        <select name="type" id="type" class="form-control mb-3" required>
+                        <option value="" disabled selected>Vilken typ av produkt det är det?</option>
+                        <option value="drink">Dricka</option>
+                        <option value="snacks">Snacks</option>
+                        <option value="food">Mat</option>
+                    </select>
+                    </div> 
                     <div class="div7"> <button name="submit" type="submit" class="btn text-white col-sm-7">Registrera varan</button></div>
                     </div>
                     <!-- add Event Handler For Enter Key-->
