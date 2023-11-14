@@ -16,12 +16,12 @@ function handleCategoryChange() {
             if (btns[index].className !== selectedValue) {
                 div.style.display = "none";
             } else {
-                div.style.display = "block";
+                div.style.display = "flex";
             }
         });
     } else {
         divs.forEach((div) => {
-            div.style.display = "block";
+            div.style.display = "flex";
         });
     }
 
