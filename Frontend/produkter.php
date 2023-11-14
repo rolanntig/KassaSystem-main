@@ -34,7 +34,7 @@
                     <div class="div4"><label>Bäst Före:</label>
                     <input name="expire" type="datetime-local" class="form-control mb-3"> </div>
                     <div class="div5"><label>Barcode:</label>
-                    <input name="barcode" type="text" class="form-control mb-3" required> </div>
+                    <input name="barcode" type="text" class="form-control mb-3" maxlength="13" required> </div>
 
                     <div class="div6">
                         <label for="type">Typ:</label>
