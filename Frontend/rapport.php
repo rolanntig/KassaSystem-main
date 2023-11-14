@@ -21,6 +21,10 @@
 
 <body>
 
+<?php
+    include './Backend/header.php'
+?>
+
 <div id="headerrep">
 <h1 class = "header_report">Försäljningsrapport</h1>
 
