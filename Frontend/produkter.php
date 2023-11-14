@@ -33,10 +33,11 @@
                     <div class="div4"><label>Bäst Före:</label>
                     <input name="expire" type="datetime-local" class="form-control mb-3"> </div>
                     <div class="div5"><label>Barcode:</label>
-                    <input name="barcode" type="text" class="form-control mb-3"required> </div>
+                    <input name="barcode" type="text" class="form-control mb-3" required> </div>
                     <div class="div6">
-                        <label for="typ">Typ:</label>
-                    <select name="typ" id="typ" class="form-control mb-3">
+                        <label for="type">Typ:</label>
+                    <select name="type" id="type" class="form-control mb-3" required>
+                    <option>Vilken typ av produkt det är det?</option>
                     <option value="drink">Dricka</option>
                     <option value="snacks">Snacks</option>
                     <option value="food">Mat</option>
