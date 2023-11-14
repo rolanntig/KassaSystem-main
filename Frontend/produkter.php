@@ -57,16 +57,15 @@
                         $expire     = $_POST['expire'];
                         $barcode    = $_POST['barcode'];
                         $type       = $_POST['type'];
+
                         if (isset($_POST['submit'])){
                             include '../Backend/Register_Product.php';
+
                         }
                     ?>
                 </div>
             </form>
-            <?php 
-            //includes the php code to view the products
-                include '../Backend/Product_view.php';
-            ?>
+
         </div>
     </div>
 </body>
