@@ -66,7 +66,7 @@
 
 
 				</div>
-				<div id="kontantDiv">
+				<div id="kontantDiv" style="display:none;">
 
 					<p>spelar ingen roll</p>
 
@@ -76,5 +76,6 @@
 		</div>
 	</div>
 	<script src="../Scripts/selectCategory.js"></script>
+	<script src="../Scripts/kassa_radioHide.js"></script>
 </body>
 </html>
