@@ -2,7 +2,8 @@
 /*session_start();
 	if(!$_SESSION["inloggad"]){
 		header("location:index.php");
-	}*/
+	}
+	*/
 ?>
 
 <!DOCTYPE html>
@@ -22,10 +23,6 @@
 </head>
 
 <body>
-	<?php
-	include "../Backend/userAdd.php";
-	?>
-
 	<?php include "../Backend/header.php" ?>
 	<div class="container">
 		<div id="justify-content">
