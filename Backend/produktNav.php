@@ -12,7 +12,7 @@ echo '<nav class="navbar navbar-expand-lg navbar-light mb-3">
                     <a class="nav-link" href="allaProdukter.php">Produkt lista</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="edit.php">Edit</a>
+                    <a class="nav-link" href="editProdukter.php">Edit</a>
                 </li>
             </ul>
         </div>

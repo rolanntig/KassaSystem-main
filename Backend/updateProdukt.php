@@ -10,6 +10,5 @@ if ($conn->query($sql) === TRUE) {
   echo "Error updating price: " . $conn->error;
 }
 
-
 $conn->close();
 ?>
