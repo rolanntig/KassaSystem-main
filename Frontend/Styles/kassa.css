@@ -44,15 +44,31 @@
 }
 
 /* Images inside of item container */
-.itemContainer>button{
+.itemContainer>form{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+.itemContainer>form>div{
   border: solid 1px;
-  background-color: rgba(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.394);
   border-radius: 20px;
   width: 150px;
   height: 200px;
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.itemContainer>form>div>button{
+  width: 50px;
+  height: 50px;
+  border: none;
 }
 
 /* LEFT DIV END LEFT DIV END LEFT DIVEND LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END  */

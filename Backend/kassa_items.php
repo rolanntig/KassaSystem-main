@@ -29,23 +29,23 @@ $data = $result->fetch_all(MYSQLI_ASSOC);
 
 <!-- Only html table as this file will be included in the index page -->
 <form action="" method="POST">
-    <table>
+
         <!-- Makes a foreach to make a tr ad td for every index in the array -->
     <?php 
     foreach($data as $row): ?>
-    <td>
+
             <!-- Uses php in the td to show every data in the index -->
-        <tr>
+            <div>
         <button type="submit" name="item" value="<?= htmlspecialchars($row['barcode']) ?>">
             <img src="https://placehold.co/50X50" alt="test">
 
-        </button>
-        <div>
+        </button></br>
+        
                 <h7><u><?= htmlspecialchars($row['product_name']) ?></u></h7>
                 <p><?= htmlspecialchars($row['price']) ?> kr</p>
         </div>
-        </tr>
-    </td>
+
+
         <!-- Ends the foreach -->
     <?php endforeach ?>
         <!-- Delete button in the view function -->
@@ -61,7 +61,7 @@ $data = $result->fetch_all(MYSQLI_ASSOC);
             $endPrice = array_count_values($_SESSION['cash']); 
         }
     ?>
-    </table>
+
 </form>
 </body>
 </html>
