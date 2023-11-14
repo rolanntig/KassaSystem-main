@@ -32,12 +32,18 @@ $result = mysqli_query($conn,"SELECT * FROM Products WHERE `barcode`='$id'");
             echo '<th>';
             echo 'PRICES';
             echo '</th>';
+            echo '<th>';
+            echo 'AMOUNT';
+            echo '</th>';
             echo '</tr>';
             foreach($endPrice as $key => $val){
                 echo '<tr>';
                 echo '<td>';
                 $finalPrice += $key * $val;
                 echo $key * $val;
+                echo '</td>';
+                echo '<td>';
+                echo $val;
                 echo '</td>';
                 echo '</tr>';
             }
