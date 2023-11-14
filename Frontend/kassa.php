@@ -50,27 +50,29 @@
 
 			</div>
 			<div class="payment">
-				<form action="#">
-					<div>
-						<label for="swish">Swish</label>
-						<input type="radio" name="swish" id="swish" checked>
+				<form action="#" id="swishKonForm">
+					<div id="buttonDiv">
+						<div>
+							<label for="swish">Swish</label>
+							<input type="radio" name="swish" id="swish" checked>
+						</div>
+						<div>
+							<label for="kontant">Kontant</label>
+							<input type="radio" name="swish" id="kontant">
+						</div>
 					</div>
-					<div>
-						<label for="kontant">Kontant</label>
-						<input type="radio" name="swish" id="kontant">
+					<div id="swishDiv">
+
+						<p>något annat</p>
+
+					</div>
+					<div id="kontantDiv">
+						
+						<p>adkjaldkjalkd</p>
+
 					</div>
 				</form>
-				<div id="swishDiv">
-
-					<p>något annat</p>
-
-
-				</div>
-				<div id="kontantDiv">
-
-					<p>spelar ingen roll</p>
-
-				</div>
+				
 			</div>
 			
 		</div>
