@@ -20,8 +20,8 @@
             <div class="form-group col-8">
                 <div class="parent1">
                 <div class="div1"><label>Barcode:</label> <input name="barcode" type="text" class="form-control mb-3" placeholder="Produktens streckkod som ska ändras"required></div>
-                <div class="div2"><label>Produkt:</label> <input name="newProduct"type="text" class="form-control mb-3" placeholder="Vilken produkt ska ändras?"></div>
-                <div class="div3"><label for="type">Typ:</label>
+                <!-- <div class="div2"><label>Produkt:</label> <input name="newProduct"type="text" class="form-control mb-3" placeholder="Vilken produkt ska ändras?"></div> -->
+                <div class="div2"><label for="type">Typ:</label>
                         <select name="newType" id="type" class="form-control mb-3" required>
                             <option value="" disabled selected>Vilken typ av produkt det är det?</option>
                             <option value="drink">Dricka</option>
@@ -29,16 +29,17 @@
                             <option value="food">Mat</option>
                             <option value="verktyg">Verktyg</option>
                         </select></div>
-                <div class="div6"><label>Bäst Före:</label> <input name="newExpire" type="datetime-local" class="form-control mb-3"></div>
-                <div class="div4"><label>Antal</label> <input name="newAmount" type="number" class="form-control mb-3" required placeholder="Hur många av den produkten?"></div>
-                <div class="div5"><label>Pris:</label> <input name="newPrice" type="number" class="form-control mb-3" required placeholder="kr"></div>
-                <div class="div7"><label for="image">Bild</label> <input type="file" accept="image/*" class="form-control" id="image" name="image" required></div>
-                <button type="submit" name="update2" class="mb-3 btn">Uppdatera</button> 
+                <div class="div5"><label>Bäst Före:</label> <input name="newExpire" type="datetime-local" class="form-control mb-3"></div>
+                <div class="div3"><label>Antal</label> <input name="newAmount" type="number" class="form-control mb-3" required placeholder="Hur många av den produkten?"></div>
+                <div class="div4"><label>Pris:</label> <input name="newPrice" type="number" class="form-control mb-3" required placeholder="kr"></div>
+                <div class="div6"><label for="image">Bild</label> <input type="file" accept="image/*" class="form-control" id="image" name="image" required></div>
+                <div class="div7"> <button type="submit" name="update2" class="mb-3 btn">Uppdatera</button></div>
+
             </div>
             </form>
     <?php 
     if (isset($_POST['update2'])){
-    $newProduct = $_POST['newProduct'];
+    // $newProduct = $_POST['newProduct'];
     $newPrice = $_POST['newPrice'];
     $newAmount = $_POST['newAmount'];
     $newExpire = $_POST['newExpire'];
