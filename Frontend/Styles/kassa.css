@@ -80,8 +80,6 @@
   border: none;
   width: 100%;
   height: 100%;
-  animation-name: bigDiv;
-  animation-duration: ;
 }
 .itemContainer>form>div>button>p{
   background-color: rgb(57, 57, 57);
@@ -218,6 +216,7 @@
   width: 100%;
   display: flex;
   justify-content: center ;
+  gap: 5px !important;
 }
 /* category */
 #category{
