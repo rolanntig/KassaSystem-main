@@ -18,8 +18,13 @@
                  </div>";
             header("Refresh:2; url=#");
         } else {
-            $sql = "INSERT INTO Products (product_name, product_info, expire_date, price, barcode, amount, category) 
-                    VALUES ('$product', '-', '$expire', '$price', '$barcode','$amount','$type')";
+            // File upload code
+            if(isset($_FILES['image'])){
+                move_uploaded_file($_FILES['image']['tmp_name'], "../Backend/image/" . $_FILES['image']['name']);
+                $image = $_FILES['image']['name'];
+            }
+            $sql = "INSERT INTO Products (product_name, product_info, expire_date, price, barcode, amount, category, `image`) 
+                    VALUES ('$product', '-', '$expire', '$price', '$barcode','$amount','$type', '$image')";
             
             try {
                 if ($conn->query($sql)) {

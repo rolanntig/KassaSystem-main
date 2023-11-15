@@ -22,7 +22,7 @@
         <div class="bg-white p-3 br1em">
         <?php include "../Backend/produktNav.php" ?>
             <h1 class="mb-4 mt-3 text-center">Registrera produkt</h1>
-            <form action="#"class="d-flex justify-content-center w-100" method="post">
+            <form action="#"class="d-flex justify-content-center w-100" method="post" enctype="multipart/form-data">
             <div class="form-group col-8">
                 <div class="parent1">
                     <div class="div1"><label>Produkt:</label> <input name="product"type="text" class="form-control mb-3" required placeholder="Vad för produkt?"> </div>
@@ -51,7 +51,7 @@
                         $expire     = $_POST['expire'];
                         $barcode    = $_POST['barcode'];
                         $type       = $_POST['type'];
-
+                        $image      = $_FILES['image']['name']; 
                         if (isset($_POST['submit'])){
                             include '../Backend/Register_Product.php';
 
