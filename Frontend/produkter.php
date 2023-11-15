@@ -39,7 +39,7 @@
                             <option value="verktyg">Verktyg</option>
                         </select>
                     </div> 
-                    <div class="div7"><label for="image">Bild</label> <input type="file" class="form-control" id="image" name="image" required></div>
+                    <div class="div7"><label for="image">Bild</label> <input type="file" accept="image/png, image/gif, image/jpeg" class="form-control" id="image" name="image" required></div>
                     <button name="submit" type="submit" class="btn text-white mb-3 btn">Registrera varan</button>
                     </div>
                     <?php
