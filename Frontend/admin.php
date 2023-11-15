@@ -159,7 +159,7 @@
 			    <div class="bg-white bg-primary d-flex justify-content-around align-items-center p-3" id="Rapport">
 				    <div class="col-5  text-center p-3 my-auto fs-2" id="summary-idag">
 					   <?php
-						   include "../Backend/getRapport.php";
+						   include "../Backend/getRapportForAdmin.php";
 						   getDailyRapport();
 					    ?>
 				    </div>
