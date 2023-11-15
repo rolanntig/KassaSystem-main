@@ -44,6 +44,10 @@
     $newExpire = $_POST['newExpire'];
     $newType = $_POST['newType'];
     $barcode = $_POST['barcode'];
+        if(isset($_FILES['image'])){
+            move_uploaded_file($_FILES['image']['tmp_name'], "../Backend/image/" . $_FILES['image']['name']);
+            $image = $_FILES['image']['name'];
+        }
     include '../Backend/updateProdukt.php';
     } ?>
 
