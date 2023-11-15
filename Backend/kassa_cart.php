@@ -18,7 +18,7 @@ $result = mysqli_query($conn,"SELECT * FROM Products WHERE `barcode`='$id'");
             echo 'ITEMS';
             echo '</th>';
             echo '</tr>';
-            foreach($endCart as $key => $val){
+            foreach($endPrice as $key => $val){
                 echo '<tr>';
                 echo '<td>';
                 echo $key;
