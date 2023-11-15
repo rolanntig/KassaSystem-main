@@ -1,8 +1,10 @@
 <?php
-	/*session_start();
+/*
+	session_start();
 	if(!$_SESSION["inloggad"]){
 		header("location:index.php");
-	}*/
+	}
+	*/
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +22,6 @@
     <title>Admin</title>
 </head>
 <body>
-  <?php include "../Backend/header.php" ?>
 	<div class="container">
   		<div id="justify-content">
   			<div class="bg-white border" id="Registrera-Kassör">

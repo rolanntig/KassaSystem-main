@@ -17,7 +17,6 @@
     <title>Produkter</title>
 </head>
 <body>
-    <?php include "../Backend/header.php" ?>
     <div class="container">
         <div class="bg-white p-3 br1em">
             <h1 class="mb-4 mt-3 text-center">Registrera produkt</h1>
@@ -33,6 +32,12 @@
                     <input name="expire" type="datetime-local" class="form-control mb-3">
                     <label>Barcode</label>
                     <input name="barcode" type="text" class="form-control mb-3">
+                    <label>Kategori</label>
+                    <select name="kategori" id="kategori" class="form-control mb-3">
+                        <option value="">Välj typ</option>
+                        <option value="godis">Godis</option>
+                        <option value="drickor">Drickor</option>
+                    </select>
                     <!-- add Event Handler For Enter Key-->
                     <button name="submit" type="submit" class="btn text-white mt-2 mb-2">Registrera varan</button>
                     
