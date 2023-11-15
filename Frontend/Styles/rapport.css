@@ -49,14 +49,17 @@ table h2 {
     text-align:center;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: center;
-  width: 30%;
-
+tr {
+  border-radius: 0.5rem;
 }
 
-
+td, th {
+  border: 1px solid #dddddd;
+  border-radius: 0.5rem;
+  text-align: center;
+  width: 30%;
+  border-radius: 0.5rem;
+}
 
 /* Style the dropdown button */
 .dropbtn {
