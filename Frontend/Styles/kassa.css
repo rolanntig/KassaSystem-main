@@ -236,7 +236,7 @@ body:not(input){
   border-radius: 20px;
   background-position: center;
 }
-.drink{
+/* .drink{
   background-image: url("../../Images/cocaCola.jpeg");
 }
 .snacks{
@@ -247,7 +247,7 @@ body:not(input){
 }
 .verktyg{
   background-image: url("../../Images/bookAndPen.jpeg");
-}
+} */
 
 nav{
   border-bottom: solid 1px;
