@@ -2,8 +2,8 @@
 ini_set('display_errors', '1');
 error_reporting(E_ALL | E_STRICT);
 
-include "../Backend/credentials.php";
-include '../Backend/databaseHandler.php';
+//include "../Backend/credentials.php";
+//include '../Backend/databaseHandler.php';
 
 // DO NOT USE CONSOLE.PHP OVER AND OVER! IT KEEPS RE-DECLAIRING!!!!
 include "../Backend/console.php";

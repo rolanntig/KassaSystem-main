@@ -13,7 +13,7 @@
 }
 
 .con {
-    height: 10.50rem;
+    height: 14rem;
 }
 
 .rapport-con {
@@ -73,4 +73,7 @@
 /* On eye icon hover change the cursor to a pointer because its a kind of button */
 .eye>i:hover{
     cursor: pointer;
+}
+body{
+    width: 100% !important;
 }

@@ -13,15 +13,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./Styles/navbar.css">
+    <link rel="stylesheet" href="./Styles/main.css">
     <link href="./Styles/admin-style.css" type="text/css" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="./Styles/navbar.css">
     <!-- Dont know why kassa.css was linked so commented it away for now atleast -->
     <!-- <link rel="stylesheet" type="text/css" href="./Styles/kassa.css"> -->
-	  <link rel="stylesheet" href="./Styles/main.css">
+    <link rel="stylesheet" type="text/css" href="./Styles/rapport.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-	  <link rel="stylesheet" type="text/css" href="./Styles/rapport.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script defer src="../Scripts/admin.js"></script>
     <title>Admin</title>
 </head>
@@ -30,14 +31,14 @@
     <!-- Adds some php files for future function and varaible uses -->
     <?php include "../Backend/userAdd.php"; ?>
     <?php include "../Backend/getAllForAdmin.php"; ?>
-    <?php include "../Backend/header.php" ?>
+    <?php include "../Frontend/header.php" ?>
 
 
     <!-- Main container  -->
-    <div class="container-fluid d-flex gap-3 p-5  border-primary flex-wrap border">
+    <div class="container-fluid d-flex gap-3 p-5 flex-wrap">
 
         <!--Div for registation of cashier-->
-        <div class="card-body border ">
+        <div class="card-body ">
             <!-- Form for registraion -->
             <form method="POST" id="otherForm" name="otherForm" class="bg-light p-1">
                 <h2 class="text-center">Registrera kassör</h2>
@@ -103,8 +104,15 @@
                     </thead>
                     <tbody>
                         <?php
-                        include "../Backend/credentials.php";
 
+                        // Breaking?? WHY???
+                        //include "../Backend/credentials.php";
+
+                        $server = "mysql.jawad.se";
+                        $username = "kassa";
+                        $password = "cGZZ2.I2mYPE*T@p";
+                        $dbname = "kassa";
+                        $port = 80;
                         // Connects to the database and gets all products in it by sending a connection
                         // to a function getAllProductsAdmin()
                         $conn = new mysqli($server, $username, $password, $dbname, $port);
