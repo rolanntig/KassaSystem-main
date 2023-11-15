@@ -42,10 +42,10 @@
     			?>
 			</div>
 			<div class="Empty-btn">
-			<form action="" method="POST">
-    			<button name="close">
-    			    Empty Cart
-    			</button>
+				<form action="" method="POST">
+					<button name="close">
+						Empty Cart
+					</button>
     			</form>
     			<?php 
     			    if(isset($_POST['close'])){
@@ -55,6 +55,7 @@
     			    }
     			?>
 			</div>
+			
 			<div class="payment">
 				<form action="#" id="swishKonForm">
 					<div id="buttonDiv">

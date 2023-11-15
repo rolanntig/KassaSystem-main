@@ -1,6 +1,6 @@
 <div class="cart-items">
 <?php
-$result = mysqli_query($conn,"SELECT * FROM Products WHERE `barcode`='$id'");
+$result = mysqli_query($conn,"SELECT * FROM Products WHERE barcode='$id'");
             $data = $result->fetch_all(MYSQLI_ASSOC);
             array_push($_SESSION['cart'],$data[0]['product_name']);
             array_push($_SESSION['cash'],$data[0]['price']);
@@ -28,7 +28,7 @@ $result = mysqli_query($conn,"SELECT * FROM Products WHERE `barcode`='$id'");
                 echo '<td>';
                 echo $key;
                 echo '</td>';
-                $result = mysqli_query($conn,"SELECT * FROM Products WHERE `product_name`='$key'");
+                $result = mysqli_query($conn,"SELECT * FROM Products WHERE product_name='$key'");
                 $data = $result->fetch_all(MYSQLI_ASSOC);
                 $finalPrice += $data[0]['price'] * $val;
                 echo '<td>';
