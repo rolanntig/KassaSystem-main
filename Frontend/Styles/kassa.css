@@ -56,7 +56,6 @@
 .itemContainer>form>div{
   border: solid 1px;
   background-color: rgba(0, 0, 0, 0.394);
-  border-radius: 20px;
   width: 150px;
   height: 200px;
   background-size: 100%;
@@ -95,7 +94,7 @@
 .itemContainer>form>div>button{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   gap:20px;
   border: none;
@@ -105,9 +104,9 @@
 .itemContainer>form>div>button>p{
   background-color: rgb(57, 57, 57);
   color: white;
-  padding: 5px;
+  width: 100%;
+  padding: 5px 0;
   border: solid 1px;
-  border-radius: 5px;
 }
 
 

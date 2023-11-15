@@ -16,6 +16,19 @@ $result = mysqli_query($conn,"SELECT * FROM Products WHERE `barcode`='$id'");
             echo '<th>';
             echo 'ITEMS';
             echo '</th>';
+            echo '</tr>';
+            foreach($endCart as $key => $val){
+                echo '<tr>';
+                echo '<td>';
+                echo $key;
+                echo '</td>';
+                echo '</tr>';
+            }
+            echo '</table>';
+            echo '</div>';
+            echo '<div class="cart-contain">';
+            echo '<table>';
+            echo '<tr>';
             echo '<th>';
             echo 'PRICES';
             echo '</th>';
@@ -23,21 +36,18 @@ $result = mysqli_query($conn,"SELECT * FROM Products WHERE `barcode`='$id'");
             echo 'AMOUNT';
             echo '</th>';
             echo '</tr>';
-            foreach($endCart as $key => $val){
+            foreach($endPrice as $key => $val){
                 echo '<tr>';
                 echo '<td>';
-                echo $key;
-                echo '</td>';
-                $result = mysqli_query($conn,"SELECT * FROM Products WHERE `product_name`='$key'");
-                $data = $result->fetch_all(MYSQLI_ASSOC);
-                $finalPrice += $data[0]['price'] * $val;
-                echo '<td>';
-                print_r($data[0]['price'] * $val);
+                $finalPrice += $key * $val;
+                echo $key * $val;
                 echo '</td>';
                 echo '<td>';
                 echo $val;
                 echo '</td>';
                 echo '</tr>';
             }
+            echo '</table>';
+            echo '</div>';
 ?>
 </div>
