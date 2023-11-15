@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
                         console("Password does not match!");
                         echo '<div class="card border-0 shadow rounded-3 br1em mt-5 text-center bg-danger text-white w-50 mx-auto align-middle">
                                 <p class="p-2 pt-4">
-                                    Login failed
+                                    Incorrect username or password
                                 </p>
                             </div>';
                     }
@@ -47,7 +47,11 @@ if (isset($_POST['submit'])) {
                 }
             } else {
                 console("No rows fetched for the given username!");
-                // Handle the case where no rows are fetched for the provided username
+                echo '<div class="card border-0 shadow rounded-3 br1em mt-5 text-center bg-danger text-white w-50 mx-auto align-middle">
+                        <p class="p-2 pt-4">
+                            Incorrect username or password
+                        </p>
+                    </div>';
             }
         } else {
             console("Query execution failed or no results returned!");
