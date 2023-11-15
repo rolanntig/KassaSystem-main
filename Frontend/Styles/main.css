@@ -15,7 +15,7 @@ html {
 
 body {
     background-color: #c182e0 !important;
-    background: linear-gradient(to Left, rgb(199, 156, 225), rgb(199, 121, 245)) !important;
+    background: linear-gradient(to left, rgb(208, 165, 233), rgb(199, 121, 245)) !important;
     color: black;
     padding: 5px;
     height: 100vh;
