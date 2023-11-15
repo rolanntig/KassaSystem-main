@@ -30,8 +30,6 @@
                 echo "Error: " . $e->getMessage();
             }
             return $connection;
-        } catch (Exception $e) {
-            echo "Error: " . $e->getMessage();
         }
 
         // fetch data securely and prevent SQL injection
