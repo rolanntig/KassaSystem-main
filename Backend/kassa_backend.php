@@ -19,7 +19,7 @@ $endPrice = array_count_values($_SESSION['cash']);
                 
                 echo '<form action="" method="POST">'
                     . '<button name="rm-item" value="'.$key.'">'
-    			        .    'Remove Item'
+    			        .    'Remove'
                     . '</button>'
     			. '</form>';
 
