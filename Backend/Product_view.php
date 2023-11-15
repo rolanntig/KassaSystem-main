@@ -46,7 +46,7 @@ try {
         echo '<td>' . $row['barcode'] . '</td>';
         echo '<td>'
             . '<form action="" method="POST">'
-            . '<button type="submit" class="btn btn" value="' . $row['ID'] . '" name="del" id="del-btn"> 
+            . '<button type="submit" class="btn btn" value="' . $row['ID'] . '" name="delete" id="del-btn"> 
                 Delete'
             . '</button>'
             . '</form>'
@@ -57,8 +57,9 @@ try {
     echo '</table>';
 
     // Handle product deletion
-    if (isset($_POST['del'])) {
-        include 'delete.php';
+    $id = $_POST['delete'];
+    if (isset($_POST['delete'])) {
+        include 'Produkt_delete.php';
     }
 
     mysqli_close($conn);
