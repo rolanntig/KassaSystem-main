@@ -1,7 +1,7 @@
 <?php
 // include the credentials.php file to get connected to the Database
 include "credentials.php";
-echo "helo";
+//Deletes the product from the DB
 $sql = "DELETE FROM Products WHERE ID=$id";
 
 
