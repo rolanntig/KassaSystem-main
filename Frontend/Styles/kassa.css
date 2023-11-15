@@ -214,14 +214,14 @@
 }
 /* category */
 #category{
-  width:15%;
+  width:10%;
   max-height: 30px;
   text-align: center;
 }
 /* BARCODE STYLING */
 #barcode{
   width: 60%;
-  max-height: 30px;
+  max-height: 26px;
 }
 
 /* Chrome, Safari, Edge, Opera */

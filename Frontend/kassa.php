@@ -8,6 +8,7 @@
 </head>
 <body>
 	<!-- add header -->
+	<?php include "../Backend/header.php"?>
 	<!-- container -->
 	<div class="fullDiv">
 		<!-- left container -->
