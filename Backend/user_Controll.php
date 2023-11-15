@@ -1,4 +1,5 @@
 <?php
+
 ini_set('display_errors', '1');
 error_reporting(E_ALL);
 
@@ -42,8 +43,8 @@ if (isset($_POST['submit'])) {
                             </div>';
                     }
                 } else {
-                    console("Password field is null or empty!");
                     // Handle the case where the password field is null or empty
+                    console("Password field is null or empty!");
                 }
             } else {
                 console("No rows fetched for the given username!");
