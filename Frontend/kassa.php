@@ -91,7 +91,7 @@
 						    </h4>
 						</div>
 						<div>
-							Ger: 80kr
+							Ger: <input type="text" name="tillbaka" id="tillbakas">
 						</div>
 						<div>
 							tillbaka:30kr

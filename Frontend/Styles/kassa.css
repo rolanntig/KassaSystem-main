@@ -40,7 +40,7 @@
   justify-content: center ;
   gap: 2px;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.347);
+  background-color: #333333;
   border: solid 1px;
   padding: 15px 0;
 }
@@ -55,7 +55,6 @@
 }
 .itemContainer>form>div{
   border: solid 1px;
-  background-color: rgba(0, 0, 0, 0.394);
   width: 150px;
   height: 200px;
   background-size: 100%;
@@ -99,7 +98,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.347);
+  background-color: #333333;
   margin-bottom: 10px;
   border-radius: 5px;
   overflow-y: scroll;
@@ -119,18 +118,24 @@
   display: flex;
   justify-content: center;
 }
-
-.cart-contain:nth-child(1){
-  display: block;
-  flex-grow: 0;
-  flex-shrink: 1;
+.cart-items{
+  width: 100%;
+  
+}
+.cart-contain{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
 }
 
-.cart-contain:nth-child(2){
-  display: block;
-  flex-grow: 0;
-  flex-shrink: 1;
+.cart-contain>table>tbody>tr{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
+
 
 /* items inside of cart */
 .cartItem:first-child{
@@ -140,21 +145,12 @@
   margin-bottom: 5px;
 }
 
-.cartItem{
-  width: 55%;
-  padding: 10px 5px;
-  text-align: center;
-  margin: 0px 0 1px 0;
-  border-radius: 5px;
-  overflow-wrap:break-word;
-  border: solid 1px;
-}
 /* payment div */
 .payment{
   height: 34.4%;
   width: 92.5%;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.347);
+  background-color: #333333;
   border: solid 1px;
 }
 /* form for swish radiobutton and kontant radiobutton */
@@ -226,7 +222,7 @@
 /* BARCODE STYLING */
 #barcode{
   width: 60%;
-  max-height: 26px;
+  max-height: 30px;
 }
 
 /* SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END  */
@@ -250,3 +246,6 @@
   background-image: url("../../Images/bookAndPen.jpeg");
 }
 
+nav{
+  border-bottom: solid 1px;
+}
