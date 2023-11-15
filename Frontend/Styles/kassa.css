@@ -120,6 +120,8 @@ body:not(input){
   display: flex;
   justify-content: center;
 }
+
+/* TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING  */
 .cart-items{
   width: 100%;
   
@@ -137,6 +139,11 @@ body:not(input){
 }
 .cart-contain table{
   width: 100%;
+  display: subgrid;
+}
+.cart-contain td{
+  width: calc((1/3)*100%);
+  word-break: break-all;
 }
 
 
