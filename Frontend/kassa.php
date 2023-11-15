@@ -44,8 +44,7 @@
 					}
     				?>
 				</table>
-			</div>
-			<div class="Empty-btn">
+				<div class="Empty-btn">
 				<form action="" method="POST">
 					<button name="close">
 						Empty Cart
@@ -59,7 +58,7 @@
     			    }
     			?>
 			</div>
-
+			</div>
 			<div class="payment">
 				<form action="#" id="swishKonForm">
 					<div id="buttonDiv">
