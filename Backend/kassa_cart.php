@@ -10,6 +10,7 @@ $result = mysqli_query($conn,"SELECT * FROM Products WHERE `barcode`='$id'");
             $endCart = array_count_values($_SESSION['cart']); 
             $endPrice = array_count_values($_SESSION['cash']);
 
+            // Php för att vissa cart
             echo '<div class="cart-contain">';
             echo '<table>';
             echo '<tr>';
