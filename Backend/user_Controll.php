@@ -24,6 +24,7 @@ if (isset($_POST['submit'])) {
                 $adminCheckData = mysqli_fetch_assoc($adminUserCheck);
 
                 if (isset($adminCheckData['password']) && !empty($adminCheckData['password'])) {
+                    //verifies password
                     if (password_verify($adminUserPass, $adminCheckData['password'])) {
                         echo '<div class="card border-0 shadow rounded-3 br1em mt-5 text-center bg-success text-white w-50 mx-auto align-middle">
                                 <p class="p-2 pt-4">

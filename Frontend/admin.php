@@ -1,8 +1,8 @@
 <?php
-	/*session_start();
+	session_start();
 	if(!$_SESSION["inloggad"]){
 		header("location:index.php");
-	}*/
+	}
 ?>
 
 <!DOCTYPE html>
