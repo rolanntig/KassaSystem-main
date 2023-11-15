@@ -14,12 +14,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Styles/main.css">
-    <link href="./Styles/admin-style.css" type="text/css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="./Styles/navbar.css">
     <!-- Dont know why kassa.css was linked so commented it away for now atleast -->
     <!-- <link rel="stylesheet" type="text/css" href="./Styles/kassa.css"> -->
     <link rel="stylesheet" type="text/css" href="./Styles/rapport.css">
+    <link href="./Styles/admin-style.css" type="text/css" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -33,6 +33,11 @@
     <?php include "../Backend/getAllForAdmin.php"; ?>
     <?php include "../Frontend/header.php" ?>
 
+    <?php
+    if(isset($_GET['deleteBtn'])){
+        removeCashiers($_GET['deleteBtn']);
+    }
+    ?>
 
     <!-- Main container  -->
     <div class="container-fluid d-flex gap-3 p-5 flex-wrap">
@@ -67,7 +72,7 @@
             </form>
             <!-- List of all registred cashiers -->
             <div class="con overflow-y-scroll bg-light ">
-                <table class="table table-light table-borderless  ">
+                <table class="table table-light table-borderless cashierTable" style="text-align: start;">
                     <thead>
                         <tr>
                             <th scope="col">Användarnamn</th>

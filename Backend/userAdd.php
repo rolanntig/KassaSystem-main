@@ -9,7 +9,12 @@ error_reporting(E_ALL | E_STRICT);
 include "../Backend/console.php";
 
 if (isset($_POST['submit'])) {
-
+	$server = "mysql.jawad.se";
+	$username = "kassa";
+	$password = "cGZZ2.I2mYPE*T@p";
+	$dbname = "kassa";
+	$port = 80;
+	
 	$newPass	  = $_POST['floatingPassword'];
 	$newPassAgain = $_POST['floatingPasswordCheck'];
 

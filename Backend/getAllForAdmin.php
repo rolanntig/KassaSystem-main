@@ -8,21 +8,38 @@ function getCashiers($persons)
     foreach ($persons as $person) { // For each registered cashier adds their username and last login to an string
         $username = $person['username'];
         $lastLogin = $person['last_login'];
+        $id = $person['ID'];
         $string .= "
         <tr>
             <td>$username</td>
             <td id='cell'>$lastLogin</td>
             <td>
                 <form method='get'>
-                    <button type='submit' class='btn btn-primary' id='editBtn' name='editBtn'>Edit</button>
-                    <button type='submit' class='btn btn-danger' id='deleteBtn' name='deleteBtn'>Delete</button>
-                    <button type='submit' class='btn btn-success' id='showBtn' name='showBtn'>Show</button>
+                    <button type='submit' class='btn btn-danger' id='deleteBtn_nr$id' value='$id' name='deleteBtn'>Delete</button>
                 </form>
             </td>
         </tr>";
+        // <button type='' class='btn btn-success' id='showBtn' name='showBtn'>Show</button>
+        // <button type='' class='btn btn-primary' id='editBtn' name='editBtn'>Edit</button>
     }
     // prints the string 
     echo $string;
+}
+function removeCashiers($who){
+    $sql = ("DELETE FROM Admin WHERE ID='$who'");
+    $server = "mysql.jawad.se";
+    $username = "kassa";
+    $password = "cGZZ2.I2mYPE*T@p";
+    $dbname = "kassa";
+    $port = 80;
+
+    $conn = new mysqli($server, $username, $password, $dbname, $port);
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    $result = $conn->query($sql);
+    $conn->close();
 }
 
 // Function for connecting to the database with a variable for sending request to the database

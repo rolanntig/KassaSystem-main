@@ -74,6 +74,14 @@
 .eye>i:hover{
     cursor: pointer;
 }
+
 body{
     width: 100% !important;
+}
+
+.cashierTable td:not(:last-child), .cashierTable th:not(:last-child){
+    text-align: start !important;
+}
+.cashierTable{
+    margin-top: 0.5rem;
 }
