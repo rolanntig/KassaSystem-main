@@ -1,5 +1,8 @@
 <?php
   session_start();
+  	if($_SESSION["inloggad"]){
+		header("location:admin.php");
+	}
 ?>
 
 <!DOCTYPE html>

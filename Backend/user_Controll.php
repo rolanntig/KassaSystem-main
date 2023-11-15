@@ -1,4 +1,5 @@
 <?php
+
 ini_set('display_errors', '1');
 error_reporting(E_ALL);
 
@@ -23,6 +24,7 @@ if (isset($_POST['submit'])) {
                 $adminCheckData = mysqli_fetch_assoc($adminUserCheck);
 
                 if (isset($adminCheckData['password']) && !empty($adminCheckData['password'])) {
+                    //verifies password
                     if (password_verify($adminUserPass, $adminCheckData['password'])) {
                         echo '<div class="card border-0 shadow rounded-3 br1em mt-5 text-center bg-success text-white w-50 mx-auto align-middle">
                                 <p class="p-2 pt-4">
@@ -37,17 +39,21 @@ if (isset($_POST['submit'])) {
                         console("Password does not match!");
                         echo '<div class="card border-0 shadow rounded-3 br1em mt-5 text-center bg-danger text-white w-50 mx-auto align-middle">
                                 <p class="p-2 pt-4">
-                                    Login failed
+                                    Incorrect username or password
                                 </p>
                             </div>';
                     }
                 } else {
-                    console("Password field is null or empty!");
                     // Handle the case where the password field is null or empty
+                    console("Password field is null or empty!");
                 }
             } else {
                 console("No rows fetched for the given username!");
-                // Handle the case where no rows are fetched for the provided username
+                echo '<div class="card border-0 shadow rounded-3 br1em mt-5 text-center bg-danger text-white w-50 mx-auto align-middle">
+                        <p class="p-2 pt-4">
+                            Incorrect username or password
+                        </p>
+                    </div>';
             }
         } else {
             console("Query execution failed or no results returned!");
