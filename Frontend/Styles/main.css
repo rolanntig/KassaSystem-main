@@ -2,17 +2,18 @@
     font-family: "Roboto-Main";
     src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 }
-
+/* Reset */
 * {
     margin: 0;
     padding: 0;
 }
-
+/* HTML General */
 html {
     scroll-behavior: smooth;
     font-family: 'Roboto-Main', sans-serif;
 }
 
+/* Body Behavior */
 body {
     background-color: #c182e0 !important;
     background: linear-gradient(to left, rgb(208, 165, 233), rgb(199, 121, 245)) !important;
@@ -21,8 +22,51 @@ body {
     height: 100vh;
     width: 100vw;   
 }
-
+/* Font Styling */
 * p, h1, h2, h3, h4, h5, h6 {
     color: inherit;
     letter-spacing: .5px;
+}
+
+/* Box Sizing */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* Links */
+a {
+    border-radius: 6px;
+    padding: 6px;
+    text-decoration: none;
+    color: black;
+}
+/* Hovered Links */
+a:hover {
+    background-color: rgb(255, 255, 255, 0.15);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Paragraphs */
+p {
+    line-height: 1.6;
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Forms */
+input, textarea{
+    font-family: 'Roboto-Main', sans-serif;
+    margin-top: 8px;
 }
