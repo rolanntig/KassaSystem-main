@@ -26,15 +26,15 @@
             <div class="form-group col-8">
                 <div class="parent1">
                     <div class="div1"><label>Produkt:</label>
-                    <input name="product"type="text" class="form-control mb-3" required placeholder="Vad för produkt?"> </div>
+                    <input name="product"type="text" class="form-control mb-3" required> </div>
                     <div class="div2"><label>Antal:</label>
-                    <input name="amount" type="number" class="form-control mb-3" required placeholder="Hur många av den produkten?"> </div>
+                    <input name="amount" type="number" class="form-control mb-3" required> </div>
                     <div class="div3"><label>Pris:</label>
-                    <input name="price" type="number" class="form-control mb-3" required placeholder="Hur mycket kostar produkten?"> </div>
+                    <input name="price" type="number" class="form-control mb-3" required> </div>
                     <div class="div4"><label>Bäst Före:</label>
                     <input name="expire" type="datetime-local" class="form-control mb-3"> </div>
                     <div class="div5"><label>Barcode:</label>
-                    <input name="barcode" type="text" class="form-control mb-3" maxlength="13" required placeholder="Scana streckkod"> </div>
+                    <input name="barcode" type="text" class="form-control mb-3" maxlength="13" required> </div>
 
                     <div class="div6">
                         <label for="type">Typ:</label>

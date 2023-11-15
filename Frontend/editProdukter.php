@@ -20,15 +20,15 @@
             <div class="form-group col-8">
                 <div class="parent1">
                     <div class="div2"><label>Produkt:</label>
-                    <input name="newProduct"type="text" class="form-control mb-3" placeholder="Vilken produkt ska ändras?" > </div>
+                    <input name="newProduct"type="text" class="form-control mb-3" placeholder="Vilken produkt ska ändras" > </div>
                     <div class="div1"><label>Barcode:</label>
                     <input name="barcode" type="text" class="form-control mb-3" placeholder="Produktens streckkod som ska ändras"required> </div>
                     <div class="div6"><label>Pris:</label>
-                    <input name="newPrice" type="number" class="form-control mb-3" required placeholder="kr"> </div>
+                    <input name="newPrice" type="number" class="form-control mb-3" required> </div>
                     <div class="div4"><label>Bäst Före:</label>
                     <input name="newExpire" type="datetime-local" class="form-control mb-3"> </div>
                     <div class="div5"><label>Antal</label>
-                    <input name="newAmount" type="number" class="form-control mb-3" required placeholder="Hur många av den produkten?"> </div>
+                    <input name="newAmount" type="number" class="form-control mb-3" required> </div>
                     <div class="div3">
                         <label for="type">Typ:</label>
                         <select name="newType" id="type" class="form-control mb-3" required>
