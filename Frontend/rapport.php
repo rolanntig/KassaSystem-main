@@ -24,7 +24,6 @@
     include 'header.php';
     include '../Backend/getRapport.php';
     ?>
-
     <div id="headerrep">
         <h1 class="header_report">Försäljningsrapport</h1>
     </div>

@@ -18,26 +18,14 @@ html, body {
   border-radius: 8px;
 }
 
-#summary-idag {
-  height: 25vh;
-  background-color: rgb(121, 70, 146);
-  color: white;
-  border-radius: 8px;
-}
-
-#summary-idag:hover {
-  background-color: rgb(204, 151, 202);
-}
-
-#summary-manad {
-  height: 25vh;
-  background-color: rgb(121, 70, 146);
-  color: white;
-  border-radius: 8px;
-}
 
 #summary-manad:hover {
   background-color: rgb(204, 151, 202);
+}
+
+/* REMOVE IF BREAK */
+a:link {
+  text-decoration: none;
 }
 
 .header_report {
