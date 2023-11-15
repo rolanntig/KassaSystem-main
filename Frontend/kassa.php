@@ -106,7 +106,7 @@
 		</div>
 	</div>
 	<script>var p = false;</script>
-	<script src="../Scripts/kassa_select_item"></script>
+	<script src="../Scripts/kassa_select_item.js"></script>
 	<script src="../Scripts/kassa_radioHide.js"></script>
 </body>
 </html>
