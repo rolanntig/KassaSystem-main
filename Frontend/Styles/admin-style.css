@@ -1,8 +1,8 @@
-
 * {
     font-family: 'Noto Sans Linear B', sans-serif;
 }
-.main-con{
+
+.main-con {
     height: 100vh;
     width: 100%;
     border: solid 1px black;
@@ -30,6 +30,38 @@
     justify-content: space-evenly;
 }
 
+
+#summary-idag {
+    height: fit-content;
+    background-color: rgb(121, 70, 146);
+    color: white;
+    border-radius: 8px;
+}
+
+#summary-idag:hover {
+    background-color: rgb(204, 151, 202);
+}
+
+#summary-manad {
+    height: fit-content;
+    background-color: rgb(121, 70, 146);
+    color: white;
+    border-radius: 8px;
+}
+
 .rapport {
     background-color: rgb(121, 70, 146);
+}
+
+.productTable {
+    color: black;
+    text-decoration: none;
+}
+
+.productTable:hover {
+    color: blue;
+}
+
+form{
+    border-bottom: 1px solid black;
 }
