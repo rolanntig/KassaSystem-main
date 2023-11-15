@@ -32,19 +32,21 @@
 		<!-- right container -->
 		<div class="rightDiv">
 			<div class="cart">
-				<table>
-					<?php 
-					echo '<tr>' .'<th>' .'ITEMS' .'</th>' .'<th>' .'PRICES' .'</th>' .'<th>' .'AMOUNT' .'</th>' .'</tr>';
-        			$id = $_POST['item'];
-        			if ( isset($_POST['item'])){
-        			   include '../Backend/kassa_cart.php';
-        			}if(isset($_POST['rm-item'])){
-						$_SESSION['cart'] = array_filter($_SESSION['cart'], function($v) { return $v != $_POST['rm-item']; });
-						include '../Backend/kassa_backend.php';
-					}
-    				?>
-				</table>
-				<div class="Empty-btn">
+				<div class="itemContainer">
+					<table>
+						<?php 
+						echo '<tr>' .'<th>' .'ITEMS' .'</th>' .'<th>' .'PRICES' .'</th>' .'<th>' .'AMOUNT' .'</th>' .'</tr>';
+						$id = $_POST['item'];
+						if ( isset($_POST['item'])){
+						include '../Backend/kassa_cart.php';
+						}if(isset($_POST['rm-item'])){
+							$_SESSION['cart'] = array_filter($_SESSION['cart'], function($v) { return $v != $_POST['rm-item']; });
+							include '../Backend/kassa_backend.php';
+						}
+						?>
+					</table>
+				</div>
+					<div class="Empty-btn">
 				<form action="" method="POST">
 					<button name="close" class="emptyBtn">
 						Empty Cart
