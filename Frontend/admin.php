@@ -1,4 +1,5 @@
 <?php
+// Checks if session has a logged in varaible, currently not working
 /*session_start();
 	if(!$_SESSION["inloggad"]){
 		header("location:index.php");
@@ -14,13 +15,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./Styles/navbar.css">
     <link href="./Styles/admin-style.css" type="text/css" rel="stylesheet">
+
+    <!-- Dont know why kassa.css was linked so commented it away for now atleast -->
     <!-- <link rel="stylesheet" type="text/css" href="./Styles/kassa.css"> -->
+
     <link rel="stylesheet" type="text/css" href="./Styles/rapport.css">
     <script defer src="../Scripts/admin.js"></script>
     <title>Admin</title>
 </head>
 
 <body>
+    <!-- Adds some php files for future function and varaible uses -->
     <?php include "../Backend/userAdd.php"; ?>
     <?php include "../Backend/getAllForAdmin.php"; ?>
     <?php include "../Backend/header.php" ?>
@@ -29,27 +34,27 @@
     <!-- Main container  -->
     <div class="container-fluid d-flex gap-3 p-5  border-primary flex-wrap border">
 
-        <!--Registerara Kassör-->
+        <!--Div for registation of cashier-->
         <div class="card-body border ">
-            <!-- Registera form -->
+            <!-- Form for registraion -->
             <form method="POST" id="otherForm" name="otherForm" class="bg-light p-1">
                 <h2 class="text-center">Registrera kassör</h2>
 
-                <!-- Input för användarnamn -->
+                <!-- Input for username -->
                 <div class="mb-3">
                     <label class="form-label" for="floatingInput">Användarnamn</label>
                     <input type="text" class="form-control" id="floatingInput" name="username" minlength="5" required placeholder="Användarnamn">
                     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
 
-                <!-- input för lösenord -->
+                <!-- input for password -->
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fas fa-lock"></i></span>
                     <input class="form-control" id="floatingPassword" name="floatingPassword" placeholder="Lösenord" type="password" value="">
                     <span class="input-group-text eye" id="eye"><i class="far fa-eye-slash" id="togglePassword"></i></span>
                 </div>
 
-                <!-- input för lösenord kontroll -->
+                <!-- input for checking such that passwords match -->
                 <div class="input-group mb-3">
                     <span class="input-group-text"><i class="fas fa-lock"></i></span>
                     <input class="form-control" id="floatingPasswordCheck" name="floatingPasswordCheck" placeholder="Lösenords kontroll" type="password" value="">
@@ -57,7 +62,7 @@
                 </div><br>
                 <button class="btn btn-login  bg-primary text-uppercase fw-bold text-white position-relative top-50 start-50 translate-middle" name="submit" type="submit">Register</button>
             </form>
-            <!-- Lista över registrerade kassörer -->
+            <!-- List of all registred cashiers -->
             <div class="con overflow-y-scroll bg-light ">
                 <table class="table table-light table-borderless  ">
                     <thead>
@@ -83,9 +88,9 @@
 
         </div>
 
-        <!--Lista över produkter-->
+        <!-- List of all products -->
         <div class="card-body overflow-y-scroll  bg-light border p-2">
-            <a href="../Frontend/rapport.php" class="productTable">
+            <a href="../Frontend/produkter.php" class="productTable">
                 <h2 class="text-center">Produkter</h2>
                 <table class="table ">
                     <thead>
@@ -110,7 +115,7 @@
         </div>
 
 
-        <!-- rapport -->
+        <!-- Rapport of income during day/month -->
         <div class="container-fluid">
             <a href="rapport.php">
                 <div class="bg-white bg-primary d-flex justify-content-around align-items-center p-3" id="Rapport">
@@ -128,8 +133,7 @@
             </a>
         </div>
 
-
-
+        <!-- Dont know if this will get used, but keeping because seems important! -->
         <!--Lista över rapport-->
         <!-- <div class="container-fluid overflow-y-scroll border p-2">      
             <div class="container rapport-con">
@@ -229,6 +233,7 @@
         </div> -->
     </div>
 
+    <!-- Links some of the used javascript files -->
     <script src="../Scripts/passwordEye.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/1b0280e235.js" crossorigin="anonymous"></script>

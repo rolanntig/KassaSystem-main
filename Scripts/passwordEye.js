@@ -1,3 +1,5 @@
+// Script for toggling visibility of passwords during registration (for now)
+
 const togglePassword = document.querySelector("#togglePassword");
 const password = document.querySelector("#floatingPassword");
 const togglePasswordCheck = document.querySelector("#togglePasswordCheck");
