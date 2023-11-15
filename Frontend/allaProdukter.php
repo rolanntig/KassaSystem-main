@@ -20,7 +20,7 @@
                 <div class="form-group col-8">
                     <div class="row">
                         <div class="col-md-6 offset-md-3 mt-3 p-2 g-col-6">
-                            <div class="input-group">
+                            <div class="input-group-lg ">
                                 <input type="text" name="search" class="form-control" placeholder="Search for products">
                                 <!-- Dropdown for filtering -->
                                 <select name="filter" class="custom-select">
