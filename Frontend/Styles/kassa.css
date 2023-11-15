@@ -118,10 +118,8 @@ body:not(input){
   background-color: #333333;
   margin-bottom: 10px;
   border-radius: 5px;
-  overflow-y: overlay;
-  overflow-x: none;
   border: solid 1px;
-
+  justify-content: space-between;
 }
 
 .cart-items:nth-child(1){
@@ -138,16 +136,17 @@ body:not(input){
 }
 
 /* TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING  */
-.cart-items{
-  width: 100%;
-  
-}
 .cart-contain{
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   text-align: center;
+}
+.cart table{
+  margin-top: 5px;
+  overflow-y: overlay;
+  overflow-x: none;
 }
 .cart td{
   width: 25%;
@@ -256,4 +255,7 @@ body:not(input){
 }
 nav{
   border-bottom: solid 1px;
+}
+.emptyBtn{
+  margin-top: 5px;
 }
