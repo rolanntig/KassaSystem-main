@@ -20,7 +20,9 @@
 </head>
 
 <body>
-
+<?php 
+    include 'header.php'
+?>
 <div id="headerrep">
 <h1 class = "header_report">Försäljningsrapport</h1>
 
