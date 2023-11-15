@@ -60,10 +60,10 @@
     <nav id="top">
         <div id="nav-item-container">
             <ul id="nav-ul">
-                <li class="zoom"><a id="admin-link" href="//ÄNDRA TILL RÄTT ID">Admin</a></li>
-                <li class="zoom"><a id="product-link" href="//ÄNDRA TILL RÄTT ID">Produkt</a></li>
-                <li class="zoom"><a id="report-link" href="//ÄNDRA TILL RÄTT ID">Rapport</a></li>
-                <li class="zoom"><a id="checkout-link" href="//ÄNDRA TILL RÄTT ID">Kassa</a></li>
+                <li class="zoom"><a id="admin-link" href="../Frontend/admin.php">Admin</a></li>
+                <li class="zoom"><a id="product-link" href="../Frontend/produkter.php">Produkt</a></li>
+                <li class="zoom"><a id="report-link" href="../Frontend/rapport.php">Rapport</a></li>
+                <li class="zoom"><a id="checkout-link" href="../Frontend/kassa.php">Kassa</a></li>
             </ul>
         </div>
     </nav>
