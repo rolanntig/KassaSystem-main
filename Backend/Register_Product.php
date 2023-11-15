@@ -1,7 +1,7 @@
 <?php
     include "./Backend/credentials.php";
 
-    // Selects all barcodes in db and assigning to the variable
+    // Assuming $barcode is defined somewhere before this code
     $barcode_already_exist = "SELECT COUNT(*) FROM Products WHERE barcode = $barcode";
     $result = $conn->query($barcode_already_exist);
 
@@ -23,41 +23,30 @@
             
             try {
                 if ($conn->query($sql)) {
-                    // Fetch the details of the newly inserted product
-                    $newProductQuery = "SELECT * FROM Products WHERE barcode = '$barcode'";
-                    $newProductResult = $conn->query($newProductQuery);
-
-                    if ($newProductResult) {
-                        $newProductRow = $newProductResult->fetch_assoc();
-
-                        // Display success message
-                        echo "<div class='card border-0 shadow rounded-3 br1em mt-2 text-center bg-success text-white w-50 mx-auto align-middle'>
-                                <p class='p-2 pt-4'>
-                                    Produkt registrerad: " . $newProductRow['product_name'] . "
-                                </p>
-                             </div>";
-                        header("Refresh:2; url=#");
-                    } else {
-                        // Handle error fetching new product details
-                        echo "<div class='card border-0 shadow rounded-3 br1em mt-2 text-center bg-danger text-white w-50 mx-auto align-middle'>
-                                <p class='p-2 pt-4'>
-                                    Registrering misslyckades
-                                </p>
-                             </div>";
-                        $dom = new DOMDocument();
-                        $dom->loadHTML($html);
-                        $xpath = new DOMXPath($dom);
-                        $hrefs = $xpath->evaluate("/html/body/div/div/form/div/input");
-
-                        // console($hrefs);
-
-                        header("Refresh:10; url=#");
-                    }
+                    // Display success message
+                    echo "<div class='card border-0 shadow rounded-3 br1em mt-2 text-center bg-success text-white w-50 mx-auto align-middle'>
+                            <p class='p-2 pt-4'>
+                                Produkt registrerad: $product
+                            </p>
+                         </div>";
+                    header("Refresh:2; url=#");
                 } else {
-                    // ... (existing code for registration failure)
+                    // Display fail message
+                    echo "<div class='card border-0 shadow rounded-3 br1em mt-2 text-center bg-danger text-white w-50 mx-auto align-middle'>
+                            <p class='p-2 pt-4'>
+                                Registrering misslyckades
+                            </p>
+                         </div>";
+                    $dom = new DOMDocument();
+                    $dom->loadHTML($html);
+                    $xpath = new DOMXPath($dom);
+                    $hrefs = $xpath->evaluate("/html/body/div/div/form/div/input");
+
+                    header("Refresh:10; url=#");
                 }
-            } catch (\Throwable $th) {
-                // ... (existing error handling code)
+            } catch (Exception $e) {
+                // Handle exceptions if needed
+                echo "Error: " . $e->getMessage();
             }
         }
     }
