@@ -3,7 +3,7 @@
 include "../Backend/credentials.php";
 
 // DO NOT USE CONSOLE.PHP OVER AND OVER! IT KEEPS RE-DECLAIRING!!!!
-//include "../Backend/console.php";
+include "../Backend/console.php";
 
 // // Function to register a new admin to AdminTable
 // function RegisterAdmin($username, $password) {
@@ -14,15 +14,10 @@ include "../Backend/credentials.php";
 
 class DatabaseHandler
 {
-    //create a secure database connection        
+
+    //create a secure database connection
     public static function dbconnect()
     {
-        $server = "mysql.jawad.se";
-        $username = "kassa";
-        $password = "cGZZ2.I2mYPE*T@p";
-        $dbname = "kassa";
-        $port = 80;
-
         try {
             $connection = mysqli_connect($server, $username, $password, $dbname, $port);
             if (!$connection) {
@@ -58,4 +53,4 @@ class DatabaseHandler
         $connection->close();
         return $products;
     }
-}
+?>
