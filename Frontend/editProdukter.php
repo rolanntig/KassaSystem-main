@@ -32,7 +32,7 @@
                 <div class="div6"><label>Bäst Före:</label> <input name="newExpire" type="datetime-local" class="form-control mb-3"></div>
                 <div class="div4"><label>Antal</label> <input name="newAmount" type="number" class="form-control mb-3" required placeholder="Hur många av den produkten?"></div>
                 <div class="div5"><label>Pris:</label> <input name="newPrice" type="number" class="form-control mb-3" required placeholder="kr"></div>
-                <div class="div7"><label for="image">Bild</label> <input type="file" accept="image/png, image/gif, image/jpeg" class="form-control" id="image" name="image" required></div>
+                <div class="div7"><label for="image">Bild</label> <input type="file" accept="image/*" class="form-control" id="image" name="image" required></div>
                 <button type="submit" name="update2" class="mb-3 btn">Uppdatera</button> 
             </div>
             </form>
