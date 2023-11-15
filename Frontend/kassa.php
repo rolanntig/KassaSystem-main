@@ -22,8 +22,8 @@
 					<option value="snacks">Snacks</option>
 					<option value="food">Mat</option>
 					<option value="verktyg">Verktyg</option>
-					<input type="text" name="barcode" id="barcode">
 				</select>
+				<input type="text" name="barcode" id="barcode">
 			</form>
 				<?php
 					include '../Backend/kassa_items.php';

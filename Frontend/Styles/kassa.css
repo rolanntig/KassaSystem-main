@@ -80,15 +80,13 @@
 .itemContainer>form>div>button{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   gap:20px;
   border: none;
-}
-.itemContainer>form>div>button{
-  width: 50%;
-  height: 50%;
-
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 /* LEFT DIV END LEFT DIV END LEFT DIVEND LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END  */
