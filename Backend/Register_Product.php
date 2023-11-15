@@ -25,7 +25,6 @@
             }
             $sql = "INSERT INTO Products (product_name, product_info, expire_date, price, barcode, amount, category, `image`) 
                     VALUES ('$product', '-', '$expire', '$price', '$barcode','$amount','$type', '$image')";
-            
             try {
                 if ($conn->query($sql)) {
                     // Display success message
