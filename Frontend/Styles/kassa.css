@@ -2,6 +2,23 @@
   margin:0;
   padding: 0;
 }
+.rightDiv button{
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 1em;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #e74c3c; 
+  border-radius: 5px;
+  color: #f6f6f6; 
+  background-color: rgb(255, 0, 0);
+  transition: background-color 0.3s, color 0.3s;
+}
+.rightDiv button:hover{
+  background-color: #ffffff;
+  color: rgb(255, 0, 0);
+}
 body:not(input){
   color: white;
 }
@@ -239,8 +256,4 @@ body:not(input){
 }
 nav{
   border-bottom: solid 1px;
-}
-
-.emptyBtn{
-  background-color: gray;
 }
