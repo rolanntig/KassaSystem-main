@@ -25,19 +25,12 @@
             <form action="#"class="d-flex justify-content-center w-100" method="post">
             <div class="form-group col-8">
                 <div class="parent1">
-                    <div class="div1"><label>Produkt:</label>
-                    <input name="product"type="text" class="form-control mb-3" required placeholder="Vad för produkt?"> </div>
-                    <div class="div2"><label>Antal:</label>
-                    <input name="amount" type="number" class="form-control mb-3" required placeholder="Hur många av den produkten?"> </div>
-                    <div class="div3"><label>Pris:</label>
-                    <input name="price" type="number" class="form-control mb-3" required placeholder="Hur mycket kostar produkten?"> </div>
-                    <div class="div4"><label>Bäst Före:</label>
-                    <input name="expire" type="datetime-local" class="form-control mb-3"> </div>
-                    <div class="div5"><label>Barcode:</label>
-                    <input name="barcode" type="text" class="form-control mb-3" maxlength="13" required placeholder="Scana streckkod"> </div>
-
-                    <div class="div6">
-                        <label for="type">Typ:</label>
+                    <div class="div1"><label>Produkt:</label> <input name="product"type="text" class="form-control mb-3" required placeholder="Vad för produkt?"> </div>
+                    <div class="div4"><label>Antal:</label> <input name="amount" type="number" class="form-control mb-3" required placeholder="Hur många av den produkten?"> </div>
+                    <div class="div5"><label>Pris:</label> <input name="price" type="number" class="form-control mb-3" required placeholder="Hur mycket kostar produkten?"> </div>
+                    <div class="div6"><label>Bäst Före:</label> <input name="expire" type="datetime-local" class="form-control mb-3"> </div>
+                    <div class="div2"><label>Barcode:</label> <input name="barcode" type="text" class="form-control mb-3" maxlength="13" required placeholder="Scana streckkod"> </div>
+                    <div class="div3"> <label for="type">Typ:</label>
                         <select name="type" id="type" class="form-control mb-3" required>
                             <option value="" disabled selected>Vilken typ av produkt det är det?</option>
                             <option value="drink">Dricka</option>
@@ -46,6 +39,7 @@
                             <option value="verktyg">Verktyg</option>
                         </select>
                     </div> 
+                    <div class="div7"><label for="image">Bild</label> <input type="file" class="form-control" id="image" name="image" required></div>
                     <button name="submit" type="submit" class="btn text-white mb-3 btn">Registrera varan</button>
                     </div>
                     <?php
