@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25vw;
+    height: 60vh;
+    border-radius: 19px;
+    background: rgba(231, 41, 225, 0.634);
+    background: linear-gradient(137deg, rgba(231, 41, 225, 0.478) 0%, rgba(233, 54, 54, 0.46) 100%);
+    box-shadow: rgba(0, 0, 0, 0.072) 0px 3px 6px, rgba(0, 0, 0, 0.12) 0px 3px 6px;
+}
+
+input {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 5px 33px;
+    margin: 30px;
+    width: 15vw;
+    border-radius: 15px;
+    font-size: 20px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.inputs {
+    outline: none;
+    border: none;
+}
+
+input::placeholder {
+    color: rgb(93, 93, 93);
+}
+
+#sign-in {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border: none;
+
+}
+
+.password-container{
+    position: relative;
+}
+
+.password-container input[type="password"],
+.password-container input[type="text"]{
+    padding: 5px 33px;
+}
+
+.fa-eye{
+    position: absolute;
+    top: 28%;
+    right: 13%;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
