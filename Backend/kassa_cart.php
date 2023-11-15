@@ -26,7 +26,7 @@ $result = mysqli_query($conn,"SELECT * FROM Products WHERE barcode='$id'");
                 $data = $result->fetch_all(MYSQLI_ASSOC);
                 $finalPrice += $data[0]['price'] * $val;
                 echo '<td>'.$data[0]['price'] * $val.'kr</td>';
-                echo '<td>'.$val.'<span style="float:right;">st</span></td>';
+                echo '<td>'.$val.'<span>st</span></td>';
                 echo '</tr>';
                 
             }

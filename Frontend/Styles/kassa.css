@@ -2,7 +2,9 @@
   margin:0;
   padding: 0;
 }
-
+body:not(input){
+  color: white;
+}
 /* main container */
 .fullDiv{
   width: 100%;
@@ -130,10 +132,16 @@
   text-align: center;
 }
 
-.cart-contain>table>tbody>tr{
+.cart-contain tbody{
   width: 100%;
-  display: flex;
-  justify-content: space-around;
+}
+.cart-contain table{
+  width: 100%;
+}
+
+.cart-contain tr{
+  border: solid 1px;
+  width: 100%;
 }
 
 
