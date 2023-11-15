@@ -132,15 +132,10 @@ body:not(input){
   text-align: center;
 }
 
-.cart-contain tbody{
+.cart-contain{
   width: 100%;
 }
 .cart-contain table{
-  width: 100%;
-}
-
-.cart-contain tr{
-  border: solid 1px;
   width: 100%;
 }
 
