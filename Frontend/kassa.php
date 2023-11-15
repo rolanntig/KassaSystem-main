@@ -66,15 +66,27 @@
 					</div>
 					<div id="swishDiv">
 
-						<div>
-							Totalt: minst 50kr
+						<div class="">
+						    <h4>
+						        <?php
+						        global $finalPrice;
+						        echo "$finalPrice";
+						        echo " " ."kr :-";
+						        ?>
+						    </h4>
 						</div>
 
 					</div>
 					<div id="kontantDiv">
 						
-						<div>
-							Totalt: minst 50kr
+						<div class="">
+						    <h4>
+						        <?php
+						        global $finalPrice;
+						        echo "$finalPrice";
+						        echo " " ."kr :-";
+						        ?>
+						    </h4>
 						</div>
 						<div>
 							Ger: 80kr

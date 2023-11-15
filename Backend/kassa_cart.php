@@ -51,12 +51,3 @@ $result = mysqli_query($conn,"SELECT * FROM Products WHERE `barcode`='$id'");
             echo '</div>';
 ?>
 </div>
-<div class="cart-items">
-    <h4>
-        <?php
-        global $finalPrice;
-        echo "$finalPrice";
-        echo " " ."kr :-";
-        ?>
-    </h4>
-</div>

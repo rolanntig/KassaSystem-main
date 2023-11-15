@@ -101,12 +101,6 @@
   flex-shrink: 1;
 }
 
-.cart-items:nth-child(2){
-  display: block;
-  flex-grow: 0;
-  flex-shrink: 1;
-}
-
 .Empty-btn{
   display: flex;
   justify-content: center;
