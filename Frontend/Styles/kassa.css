@@ -51,7 +51,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 5px;
+  gap: 15px;
 }
 .itemContainer>form>div{
   border: solid 1px;
@@ -59,37 +59,17 @@
   width: 150px;
   height: 200px;
   background-size: 100%;
-  background-position: center;
+  background-position: 200px;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: ease-in-out 400ms;
-  animation-name: smallDiv;
-  animation-duration: .5s;
-  animation-fill-mode: forwards;
+  transition: ease-in-out 400ms;
 }
 
 .itemContainer>form>div:hover{
-  animation-name: bigDiv;
-  animation-duration: .5s;
-  animation-fill-mode: forwards;
-}
-@keyframes bigDiv {
-  to{
-    background-size: 200%;
-  }
-
-}
-@keyframes smallDiv {
-  from{
-    width: 160px;
-    height: 207.5px;
-  }
-  to{
-    width: 150px;
-    height: 200px;
-  }
+  transform: scale(1.1);
 }
 .itemContainer>form>div>button{
   display: flex;
