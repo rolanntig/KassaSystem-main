@@ -64,6 +64,17 @@
   flex-direction: column;
   align-items: center;
 }
+@keyframes bigDiv {
+  to{
+    width: 160px;
+    height: 207.5px;
+  }
+}
+.itemContainer>form>div:hover{
+  animation-name: bigDiv;
+  animation-duration: .2s;
+  animation-fill-mode: forwards;
+}
 .itemContainer>form>div>button{
   display: flex;
   flex-direction: column;
@@ -196,16 +207,34 @@
 /* SELECT START SELECT START SELECT START SELECT START SELECT START SELECT START SELECT START  */
 
 /* catecory div */
-.categoryDiv{
+.categoryForm{
   width: 100%;
   display: flex;
   justify-content: center ;
 }
 /* category */
 #category{
-  width:80%;
+  width:15%;
   max-height: 30px;
   text-align: center;
 }
+/* BARCODE STYLING */
+#barcode{
+  width: 60%;
+  max-height: 30px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+#barcode::-webkit-outer-spin-button,
+#barcode::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+#barcode[type=number] {
+  -moz-appearance: textfield;
+}
 
 /* SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END  */
+

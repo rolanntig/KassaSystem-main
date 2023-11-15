@@ -14,15 +14,16 @@
 		<div class="leftDiv">
 			<!-- container where items show -->
 			<div class="itemContainer">
-			<div class="categoryDiv">
+			<form class="categoryForm">
 				<select name="category" id="category" >
 					<option value="">Allt</option>
 					<option value="drink">Dryck</option>
 					<option value="snacks">Snacks</option>
 					<option value="food">Mat</option>
 					<option value="verktyg">Verktyg</option>
+					<input type="number" name="barcode" id="barcode">
 				</select>
-			</div>
+			</form>
 				<?php
 					include '../Backend/kassa_items.php';
 				?>
