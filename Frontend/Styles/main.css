@@ -50,13 +50,11 @@ a:hover {
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
-    margin-bottom: 15px;
 }
 
 /* Paragraphs */
 p {
     line-height: 1.6;
-    margin: 0.5rem 0 0.5rem 0;
 }
 
 /* Images */
@@ -68,5 +66,4 @@ img {
 /* Forms */
 input, textarea {
     font-family: 'Roboto-Main', sans-serif;
-    margin-top: 8px;
 }
