@@ -22,7 +22,7 @@
 
 <body>
     <?php include "../Backend/userAdd.php"; ?>
-    <?php include "../Backend/getRapportForAdmin.php"; ?>
+    <?php include "../Backend/getAllForAdmin.php"; ?>
     <?php include "../Backend/header.php" ?>
 
 
@@ -32,7 +32,7 @@
         <!--Registerara Kassör-->
         <div class="card-body border ">
             <!-- Registera form -->
-            <form method="POST" name="otherForm" class="bg-light p-1">
+            <form method="POST" id="otherForm" name="otherForm" class="bg-light p-1">
                 <h2 class="text-center">Registrera kassör</h2>
 
                 <!-- Input för användarnamn -->
@@ -43,21 +43,17 @@
                 </div>
 
                 <!-- input för lösenord -->
-                <div class="mb-3">
-                    <label class="form-label" for="floatingPassword">Lösenord</label>
-                    <input type="password" class="form-control" id="floatingPassword" name="pass" minlength="6" required placeholder="Lösenord">
+                <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    <input class="form-control" id="floatingPassword" name="floatingPassword" placeholder="Lösenord" type="password" value="">
+                    <span class="input-group-text eye" id="eye"><i class="far fa-eye-slash" id="togglePassword"></i></span>
                 </div>
 
                 <!-- input för lösenord kontroll -->
-                <div class=" mb-3">
-                    <label class="form-label" for="floatingPasswordCheck">Lösensord Kontroll</label>
-                    <input type="password" class="form-control" id="floatingPasswordCheck" name="pass2" minlength="6" required placeholder="Lösenord (igen)">
-
-                    <!-- Kom i håg lösenord i registrering av kassör? Varför? Sparar dock koden ifall att -->
-                    <!-- <input class="form-check-input" type="checkbox" id="rememberPasswordCheck">
-					<label class="form-check-label" for="rememberPasswordCheck">
-						Kom ihåg lösenord
-					</label> -->
+                <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    <input class="form-control" id="floatingPasswordCheck" name="floatingPasswordCheck" placeholder="Lösenords kontroll" type="password" value="">
+                    <span class="input-group-text eye" id="eyeCheck"><i class="far fa-eye-slash" id="togglePasswordCheck"></i></span>
                 </div><br>
                 <button class="btn btn-login  bg-primary text-uppercase fw-bold text-white position-relative top-50 start-50 translate-middle" name="submit" type="submit">Register</button>
             </form>
@@ -73,48 +69,14 @@
                     </thead>
                     <tbody>
                         <?php
-                        include "../Backend/getCashiersAdmin.php";
+                        // Selects all accounts from the table Admin in the databaase
                         $persons = connectToDb("SELECT * FROM Admin");
-                        if($persons != NULL){
+                        if ($persons != NULL) { // Checks so its not null, otherwise print no logins
                             getCashiers($persons);
+                        } else {
+                            echo "<tr><td>No logins!</td></tr>";
                         }
                         ?>
-                        <!-- <tr>
-                            <td>Gustav@gmail.com</td>
-                            <td id="cell">Test1234</td>
-                            <td>
-                                <button class="btn btn-primary" id="editBtn">Edit</button>
-                                <button class="btn btn-danger" id="deleteBtn">Delete</button>
-                                <button class="btn btn-success" id="showBtn">Show</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Gunnar_eriksson@gmail.com</td>
-                            <td>SommarSol1234</td>
-                            <td>
-                                <button class="btn btn-primary">Edit</button>
-                                <button class="btn btn-danger">Delete</button>
-                                <button class="btn btn-success" id="showBtn">Show</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Gunnar_eriksson@gmail.com</td>
-                            <td>SommarSol1234</td>
-                            <td>
-                                <button class="btn btn-primary">Edit</button>
-                                <button class="btn btn-danger">Delete</button>
-                                <button class="btn btn-success" id="showBtn">Show</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Gunnar_eriksson@gmail.com</td>
-                            <td>SommarSol1234</td>
-                            <td>
-                                <button class="btn btn-primary">Edit</button>
-                                <button class="btn btn-danger">Delete</button>
-                                <button class="btn btn-success" id="showBtn">Show</button>
-                            </td>
-                        </tr> -->
                     </tbody>
                 </table>
             </div>
@@ -136,26 +98,11 @@
                         <?php
                         include "../Backend/credentials.php";
 
-                        // DO NOT USE CONSOLE.PHP OVER AND OVER! IT KEEPS RE-DECLAIRING!!!!
-                        //include "../Backend/console.php";
-
+                        // Connects to the database and gets all products in it by sending a connection
+                        // to a function getAllProductsAdmin()
                         $conn = new mysqli($server, $username, $password, $dbname, $port);
-                        try {
-                            $sqlGetProduct = 'SELECT * FROM Products';
-                            $products = mysqli_query($conn, $sqlGetProduct);
-                            //fetches all products from database
-                            while ($row = mysqli_fetch_assoc($products)) {
-                                echo '<tr>';
-                                echo '<td>' . $row['product_name'] . '</td>';
-                                echo '<td>' . $row['amount'] . '</td>';
-                                echo '</tr>';
-                            }
 
-                            mysqli_close($conn);
-                        } catch (\Throwable $th) {
-                            console($th->getMessage());
-                            console($th->getLine());
-                        }
+                        getAllProductsAdmin($conn);
                         ?>
                     </tbody>
                 </table>
@@ -280,9 +227,9 @@
                 <button class="btn btn-primary">Skriv ut</button>
             </div>
         </div> -->
-
     </div>
 
+    <script src="../Scripts/passwordEye.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/1b0280e235.js" crossorigin="anonymous"></script>
 </body>

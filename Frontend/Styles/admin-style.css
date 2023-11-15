@@ -62,6 +62,9 @@
     color: blue;
 }
 
-form{
+#otherForm{
     border-bottom: 1px solid black;
+}
+.eye>i:hover{
+    cursor: pointer;
 }

@@ -10,8 +10,8 @@ include "../Backend/console.php";
 
 if (isset($_POST['submit'])) {
 
-	$newPass	  = $_POST['pass'];
-	$newPassAgain = $_POST['pass2'];
+	$newPass	  = $_POST['floatingPassword'];
+	$newPassAgain = $_POST['floatingPasswordCheck'];
 
 	// Kollar ifall lösenorden är likadana 
 	if ($newPass !== $newPassAgain) {
