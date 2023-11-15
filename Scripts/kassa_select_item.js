@@ -1,5 +1,3 @@
-console.log("hello");
-
 // select container in html code with the following class
 const con = document.querySelector(".itemContainer");
 // select the "select" tag with the following id
