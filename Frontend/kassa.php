@@ -47,7 +47,7 @@
 			</div>
 			<div class="Empty-btn">
 				<form action="" method="POST">
-					<button name="close">
+					<button name="close" class="emptyBtn">
 						Empty Cart
 					</button>
     			</form>
