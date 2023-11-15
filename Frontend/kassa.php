@@ -6,8 +6,6 @@
 	<title>Kassa</title>
 	<link rel="stylesheet" href="./Styles/kassa.css">
 	<link rel="stylesheet" href="./Styles/main.css">
-</head>
-<body>
 	<!-- add header -->
 	<?php include "../Frontend/header.php"?>
 	<!-- container -->
