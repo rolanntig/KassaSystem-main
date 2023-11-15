@@ -46,7 +46,7 @@
                             <option value="verktyg">Verktyg</option>
                         </select>
                     </div> 
-                    <div class="div7"> <button name="submit" type="submit" class="btn text-white col-sm-7">Registrera varan</button></div>
+                    <button name="submit" type="submit" class="btn text-white mb-3 btn">Registrera varan</button>
                     </div>
                     <?php
                         include "../Backend/credentials.php";                  
