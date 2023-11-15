@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="./Styles/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" type="text/css" href="./Styles/kassa.css"> -->
     <link rel="stylesheet" type="text/css" href="./Styles/rapport.css">
     <title>Rapport</title>
 </head>
@@ -28,7 +27,6 @@
 
     <div id="headerrep">
         <h1 class="header_report">Försäljningsrapport</h1>
-
     </div>
 
     <?php
@@ -55,7 +53,7 @@
         // Här visar den en tabell för försäljningsrapporten inom den aktiva dagen. $dayName och $activeDay visar den aktiva dagen.
         // Dropdowns knapparna ligger i en tabell i th-taggen.
         echo '
-    <table border="1">
+    <table id="fulltable" border="1">
         <tr>
             <th colspan="3">
                  <h3 class="header_report">' . $dayName . ' - ' . $activeDay . '</h3> 
