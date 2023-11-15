@@ -15,7 +15,7 @@
 		<div class="leftDiv">
 			<!-- container where items show -->
 			<div class="itemContainer">
-			<form class="categoryForm">
+			<form class="categoryForm" onsubmit = "return(p)">
 				<select name="category" id="category" >
 					<option value="">Allt</option>
 					<option value="drink">Dryck</option>
@@ -104,6 +104,7 @@
 			
 		</div>
 	</div>
+	<script>var p = false;</script>
 	<script src="../Scripts/selectCategory.js"></script>
 	<script src="../Scripts/kassa_radioHide.js"></script>
 </body>
