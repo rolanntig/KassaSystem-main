@@ -41,143 +41,86 @@
     // För att hålla reda på vilken typ av tabell som visas. Den visar vilken tabell som ska visas först.
     $tableType = isset($_GET['table_type']) ? $_GET['table_type'] : 'month';
 
-    // Om användaren väljer dagstabell
+    // Create a string, which is a table 
+    $tableString =
+        '<table id="fulltable" border="1" class="fullProductTable">
+        <tr>
+            <th colspan="3">';
+
+    // Creates another string for completing the table
+    $tableString2 =
+        '<th>
+        <div class="dropdown">
+            <button class="dropbtn">Betalnings alternativ</button>
+            <div class="dropdown-content">
+                <a href="?table_type=kontant">Kontanter</a>
+                <a href="?table_type=swish">Swish</a>
+            </div>
+        </div>
+        </th>
+            </tr>
+            <tr>
+                <th>Produkt</th>
+                <th>Totalt</th>
+                <th>Antal</th>
+                <th>
+                    <div class="dropdown">
+                        <button class="dropbtn">' . ucfirst($tableType) . '</button>
+                        <div class="dropdown-content">
+                            <a href="?table_type=month">Månadstabell</a>
+                            <a href="?table_type=day">Dagstabell</a>
+                        </div>
+                    </div>
+                </th>
+        </tr>';
+
+    // If the user choses day, display todays earning in a table
     if ($tableType == 'day') {
         // Hämta den aktiva dagen från URL-parametern
         $activeDay = isset($_GET['day']) ? $_GET['day'] : date('d');
-
         // Hämta dagens namn baserat på den aktiva dagen
         $dayName = date('l', strtotime("$currentYear-$currentMonth-$activeDay"));
 
         // Här visar den en tabell för försäljningsrapporten inom den aktiva dagen. $dayName och $activeDay visar den aktiva dagen.
         // Dropdowns knapparna ligger i en tabell i th-taggen.
-        echo '
-    <table id="fulltable" border="1">
-        <tr>
-            <th colspan="3">
-                 <h3 class="header_report">' . $dayName . ' - ' . $activeDay . '</h3> 
-            </th>
-            <th><div class="dropdown">
-        <button class="dropbtn">Betalnings alternativ</button>
-        <div class="dropdown-content">
-            <a href="?table_type=kontant">Kontanter</a>
-            <a href="?table_type=swish">Swish</a>
-        </div>
-    </div></th>
-        </tr>
-        <tr>
-            <th>Produkt</th>
-            <th>Totalt</th>
-            <th>Antal</th>
-            <th>
-                <div class="dropdown">
-                    <button class="dropbtn">' . ucfirst($tableType) . '</button>
-                    <div class="dropdown-content">
-                        <a href="?table_type=month">Månadstabell</a>
-                        <a href="?table_type=day">Dagstabell</a>
-                    </div>
-                </div>
-            </th>
-        </tr>
-        ' . getDailyRapport() . '
-    </table>
-    ';
+        $tableString .= '<h3 class="header_report">' . $dayName . ' - ' . $activeDay . '</h3></th>';
+
+        // Calls the function getDailyRapport and adds it to the table string for echo(ing)
+        $tableString .= $tableString2 . getDailyRapport() . '</table>';
+        echo ($tableString);
     }
 
-    // Om användaren väljer månadsstabell
+    // If the user choses month, display table for the months earning
     if ($tableType == 'month') {
-
         // Här visar den en tabell för försäljningsrapporten inom den aktiva månaden.$monthName och $currentYear visar den aktiva 
         // månaden och året. Dropdowns knapparna ligger i en tabell i th-taggen.
-        echo '
-<table border="1">
-<tr >
-<th colspan="3"><h3 class = header_report> ' . $monthName . ' - ' . $currentYear . '</h3></th>
-<th><div class="dropdown">
-        <button class="dropbtn">Betalnings alternativ</button>
-        <div class="dropdown-content">
-            <a href="?table_type=kontant">Kontanter</a>
-            <a href="?table_type=swish">Swish</a>
-        </div>
-    </div></th>
-</tr>
-    <tr>
-        <th>Produkt</th>
-        <th>Totalt</th>
-        <th>Antal</th>
-        <th><div class="dropdown">
-        <button class="dropbtn">' . ucfirst($tableType) . '</button>
-        <div class="dropdown-content">
-            <a href="?table_type=month">Månadstabell</a>
-            <a href="?table_type=day">Dagstabell</a>
-        </div>
-    </div></th>
-    </tr>' . getMonthlyRapport() . '
-</table>
-';
+        $tableString .= '<h3 class = header_report> ' . $monthName . ' - ' . $currentYear . '</h3></th>';
+
+        // Calls the function getMonthlyRapport and adds it to the table string for echo(ing)
+        $tableString .= $tableString2 . getMonthlyRapport() . '</table>';
+        echo ($tableString);
     }
+
+    // If the user choses kontant as the payment method show whole month but only kontant payments
     if ($tableType == "kontant") {
-        echo '
-        <table border="1">
-        <tr >
-        <th colspan="3"><h3 class = header_report> ' . $monthName . ' - ' . $currentYear . '</h3></th>
-        <th><div class="dropdown">
-                <button class="dropbtn">Betalnings alternativ</button>
-                <div class="dropdown-content">
-                    <a href="?table_type=kontant">Kontanter</a>
-                    <a href="?table_type=swish">Swish</a>
-                </div>
-            </div></th>
-        </tr>
-            <tr>
-                <th>Produkt</th>
-                <th>Totalt</th>
-                <th>Antal</th>
-                <th><div class="dropdown">
-                <button class="dropbtn">' . ucfirst($tableType) . '</button>
-                <div class="dropdown-content">
-                    <a href="?table_type=month">Månadstabell</a>
-                    <a href="?table_type=day">Dagstabell</a>
-                </div>
-            </div></th>
-            </tr>' . getMonthlyRapport("Kontant") . '
-        </table>
-        ';
+        $tableString .= '<h3 class = header_report> ' . $monthName . ' - ' . $currentYear . '</h3></th>';
+
+        // Calls the function getMonthlyRapport with the variable Kontant such that it only takes 
+        // the transactions with kontant and adds it to the table string for echo(ing)
+        $tableString .= $tableString2 . getMonthlyRapport("Kontant") . '</table>';
+        echo ($tableString);
     }
+
+    // If the user choses swish as the payment method show whole month but only swish payments
     if ($tableType == "swish") {
-        echo '
-        <table border="1">
-        <tr >
-        <th colspan="3"><h3 class = header_report> ' . $monthName . ' - ' . $currentYear . '</h3></th>
-        <th><div class="dropdown">
-                <button class="dropbtn">Betalnings alternativ</button>
-                <div class="dropdown-content">
-                    <a href="?table_type=kontant">Kontanter</a>
-                    <a href="?table_type=swish">Swish</a>
-                </div>
-            </div></th>
-        </tr>
-            <tr>
-                <th>Produkt</th>
-                <th>Totalt</th>
-                <th>Antal</th>
-                <th><div class="dropdown">
-                <button class="dropbtn">' . ucfirst($tableType) . '</button>
-                <div class="dropdown-content">
-                    <a href="?table_type=month">Månadstabell</a>
-                    <a href="?table_type=day">Dagstabell</a>
-                </div>
-            </div></th>
-            </tr>' . getMonthlyRapport("Swish") . '
-        </table>
-        ';
+        $tableString .= '<h3 class = header_report> ' . $monthName . ' - ' . $currentYear . '</h3></th>';
+
+        // Calls the function getMonthlyRapport with the variable swish such that it only takes 
+        // the transactions with kontant and adds it to the table string for echo(ing)
+        $tableString .= $tableString2 . getMonthlyRapport("Swish") . '</table>';
+        echo ($tableString);
     }
-
     ?>
-
-
-
-
 </body>
 
 </html>
