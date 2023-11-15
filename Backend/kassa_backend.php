@@ -13,8 +13,8 @@ $endPrice = array_count_values($_SESSION['cash']);
                 }
                 $finalPrice += $data[0]['price'] * $val;
 
-                echo '<td>' . $data[0]['price'] * $val . '</td>' . '<td>' . $val
-                . '</td>' . '<td>';
+                echo '<td>' . $data[0]['price'] * $val . 'kr</td>' . '<td>' . $val
+                . 'st</td>' . '<td>';
 
                 
                 echo '<form action="" method="POST">'
