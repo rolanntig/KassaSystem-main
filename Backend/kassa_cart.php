@@ -13,19 +13,11 @@ $result = mysqli_query($conn,"SELECT * FROM Products WHERE barcode='$id'");
             echo '<div class="cart-contain">';
             echo '<table>';
             echo '<tr>';
-            echo '<th>';
-            echo 'ITEMS';
-            echo '</th>';
-            echo '<th>';
-            echo 'PRICES';
-            echo '</th>';
-            echo '<th>';
-            echo 'AMOUNT';
-            echo'<br>';
-            echo '</th>';
+            echo '<th>ITEMS </th>';
+            echo '<th>PRICES </th>';
+            echo '<th>AMOUNT </th>';
             echo '</tr>';
-            echo '</table>';
-            echo'</div>';
+            
             foreach($endCart as $key => $val){
                 echo '<tr>';
                 echo '<td>';
@@ -41,6 +33,9 @@ $result = mysqli_query($conn,"SELECT * FROM Products WHERE barcode='$id'");
                 echo $val;
                 echo '</td>';
                 echo '</tr>';
+                
             }
+            echo '</table>';
+            echo'</div>';
 ?>
 </div>
