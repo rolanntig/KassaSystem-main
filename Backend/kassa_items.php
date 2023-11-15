@@ -24,7 +24,7 @@
     foreach($data as $row): ?>
             <!-- Uses php in the td to show every data in the index -->
         <div>
-        <button type="submit" name="item" value="<?= htmlspecialchars($row['barcode']) ?>"  class="<?= htmlspecialchars($row['category']) ?>">
+        <button type="submit" name="item" value="<?= htmlspecialchars($row['barcode']) ?>"  class="<?= htmlspecialchars($row['category']) ?>" id="<?= htmlspecialchars($row['barcode']) ?>">
             <img src="https://placehold.co/50X50" alt="test">
             <h7><u><?= htmlspecialchars($row['product_name']) ?></u></h7>
             <p><?= htmlspecialchars($row['price']) ?> kr</p>
