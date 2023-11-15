@@ -3,7 +3,7 @@
         public static function scan(){
             include '../Backend/console.php';
             include '../Backend/databaseHandler.php';
-             $query = "SELECT * FROM `Products` WHERE `barcode` = '".$_POST['scanner']."'";
+            $query = "SELECT * FROM `Products` WHERE `barcode` = '".$_POST['scanner']."'";
             $result = DatabaseHandler::fetchData($query,DatabaseHandler::dbconnect());
             while ($row=mysqli_fetch_array($result)) {
             console($row['product_name']);
@@ -11,10 +11,6 @@
             return $result;
         }
     }
-
-
-
-
 
 
 //         $sca=trim($_POST['no'],"");		

@@ -20,112 +20,46 @@
 <body>
     <div class="container">
         <div class="bg-white p-3 br1em">
+        <?php include "../Backend/produktNav.php" ?>
             <h1 class="mb-4 mt-3 text-center">Registrera produkt</h1>
-            <form action="#"class="d-flex justify-content-center w-100" method="POST">
-                <div class="form-group col-8">
-                    <label>Produkt</label>
-                    <input name="product"type="text" class="form-control mb-3">
-                    <label>Antal</label>
-                    <input name="amount" type="number" class="form-control mb-3">
-                    <label>Pris</label>
-                    <input name="price" type="text" class="form-control mb-3">
-                    <label>Bäst Före</label>
-                    <input name="expire" type="datetime-local" class="form-control mb-3">
-                    <label>Barcode</label>
-                    <input name="barcode" type="text" class="form-control mb-3">
-                    <label>Kategori</label>
-                    <select name="kategori" id="kategori" class="form-control mb-3">
-                        <option value="">Välj typ</option>
-                        <option value="godis">Godis</option>
-                        <option value="drickor">Drickor</option>
-                    </select>
-                    <!-- add Event Handler For Enter Key-->
-                    <button name="submit" type="submit" class="btn text-white mt-2 mb-2">Registrera varan</button>
-                    
+            <form action="#"class="d-flex justify-content-center w-100" method="post" enctype="multipart/form-data">
+            <div class="form-group col-8">
+                <div class="parent1">
+                    <div class="div1"><label>Produkt:</label> <input name="product"type="text" class="form-control mb-3" required placeholder="Vad för produkt?"> </div>
+                    <div class="div4"><label>Antal:</label> <input name="amount" type="number" class="form-control mb-3" required placeholder="Hur många av den produkten?"> </div>
+                    <div class="div5"><label>Pris:</label> <input name="price" type="number" class="form-control mb-3" required placeholder="Hur mycket kostar produkten?"> </div>
+                    <div class="div6"><label>Bäst Före:</label> <input name="expire" type="datetime-local" class="form-control mb-3"> </div>
+                    <div class="div2"><label>Barcode:</label> <input name="barcode" type="text" class="form-control mb-3" maxlength="13" required placeholder="Scana streckkod"> </div>
+                    <div class="div3"> <label for="type">Typ:</label>
+                        <select name="type" id="type" class="form-control mb-3" required>
+                            <option value="" disabled selected>Vilken typ av produkt det är det?</option>
+                            <option value="drink">Dricka</option>
+                            <option value="snacks">Snacks</option>
+                            <option value="food">Mat</option>
+                            <option value="verktyg">Verktyg</option>
+                        </select>
+                    </div> 
+                    <div class="div7"><label for="image">Bild</label> <input type="file" accept="image/*" class="form-control" id="image" name="image" required></div>
+                    <button name="submit" type="submit" class="btn text-white mb-3 btn">Registrera varan</button>
+                    </div>
                     <?php
-                        include "../Backend/credentials.php";
-                        $conn = new mysqli($server, $username, $password, $dbname,$port);
-                                            
+                        include "../Backend/credentials.php";                  
                         //Registering a product
-                        if(isset($_POST['submit'])){
-                            $product    = $_POST['product'];
-                            $amount     = $_POST['amount'];
-                            $price      = $_POST['price'];
-                            $expire     = $_POST['expire'];
-                            $barcode    = $_POST['barcode'];
+                        $product    = $_POST['product'];
+                        $amount     = $_POST['amount'];
+                        $price      = $_POST['price'];
+                        $expire     = $_POST['expire'];
+                        $barcode    = $_POST['barcode'];
+                        $type       = $_POST['type'];
+                        $image      = $_FILES['image']['name']; 
+                        if (isset($_POST['submit'])){
+                            include '../Backend/Register_Product.php';
 
-                            $sqlquery = "INSERT INTO Products (product_name, product_info, expire_date, price, barcode,amount,category) VALUES ('$product', '-', '$expire', '$price', '$barcode','$amount','-')";
-                            try {
-                                if ($conn->query($sqlquery)) {
-                                    //echo "<script>alert('Produkt registrerad')</script>";
-                                    echo "<div class='card border-0 shadow rounded-3 br1em mt-2 text-center bg-success text-white w-50 mx-auto align-middle'>
-                                            <p class='p-2 pt-4'>
-                                                Produkt registrerad
-                                            </p>
-                                        </div>
-                                    ";
-                                    header("Refresh:2; url=#");
-                                }
-                                else {
-                                    echo "<div class='card border-0 shadow rounded-3 br1em mt-2 text-center bg-danger text-white w-50 mx-auto align-middle'>
-                                            <p class='p-2 pt-4'>
-                                                Registrering misslyckades
-                                            </p>
-                                        </div>
-                                    ";
-                                    
-                                    $dom = new DOMDocument();
-                                    $dom->loadHTML($html);
-                                    $xpath = new DOMXPath($dom);
-                                    $hrefs = $xpath->evaluate("/html/body/div/div/form/div/input");
-
-                                    console($hrefs);
-
-                                    header("Refresh:10; url=#");
-                                }
-                            }
-                            catch (\Throwable $th) {
-                                console($th->getMessage());
-                                console($th->getLine());
-                            }
                         }
                     ?>
                 </div>
             </form>
-            <h1 class="mb-4 mt-3 text-center">Produkter</h1>
-            <table id="produkterKvar" class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Produkt</th>
-                        <th scope="col">Antal</th>
-                        <th scope="col">Pris</th>
-                        <th scope="col">Bäst före</th>
-                        <th scope="col">Barcode</th>
-                    </tr>
-                </thead>
-                <?php
-                    include "../Backend/credentials.php";
-                    try {
-                        $sqlGetProduct = 'SELECT * FROM Products';
-                        $products= mysqli_query($conn, $sqlGetProduct);
-                        //fetches all products from database
-                        while($row = mysqli_fetch_assoc($products)){
-                            echo '<tr>';
-                            echo '<td>'.$row['product_name'].'</td>';
-                            echo '<td>'.$row['amount'].'</td>';
-                            echo '<td>'.$row['price'].' kr </td>';
-                            echo '<td>'.$row['expire_date'].'</td>';
-                            echo '<td>'.$row['barcode'].'</td>';
-                            echo '</tr>';
-                        }
-                        
-                        mysqli_close($conn);
-                    } catch (\Throwable $th) {
-                        console($th->getMessage());
-                        console($th->getLine());
-                    }
-                ?>
-            </table>
+
         </div>
     </div>
 </body>
