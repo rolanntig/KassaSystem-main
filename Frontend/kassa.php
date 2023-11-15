@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Kassa</title>
 	<link rel="stylesheet" href="./Styles/kassa.css">
+	<link rel="stylesheet" href="./Styles/main.css">
 </head>
 <body>
 	<!-- add header -->
@@ -23,7 +24,7 @@
 					<option value="food">Mat</option>
 					<option value="verktyg">Verktyg</option>
 				</select>
-				<input type="text" name="barcode" id="barcode">
+				<input type="text" name="barcode" id="barcode" placeholder="BARCODE">
 			</form>
 				<?php
 					include '../Backend/kassa_items.php';
@@ -105,7 +106,7 @@
 		</div>
 	</div>
 	<script>var p = false;</script>
-	<script src="../Scripts/selectCategory.js"></script>
+	<script src="../Scripts/kassa_select_item"></script>
 	<script src="../Scripts/kassa_radioHide.js"></script>
 </body>
 </html>
