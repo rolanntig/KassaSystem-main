@@ -55,7 +55,7 @@
     			    }
     			?>
 			</div>
-			
+
 			<div class="payment">
 				<form action="#" id="swishKonForm">
 					<div id="buttonDiv">

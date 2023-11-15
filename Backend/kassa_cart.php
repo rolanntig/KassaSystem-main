@@ -21,8 +21,11 @@ $result = mysqli_query($conn,"SELECT * FROM Products WHERE barcode='$id'");
             echo '</th>';
             echo '<th>';
             echo 'AMOUNT';
+            echo'<br>';
             echo '</th>';
             echo '</tr>';
+            echo '</table>';
+            echo'</div>';
             foreach($endCart as $key => $val){
                 echo '<tr>';
                 echo '<td>';
