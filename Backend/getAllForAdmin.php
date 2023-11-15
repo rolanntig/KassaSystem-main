@@ -25,7 +25,8 @@ function getCashiers($persons)
     // prints the string 
     echo $string;
 }
-function removeCashiers($who){
+function removeCashiers($who)
+{
     $sql = ("DELETE FROM Admin WHERE ID='$who'");
     $server = "mysql.jawad.se";
     $username = "kassa";
@@ -94,15 +95,17 @@ function getDailyRapport()
             // Sends a request to the database to fetch the price of said sold item for calculations
             $data = connectToDb("SELECT product_name, price FROM Products 
                                 WHERE product_name = '$prodName'");
-            foreach ($data as $product) {
-                $total += ($product['price'] * $amountSold);
-                switch ($row['payment_method']) {
-                    case "Swish":
-                        $swishTotal += ($product['price'] * $amountSold);
-                        break;
-                    case "Kontant":
-                        $kontantTotal += ($product['price'] * $amountSold);
-                        break;
+            if ($data != null) {
+                foreach ($data as $product) {
+                    $total += ($product['price'] * $amountSold);
+                    switch ($row['payment_method']) {
+                        case "Swish":
+                            $swishTotal += ($product['price'] * $amountSold);
+                            break;
+                        case "Kontant":
+                            $kontantTotal += ($product['price'] * $amountSold);
+                            break;
+                    }
                 }
             }
         }
@@ -136,15 +139,17 @@ function getMonthlyRapport()
             // Sends a request to the database to fetch the price of said sold item for calculations
             $data = connectToDb("SELECT product_name, price FROM Products 
                                 WHERE product_name = '$prodName'");
-            foreach ($data as $product) {
-                $total += ($product['price'] * $amountSold);
-                switch ($row['payment_method']) {
-                    case "Swish":
-                        $swishTotal += ($product['price'] * $amountSold);
-                        break;
-                    case "Kontant":
-                        $kontantTotal += ($product['price'] * $amountSold);
-                        break;
+            if ($data != null) {
+                foreach ($data as $product) {
+                    $total += ($product['price'] * $amountSold);
+                    switch ($row['payment_method']) {
+                        case "Swish":
+                            $swishTotal += ($product['price'] * $amountSold);
+                            break;
+                        case "Kontant":
+                            $kontantTotal += ($product['price'] * $amountSold);
+                            break;
+                    }
                 }
             }
         }

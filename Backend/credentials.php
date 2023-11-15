@@ -7,6 +7,4 @@ $password = "cGZZ2.I2mYPE*T@p";
 $dbname = "kassa";
 $port = 80;
 
-
-
 ?>
