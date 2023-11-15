@@ -10,8 +10,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-family: 'Roboto', sans-serif;
-
+    font-family: 'Roboto-Main', sans-serif;
 }
 
 body {
@@ -24,5 +23,6 @@ body {
 }
 
 * p, h1, h2, h3, h4, h5, h6 {
-    font-size: 2rem;
+    color: inherit;
+    letter-spacing: .5px;
 }
