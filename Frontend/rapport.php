@@ -11,91 +11,173 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Styles/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./Styles/navbar.css">
-    <link rel="stylesheet" type="text/css" href="./Styles/kassa.css">
     <link rel="stylesheet" type="text/css" href="./Styles/rapport.css">
     <title>Rapport</title>
 </head>
 
 <body>
 
-<div id="headerrep">
-<h1 class = "header_report">Försäljningsrapport</h1>
+    <?php
+    include 'header.php';
+    include '../Backend/getRapport.php';
+    ?>
+    <div id="headerrep">
+        <h1 class="header_report">Försäljningsrapport</h1>
+    </div>
 
-</div>
-<!-- <table>
+    <?php
+    // Hämta det aktuella året och månaden
+    $currentYear = date('Y');
+    $currentMonth = date('m');
 
-<tr>
-    <th colspan = "3"><h2>Månad</h2>
-    <label for="tableType">Välj tabelltyp:</label>
-    <select id="tableType" name="table_type">
-        <option value="month" >Månadstabell</option>
-        <option value="day">Dagstabell</option>
-    </select>
-</th>
-</tr>
+    $monthName = date('F', strtotime("$currentYear-$currentMonth-01"));
 
-  <tr>
-    <th>Produkt</th>
-    <th>Totalt</th>
-    <th>Antal</th>
-  </tr>
-  
-</table> -->
+    // Skapa en lista med år att visa i rullgardinsmenyn
+    $yearList = range(date('Y') - 5, date('Y') + 5);
 
+    // För att hålla reda på vilken typ av tabell som visas. Den visar vilken tabell som ska visas först.
+    $tableType = isset($_GET['table_type']) ? $_GET['table_type'] : 'month';
 
+    // Om användaren väljer dagstabell
+    if ($tableType == 'day') {
+        // Hämta den aktiva dagen från URL-parametern
+        $activeDay = isset($_GET['day']) ? $_GET['day'] : date('d');
 
-<?php
-// Hämta det aktuella året och månaden
-$currentYear = date('Y');
-$currentMonth = date('m');
+        // Hämta dagens namn baserat på den aktiva dagen
+        $dayName = date('l', strtotime("$currentYear-$currentMonth-$activeDay"));
 
-$monthName = date('F', strtotime("$currentYear-$currentMonth-01"));
+        // Här visar den en tabell för försäljningsrapporten inom den aktiva dagen. $dayName och $activeDay visar den aktiva dagen.
+        // Dropdowns knapparna ligger i en tabell i th-taggen.
+        echo '
+    <table id="fulltable" border="1">
+        <tr>
+            <th colspan="3">
+                 <h3 class="header_report">' . $dayName . ' - ' . $activeDay . '</h3> 
+            </th>
+            <th><div class="dropdown">
+        <button class="dropbtn">Betalnings alternativ</button>
+        <div class="dropdown-content">
+            <a href="?table_type=kontant">Kontanter</a>
+            <a href="?table_type=swish">Swish</a>
+        </div>
+    </div></th>
+        </tr>
+        <tr>
+            <th>Produkt</th>
+            <th>Totalt</th>
+            <th>Antal</th>
+            <th>
+                <div class="dropdown">
+                    <button class="dropbtn">' . ucfirst($tableType) . '</button>
+                    <div class="dropdown-content">
+                        <a href="?table_type=month">Månadstabell</a>
+                        <a href="?table_type=day">Dagstabell</a>
+                    </div>
+                </div>
+            </th>
+        </tr>
+        ' . getDailyRapport() . '
+    </table>
+    ';
+    }
 
-// Skapa en lista med år att visa i rullgardinsmenyn
-$yearList = range(date('Y') - 5, date('Y') + 5);
+    // Om användaren väljer månadsstabell
+    if ($tableType == 'month') {
 
-$tableType = isset($_GET['table_type']) ? $_GET['table_type'] : 'month'; // För att hålla reda på vilken typ av tabell som visas.
-
-$table = '
+        // Här visar den en tabell för försäljningsrapporten inom den aktiva månaden.$monthName och $currentYear visar den aktiva 
+        // månaden och året. Dropdowns knapparna ligger i en tabell i th-taggen.
+        echo '
 <table border="1">
-<tr>
-<th colspan="4">
-    <h2>' . $monthName . '</h2>
-    <label for="tableType"></label>
-    <select id="tableType" name="table_type" onchange="changeTableType(this.value)">
-    <option value="month" selected> Välj tabelltyp</option>
-        <option value="month" ' . ($tableType == 'month' ?  : '') . '>Månadstabell</option>
-        <option value="day" ' . ($tableType == 'day' ? : '') . '>Dagstabell</option>
-    </select>
-</th>
+<tr >
+<th colspan="3"><h3 class = header_report> ' . $monthName . ' - ' . $currentYear . '</h3></th>
+<th><div class="dropdown">
+        <button class="dropbtn">Betalnings alternativ</button>
+        <div class="dropdown-content">
+            <a href="?table_type=kontant">Kontanter</a>
+            <a href="?table_type=swish">Swish</a>
+        </div>
+    </div></th>
 </tr>
-<tr>
-    <th>Produkt</th>
-    <th>Totalt</th>
-    <th>Antal</th>
-</tr>
+    <tr>
+        <th>Produkt</th>
+        <th>Totalt</th>
+        <th>Antal</th>
+        <th><div class="dropdown">
+        <button class="dropbtn">' . ucfirst($tableType) . '</button>
+        <div class="dropdown-content">
+            <a href="?table_type=month">Månadstabell</a>
+            <a href="?table_type=day">Dagstabell</a>
+        </div>
+    </div></th>
+    </tr>' . getMonthlyRapport() . '
+</table>
 ';
+    }
+    if ($tableType == "kontant") {
+        echo '
+        <table border="1">
+        <tr >
+        <th colspan="3"><h3 class = header_report> ' . $monthName . ' - ' . $currentYear . '</h3></th>
+        <th><div class="dropdown">
+                <button class="dropbtn">Betalnings alternativ</button>
+                <div class="dropdown-content">
+                    <a href="?table_type=kontant">Kontanter</a>
+                    <a href="?table_type=swish">Swish</a>
+                </div>
+            </div></th>
+        </tr>
+            <tr>
+                <th>Produkt</th>
+                <th>Totalt</th>
+                <th>Antal</th>
+                <th><div class="dropdown">
+                <button class="dropbtn">' . ucfirst($tableType) . '</button>
+                <div class="dropdown-content">
+                    <a href="?table_type=month">Månadstabell</a>
+                    <a href="?table_type=day">Dagstabell</a>
+                </div>
+            </div></th>
+            </tr>' . getMonthlyRapport("Kontant") . '
+        </table>
+        ';
+    }
+    if ($tableType == "swish") {
+        echo '
+        <table border="1">
+        <tr >
+        <th colspan="3"><h3 class = header_report> ' . $monthName . ' - ' . $currentYear . '</h3></th>
+        <th><div class="dropdown">
+                <button class="dropbtn">Betalnings alternativ</button>
+                <div class="dropdown-content">
+                    <a href="?table_type=kontant">Kontanter</a>
+                    <a href="?table_type=swish">Swish</a>
+                </div>
+            </div></th>
+        </tr>
+            <tr>
+                <th>Produkt</th>
+                <th>Totalt</th>
+                <th>Antal</th>
+                <th><div class="dropdown">
+                <button class="dropbtn">' . ucfirst($tableType) . '</button>
+                <div class="dropdown-content">
+                    <a href="?table_type=month">Månadstabell</a>
+                    <a href="?table_type=day">Dagstabell</a>
+                </div>
+            </div></th>
+            </tr>' . getMonthlyRapport("Swish") . '
+        </table>
+        ';
+    }
 
-if ($tableType == 'day') {
-    // Visa dagstabell
-    // Du kan anpassa koden för dagstabellen här
-    
-} else {
-    // Visa månadstabell
-    // Du kan anpassa koden för månadstabellen här
-}
+    ?>
 
-$table .= '</table>';
-?>
 
-<?php
-echo $table;
-?>
 
-    
+
 </body>
 
 </html>

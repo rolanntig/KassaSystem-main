@@ -1,6 +1,8 @@
 <?php
 //Include credentials for the entire database. This file is ignored to keep it secret.
 include "../Backend/credentials.php";
+
+// DO NOT USE CONSOLE.PHP OVER AND OVER! IT KEEPS RE-DECLAIRING!!!!
 include "../Backend/console.php";
 
 // // Function to register a new admin to AdminTable
@@ -8,7 +10,6 @@ include "../Backend/console.php";
 //     $sqliRegisterAdminQuery = "INSERT INTO `Admin`(`username`, `password`) VALUES ('$username', '$password')";
 //     return $sqliRegisterAdminQuery;
 // }
-
 
 
 class DatabaseHandler
@@ -52,18 +53,4 @@ class DatabaseHandler
         $connection->close();
         return $products;
     }
-
-    public static function fetchDataBetter($sqlquery, $connection)
-    {
-        try {
-            $result = $connection->query($sqlquery);
-            $followingdata = $result->fetch_assoc();
-            console($followingdata);
-            return $followingdata;
-        } catch (\Throwable $th) {
-            console($th->getMessage());
-            console($th->getLine());
-        }
-    }
-}
 ?>
