@@ -65,11 +65,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: ease-in-out 400ms;
+  animation-name: smallDiv;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
 }
 @keyframes bigDiv {
   to{
     width: 160px;
     height: 207.5px;
+  }
+
+}
+@keyframes smallDiv {
+  from{
+    width: 160px;
+    height: 207.5px;
+  }
+  to{
+    width: 150px;
+    height: 200px;
   }
 }
 .itemContainer>form>div:hover{
@@ -86,7 +101,6 @@
   border: none;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0);
 }
 
 /* LEFT DIV END LEFT DIV END LEFT DIVEND LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END  */
@@ -229,4 +243,23 @@
 }
 
 /* SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END  */
+
+/* ITEM STYLING */
+.drink, .snacks, .food, .verktyg{
+  background-size: cover;
+  border-radius: 20px;
+  background-position: center;
+}
+.drink{
+  background-image: url("../../Images/cocaCola.jpeg");
+}
+.snacks{
+  background-image: url("../../Images/chips.avif");
+}
+.food{
+  background-image: url("../../Images/grilledCheese.avif");
+}
+.verktyg{
+  background-image: url("../../Images/pen.jpeg");
+}
 
