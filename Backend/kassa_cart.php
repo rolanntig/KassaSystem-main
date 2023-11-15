@@ -11,6 +11,7 @@ $result = mysqli_query($conn,"SELECT * FROM Products WHERE barcode='$id'");
             $endPrice = array_count_values($_SESSION['cash']);
 
             echo '<div class="cart-contain">';
+
             echo '<table>';
             echo '<tr>';
             echo '<th>ITEMS </th>';
@@ -20,18 +21,12 @@ $result = mysqli_query($conn,"SELECT * FROM Products WHERE barcode='$id'");
             
             foreach($endCart as $key => $val){
                 echo '<tr>';
-                echo '<td>';
-                echo $key;
-                echo '</td>';
+                echo '<td>'.$key.'</td>';
                 $result = mysqli_query($conn,"SELECT * FROM Products WHERE product_name='$key'");
                 $data = $result->fetch_all(MYSQLI_ASSOC);
                 $finalPrice += $data[0]['price'] * $val;
-                echo '<td>';
-                print_r($data[0]['price'] * $val);
-                echo '</td>';
-                echo '<td>';
-                echo $val;
-                echo '</td>';
+                echo '<td>'.$data[0]['price'] * $val.'kr</td>';
+                echo '<td>'.$val.'<span style="float:right;">st</span></td>';
                 echo '</tr>';
                 
             }
