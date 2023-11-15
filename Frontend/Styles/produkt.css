@@ -3,18 +3,6 @@
     background: linear-gradient(to right, rgb(208, 165, 233), #c779f5) !important;
   }
   
-  /* .orderborder {
-    width: 50vw;
-    height: 45vw;
-    background-color: #ffffff;
-    border-radius: 8px;
-    margin-left: 40vw;
-    margin-top: 5vw;
-    transform: translateY(0%);
-    vertical-align: middle;
-    overflow: scroll;
-  } */
-  
   .textwall {
     color: white;
     margin-right: calc(2em + 36vw);
@@ -40,91 +28,7 @@
   .flex-container > div {
     margin: 10px;
   }
-  /* Create a column layout with Flexbox */
-  /* .row {
-    display: flex;
-  } */
-  
-  /* Left column (menu) */
-  .left {
-    flex: 35%;
-    padding: 15px 0;
-    background-color: rgb(121, 70, 146);
-    color: white;
-    height: 80vh;
-    padding: 2em;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    overflow: scroll;
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
-  
-  .left h2 {
-    padding-left: 8px;
-  }
-  
-  /* Right column (page content) */
-  .right {
-    flex: 65%;
-    padding: 15px;
-    background-color: white;
-    height: 80vh;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    overflow: scroll;
-    overflow-x: hidden;
-  }
-  
-  /* Style the search box */
-  #mySearch {
-    width: 50%;
-    font-size: 10px;
-    padding: 2px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  /* Style the navigation menu inside the left column */
-  #myMenu {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    border-radius: 10px;
-  }
-  
-  #myMenu li a {
-    padding: 12px;
-    text-decoration: none;
-    color: white;
-    display: block;
-  }
-  
-  #myMenu li a:hover {
-    background-color: rgb(204, 151, 202);
-  }
-  
-  #mySearch2 {
-    width: 80%;
-    font-size: 18px;
-    padding: 11px;
-    border: 1px solid #ddd;
-  }
-  
-  #kassa-div{
-    overflow-y: scroll;
-  }
-  
-  /* .under {
-    position: absolute;
-    bottom: 0;
-  } */
-  
-  .lista {
-    height: 10%;
-  
-    color: rgb(0, 0, 0);
-  }
+
   button {
     background-color: rgb(121, 70, 146) !important;
     color: white !important;
@@ -153,53 +57,11 @@
   
     padding: 10px;
   }
-  
-  /* .choose{
-    display: -ms-grid;
-    display: grid;
-    justify-content: end;
-    justify-items: end;
-  } */
-  /*
-  
-  Start
-  Login hemsidan
-  
-  */
-  
-  .btn-login {
-    font-size: 0.9rem;
-    letter-spacing: 0.05rem;
-    padding: 0.75rem 1rem;
-  }
-  
-  .btn-google {
-    color: white !important;
-    background-color: #ea4335;
-  }
-  
-  .btn-facebook {
-    color: white !important;
-    background-color: #3b5998;
-  }
-  
-  /*
-  
-  End
-  Login hemsidan
-  
-  */
-  
+
   ul {
     list-style: none;
   }
   
-  /*
-  
-  Start
-  Admin hemsidan
-  
-  */
   form {
     height: 100%;
   }
@@ -209,24 +71,6 @@
     flex-direction: row;
     justify-content: center;
     margin-top: -5%;
-  }
-  
-  #Registrera-Kassör {
-    width: 50vw;
-    height: 45vh;
-    border-radius: 1em;
-    margin-bottom: 5%;
-    margin-right: 4%;
-  }
-  
-  #Produkter {
-    width: 20vw;
-    height: 45vh;
-    border-radius: 1em;
-    margin-bottom: 5%;
-    overflow: scroll;
-    overflow-x: hidden;
-    text-decoration: none;
   }
   
   #Rapport {
@@ -256,19 +100,7 @@
     border-top-left-radius: 1em;
     border-top-right-radius: 1em; 
    }
-  /*
-  
-  End
-  Admin hemsidan
-  
-  */ ;
-  
-  
-  .w{
-  width: 25vw;
-  height: 30vh;
-  }
-  
+
   .flex-container{
     display: flex;
     flex-direction: column;
