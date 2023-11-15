@@ -22,7 +22,7 @@
 					<option value="snacks">Snacks</option>
 					<option value="food">Mat</option>
 					<option value="verktyg">Verktyg</option>
-					<input type="number" name="barcode" id="barcode">
+					<input type="text" name="barcode" id="barcode">
 				</select>
 			</form>
 				<?php
