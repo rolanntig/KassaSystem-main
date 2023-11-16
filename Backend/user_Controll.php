@@ -33,6 +33,10 @@ if (isset($_POST['submit'])) {
                             </div>';
 
                         $_SESSION["inloggad"] = true;
+
+                        $query = "UPDATE Admin SET last_login=now() WHERE username = '$adminUserName'";
+                        $adminUserCheck = DatabaseHandler::fetchData($query, DatabaseHandler::dbconnect());
+
                         header("Refresh:2; url=admin.php");
                         exit;
                     } else {
