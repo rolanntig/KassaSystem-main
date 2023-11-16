@@ -9,11 +9,13 @@ function getCashiers($persons)
     foreach ($persons as $person) { // For each registered cashier adds their username and last login to an string
         $username = $person['username'];
         $lastLogin = $person['last_login'];
+        $regDate = $person['reg_date'];
         $id = $person['ID'];
         $string .= "
         <tr>
             <td>$username</td>
             <td id='cell'>$lastLogin</td>
+            <td>$regDate</td>
             <td>
                 <form method='get'>
                     <button type='submit' class='btn btn-danger' id='deleteBtn_nr$id' value='$id' name='deleteBtn'>Delete</button>

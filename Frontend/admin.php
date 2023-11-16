@@ -77,6 +77,7 @@
                         <tr>
                             <th scope="col">Användarnamn</th>
                             <th scope="col">Last login</th>
+                            <th scope="col">Reg Date</th>
                             <th></th>
                         </tr>
                     </thead>
