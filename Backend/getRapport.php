@@ -54,19 +54,14 @@ function getDailyRapport($payMethod = "both")
             $string .= "<tr>";
             $amountSold = $row['amount_sold'];
             $prodName = $row['product_name'];
+            $prodPrice = $row['product_price'];
 
-            // Connects to the database and selects eveything from products to fetch the price of said product
-            // Might be better to input a price into the payment table...
-            $data = connectToDb("SELECT * FROM Products WHERE product_name = '$prodName'");
-            foreach ($data as $product) {
+            $totalPerProduct = ($prodPrice * $amountSold);
+            $total += $totalPerProduct;
+            $totalAmount += $amountSold;
 
-                $totalPerProduct = ($product['price'] * $amountSold);
-                $total += $totalPerProduct;
-                $totalAmount += $amountSold;
-
-                // Adds to the large string with the fetched data as a table row 
-                $string .= "<td>" . $product['product_name'] . "</td><td>" . $totalPerProduct . " kr</td><td>" . $row['amount_sold'] . " st</td><td>" . $row['payment_date'] . "</td></tr>";
-            }
+            // Adds a large string with data for printing later.
+            $string .= "<td>" . $prodName . "</td><td>" . $totalPerProduct . " kr</td><td>" . $row['amount_sold'] . " st</td><td>" . $row['payment_date'] . "</td></tr>";
         }
         return "$string<tr><td>Allting</td><td>$total kr</td><td>$totalAmount st</td><td>$date</td>";
     } else { // Said row with no products and more text
@@ -99,18 +94,14 @@ function getMonthlyRapport($payMethod = "both")
             $string .= "<tr>";
             $amountSold = $row['amount_sold'];
             $prodName = $row['product_name'];
-            
-            // Connects to the database and selects eveything from products to fetch the price of said product
-            // Might be better to input a price into the payment table...
-            $data = connectToDb("SELECT * FROM Products WHERE product_name = '$prodName'");
-            foreach ($data as $product) {
-                $totalPerProduct = ($product['price'] * $amountSold);
-                $total += $totalPerProduct;
-                $totalAmount += $amountSold;
+            $prodPrice = $row['product_price'];
 
-                // Adds a large string with data for printing later. (date neds fixing) 
-                $string .= "<td>" . $product['product_name'] . "</td><td>" . $totalPerProduct . " kr</td><td>" . $row['amount_sold'] . " st</td><td>" . $row['payment_date'] . "</td></tr>";
-            }
+            $totalPerProduct = ($prodPrice * $amountSold);
+            $total += $totalPerProduct;
+            $totalAmount += $amountSold;
+
+            // Adds a large string with data for printing later.
+            $string .= "<td>" . $prodName . "</td><td>" . $totalPerProduct . " kr</td><td>" . $row['amount_sold'] . " st</td><td>" . $row['payment_date'] . "</td></tr>";
         }
         return "$string<tr><td>Allting</td><td>$total kr</td><td>$totalAmount st</td><td>$date</td>";
     } else {
