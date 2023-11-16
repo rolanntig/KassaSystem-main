@@ -276,6 +276,11 @@ body:not(input){
   text-align: center;
   gap: 5px;
 }
+.singularMoneyDiv {
+  background-color: #646464;
+  border-radius: 4px;
+  padding: 7px;
+}
 .singularMoneyDiv img {
   height: 40px;
 }
