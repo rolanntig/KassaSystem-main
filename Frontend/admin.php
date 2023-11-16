@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Styles/main.css">
 
-    <link rel="stylesheet" type="text/css" href="./Styles/navbar.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./Styles/navbar.css"> -->
     <!-- Dont know why kassa.css was linked so commented it away for now atleast -->
     <!-- <link rel="stylesheet" type="text/css" href="./Styles/kassa.css"> -->
     <link rel="stylesheet" type="text/css" href="./Styles/rapport.css">
@@ -45,7 +45,7 @@
         <!--Div for registation of cashier-->
         <div class="card-body ">
             <!-- Form for registraion -->
-            <form method="POST" id="otherForm" name="otherForm" class="bg-light p-1">
+            <form method="POST" id="otherForm" name="otherForm" class="bg-light p-1 rounded-top">
                 <h2 class="text-center">Registrera kassör</h2>
 
                 <!-- Input for username -->
@@ -71,7 +71,7 @@
                 <button class="btn btn-login  bg-primary text-uppercase fw-bold text-white position-relative top-50 start-50 translate-middle" name="submit" type="submit">Register</button>
             </form>
             <!-- List of all registred cashiers -->
-            <div class="con overflow-y-scroll bg-light ">
+            <div class="con overflow-y-scroll bg-light  rounded-bottom">
                 <table class="table table-light table-borderless cashierTable" style="text-align: start;">
                     <thead>
                         <tr>
@@ -98,10 +98,10 @@
         </div>
 
         <!-- List of all products -->
-        <div class="card-body overflow-y-scroll  bg-light border p-2">
-            <a href="../Frontend/produkter.php" class="productTable">
+        <div class="card-body overflow-y-scroll  bg-light border rounded p-2">
+            <a href="../Frontend/produkter.php" class="productTable rounded">
                 <h2 class="text-center">Produkter</h2>
-                <table class="table ">
+                <table class="table rounded ">
                     <thead>
                         <tr>
                             <th scope="col">Produkter</th>
@@ -132,15 +132,15 @@
 
 
         <!-- Rapport of income during day/month -->
-        <div class="container-fluid">
+        <div class="container-fluid rounded">
             <a href="rapport.php">
-                <div class="bg-white bg-primary d-flex justify-content-around align-items-center p-3" id="Rapport">
+                <div class="bg-white bg-primary d-flex justify-content-around align-items-center rounded p-3" id="Rapport">
                     <div class="col-5  text-center p-3 my-auto fs-2" id="summary-idag">
                         <?php
                         getDailyRapport();
                         ?>
                     </div>
-                    <div class="col-5 text-center p-3 my-auto fs-2" id="summary-manad">
+                    <div class="col-5 text-center p-3 my-auto fs-2 rounded " id="summary-manad">
                         <?php
                         getMonthlyRapport();
                         ?>
@@ -148,105 +148,6 @@
                 </div>
             </a>
         </div>
-
-        <!-- Dont know if this will get used, but keeping because seems important! -->
-        <!--Lista över rapport-->
-        <!-- <div class="container-fluid overflow-y-scroll border p-2">      
-            <div class="container rapport-con">
-                <div>
-                    <h2 class="text-center">Månadens kassa</h2>
-                    <table class="table overflow-y-scroll">
-                        <thead>
-                            <tr>
-                                <th scope="col">Månad</th>
-                                <th scope="col">Kontant</th>
-                                <th scope="col">Swish</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Januari</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>Februari</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>Mars</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                    <h2 class="text-center">Dagens kassa</h2>
-                    <table class="table overflow-y-scroll">
-                        <thead>
-                            <tr>
-                                <th scope="col">Datum</th>
-                                <th scope="col">Kontant</th>
-                                <th scope="col">Swish</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1970/1/1</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>1970/1/1</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>1970/1/1</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                    <h2 class="text-center">Stuff</h2>
-                    <table class="table overflow-y-scroll">
-                        <thead>
-                            <tr>
-                                <th scope="col">Nr</th>
-                                <th scope="col">Produkter</th>
-                                <th scope="col">Antal</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Celcius</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Kaffe</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Marabo</td>
-                                <td>10</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class ="flex-wrap d-flex rapport-con-buttons">
-                <button class="btn btn-primary">Skriv ut</button>
-                <button class="btn btn-primary">Skriv ut</button>
-                <button class="btn btn-primary">Skriv ut</button>
-            </div>
-        </div> -->
     </div>
 
     <!-- Links some of the used javascript files -->
