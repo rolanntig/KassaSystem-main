@@ -102,6 +102,32 @@
 						<p>
 							Ger: <input type="number" name="tillbaka" id="payed">
 							<p id="payBack"></p>
+							<div class="moneyCon">
+								<div class="singularMoneyDiv">
+									<p>Some text here</p>
+									<img src="your_image_source_here" alt="Image Description">
+								</div>
+								<div class="singularMoneyDiv">
+									<p>Some text here</p>
+									<img src="your_image_source_here" alt="Image Description">
+								</div>
+								<div class="singularMoneyDiv">
+									<p>Some text here</p>
+									<img src="your_image_source_here" alt="Image Description">
+								</div>
+								<div class="singularMoneyDiv">
+									<p>Some text here</p>
+									<img src="your_image_source_here" alt="Image Description">
+								</div>
+								<div class="singularMoneyDiv">
+									<p>Some text here</p>
+									<img src="your_image_source_here" alt="Image Description">
+								</div>
+								<div class="singularMoneyDiv">
+									<p>Some text here</p>
+									<img src="your_image_source_here" alt="Image Description">
+								</div>
+							</div>
 							<p id="bills"></p>
 
 						
