@@ -138,7 +138,7 @@ function getMonthlyRapport()
     // works by checking so that month and year matches
     $array = connectToDb("SELECT product_name, amount_sold, payment_method FROM Payment 
                         WHERE MONTH(payment_date) = '$month' AND YEAR(payment_date) = '$year'");
-    
+
     if ($array != NULL) { // Checks so that there is any data returned from the request
         foreach ($array as $row) { // Goes through each product sold and adds it to a total
             $amountSold = $row['amount_sold'];
@@ -179,10 +179,13 @@ function getAllProductsAdmin($conn)
         $products = mysqli_query($conn, $sqlGetProduct);
         //fetches all products from database
         while ($row = mysqli_fetch_assoc($products)) {
-            echo '<tr>';
-            echo '<td>' . $row['product_name'] . '</td>';
-            echo '<td>' . $row['amount'] . '</td>';
-            echo '</tr>';
+            if (!$row['amount'] <= 0) {
+                echo '<tr>';
+                echo '<td>' . $row['product_name'] . '</td>';
+                echo '<td>' . $row['amount'] . '</td>';
+                echo '<td>' . $row['price'] . '</td>';
+                echo '</tr>';
+            }
         }
 
         mysqli_close($conn);

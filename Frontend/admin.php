@@ -106,6 +106,7 @@
                         <tr>
                             <th scope="col">Produkter</th>
                             <th scope="col">Antal</th>
+                            <th scope="col">Pris</th>
                         </tr>
                     </thead>
                     <tbody>
