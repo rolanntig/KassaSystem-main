@@ -178,6 +178,7 @@ body:not(input){
   height: 100%;
 }
 
+/* Make bigger font for swishKonForm div */
 #swishKonForm h4, #swishKonForm button, #swishKonForm p{
   font-size: 1.5em;
 }
@@ -188,6 +189,7 @@ body:not(input){
   align-items: center;
   height: 7%;
 }
+/* Gives some margin to swish and kontant buttons */
 #buttonDiv>div{
   margin-top: 5px;
   text-align: center;
