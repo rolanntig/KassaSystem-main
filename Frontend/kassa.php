@@ -23,7 +23,7 @@
 					<option value="food">Mat</option>
 					<option value="verktyg">Verktyg</option>
 				</select>
-				<input type="text" name="barcode" id="barcode" placeholder="123456">
+				<input type="text" name="barcode" id="barcode" placeholder="BARCODE">
 			</form>
 				<?php
 					include '../Backend/kassa_items.php';
@@ -90,8 +90,8 @@
 					</div>
 					<div id="kontantDiv">
 						
-						<div class="">
-						    <h4>
+						<div>
+						    <h4 id="cost">
 						        <?php
 						        global $finalPrice;
 						        echo "$finalPrice";
@@ -100,9 +100,9 @@
 						    </h4>
 						</div>
 						<div>
-							Ger: <input type="text" name="tillbaka" id="tillbakas">
+							Ger: <input type="text" name="tillbaka" id="payed">
 						</div>
-						<div>
+						<div id="payBack">
 							tillbaka:30kr
 						</div>
 						
