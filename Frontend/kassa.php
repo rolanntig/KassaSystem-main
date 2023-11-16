@@ -114,7 +114,7 @@
 	</div>
 	<!-- script to cancel sumbit for barcode and category select -->
 	<script>var p = false;</script>
-	
+	<script src="../Scripts/kassa_money_back.js"></script>
 	<script src="../Scripts/kassa_select_item.js"></script>
 	<script src="../Scripts/kassa_radioHide.js"></script>
 </body>
