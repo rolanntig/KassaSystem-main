@@ -104,28 +104,32 @@
 							<p id="payBack"></p>
 							<div class="moneyCon">
 								<div class="singularMoneyDiv">
-									<p>Some text here</p>
-									<img src="your_image_source_here" alt="Image Description">
+									<p id="kr1">Some text here</p>
+									<img src="../Images/1kr.png" alt="Image Description">
 								</div>
 								<div class="singularMoneyDiv">
-									<p>Some text here</p>
-									<img src="your_image_source_here" alt="Image Description">
+									<p id="kr5">Some text here</p>
+									<img src="../Images/5kr.png" alt="Image Description">
 								</div>
 								<div class="singularMoneyDiv">
-									<p>Some text here</p>
-									<img src="your_image_source_here" alt="Image Description">
+									<p id="kr10">Some text here</p>
+									<img src="../Images/10kr.png" alt="Image Description">
 								</div>
 								<div class="singularMoneyDiv">
-									<p>Some text here</p>
-									<img src="your_image_source_here" alt="Image Description">
+									<p id="kr20">Some text here</p>
+									<img src="../Images/20kr.png" alt="Image Description">
 								</div>
 								<div class="singularMoneyDiv">
-									<p>Some text here</p>
-									<img src="your_image_source_here" alt="Image Description">
+									<p id="kr50">Some text here</p>
+									<img src="../Images/50kr.png" alt="Image Description">
 								</div>
 								<div class="singularMoneyDiv">
-									<p>Some text here</p>
-									<img src="your_image_source_here" alt="Image Description">
+									<p id="kr100">Some text here</p>
+									<img src="../Images/100kr.png" alt="Image Description">
+								</div>
+								<div class="singularMoneyDiv">
+									<p id="kr200">Some text here</p>
+									<img src="../Images/200kr.png" alt="Image Description">
 								</div>
 							</div>
 							<p id="bills"></p>

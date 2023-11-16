@@ -270,4 +270,10 @@ body:not(input){
   align-items: stretch;
   padding: 20px;
 }
-
+.moneyCon {
+  display: flex;
+  justify-content: center;
+}
+.singularMoneyDiv img {
+  height: 40px;
+}
