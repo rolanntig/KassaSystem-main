@@ -5,11 +5,17 @@ let payBack = document.getElementById("payBack");
 // sätter en variabel på input i kontant diven
 let payed = document.getElementById("payed");
 
+
 // funktion som sätter en string i paragrafen (payed)
 function moneyBack() {
-  let växel = payed.value - price;
-  payBack.textContent = "Växel: " + växel + "kr";
+  if (price <= payed.value) {
+    let växel = payed.value - price;
+    payBack.textContent = "Växel: " + växel + "kr";
+  } else {
+    payBack.textContent = "KILL YOURSELF NOW";
+  }
 }
 
 // när inputden förändras så kallar den funktionen ovanför
 payed.addEventListener("input", moneyBack);
+
