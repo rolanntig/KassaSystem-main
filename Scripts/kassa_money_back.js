@@ -20,16 +20,16 @@ function moneyBack() {
 
     for(i=0;i <= moneyType.length;i++){
 
-      document.getElementById(kr${moneyType[i]}).textContent=Math.floor((växel%moneyType[i+1])/moneyType[i]);
+      document.getElementById(`kr${moneyType[i]}`).textContent=Math.floor((växel%moneyType[i+1])/moneyType[i]);
 
     }
 
   } else {
-    payBack.textContent = "KILL YOURSELF NOW";
+    payBack.textContent = "Växel: 0kr";
 
     //makes empty string for = 0
     for(i=0;i <= moneyType.length;i++){
-      document.getElementById(kr${moneyType[i]}).textContent="";
+      document.getElementById(`kr${moneyType[i]}`).textContent="";
     }
 
   }
