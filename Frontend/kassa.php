@@ -63,15 +63,15 @@
 			</div>
 			</div>
 			<div class="payment">
-				<form action="#" id="swishKonForm">
+				<form action="#" id="swishKonForm" method="POST">
 					<div id="buttonDiv">
 						<div>
 							<label for="swish">Swish</label>
-							<input type="radio" name="swish" id="swish" checked>
+							<input type="radio" name="radio-btn" id="swish" checked value="Swish">
 						</div>
 						<div>
 							<label for="kontant">Kontant</label>
-							<input type="radio" name="swish" id="kontant">
+							<input type="radio" name="radio-btn" id="kontant" value="Kontant">
 						</div>
 					</div>
 					<div id="swishDiv">
@@ -85,7 +85,9 @@
 						        ?>
 						    </h4>
 						</div>
-
+						<button name="checkout-btn">
+							Checkout
+						</button>
 					</div>
 					<div id="kontantDiv">
 						
@@ -104,10 +106,13 @@
 						<div>
 							tillbaka:30kr
 						</div>
-
+						
+						<button name="checkout-btn">
+							Checkout
+						</button>
+						<?php include'../Backend/kassa_checkout.php'?>
 					</div>
 				</form>
-				
 			</div>
 			
 		</div>
