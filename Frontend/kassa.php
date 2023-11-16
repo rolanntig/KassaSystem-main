@@ -6,6 +6,7 @@
 	<title>Kassa</title>
 	<link rel="stylesheet" href="./Styles/kassa.css">
 	<link rel="stylesheet" href="./Styles/main.css">
+	<script src="https://kit.fontawesome.com/f5139ef0fc.js" crossorigin="anonymous"></script>
 	<!-- add header -->
 	<?php include "../Frontend/header.php"?>
 	<!-- container -->
