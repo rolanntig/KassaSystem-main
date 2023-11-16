@@ -80,7 +80,8 @@
 						    <h4>
 						        <?php
 						        global $finalPrice;
-						        echo "<p id='hello'>"."$finalPrice"." kr :-</p>";
+						        echo "$finalPrice";
+						        echo " " ."kr :-";
 						        ?>
 						    </h4>
 						</div>
@@ -94,17 +95,15 @@
 						    <h4 id="cost">
 						        <?php
 						        global $finalPrice;
-						        echo "$finalPrice";
-						        echo " " ."kr :-";
+								echo "<p id='price'>"."$finalPrice"." kr :-</p>";
 						        ?>
 						    </h4>
 						</div>
 						<p>
 							Ger: <input type="text" name="tillbaka" id="payed">
-						</p>
-						<p id="payBack">
-							tillbaka:30kr
-						</p>
+						</div>
+						<p id="payBack"></p>
+
 						
 						<button class="checkout-btn" name="checkout-btn">
 							Checkout

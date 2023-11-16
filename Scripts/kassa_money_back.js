@@ -1,16 +1,15 @@
-let cost = document.getElementById("hello");
+// takes the finalPrice from document and make the value visable, splits of the rest
+let price = parseFloat(document.getElementById("price").textContent.split(' ')[0]);
+// hämtar en tom <p>
+let payBack = document.getElementById("payBack");
+// sätter en variabel på input i kontant diven
+let payed = document.getElementById("payed");
 
-console.log(cost[0]);
-/* let newCostInt = Number((cost.slice(cost.search(" "),cost.search("kr"))));
+// funktion som sätter en string i paragrafen (payed)
+function moneyBack() {
+  let växel = payed.value - price;
+  payBack.textContent = "Växel: " + växel + "kr";
+}
 
-let payed = Number(document.getElementById("payed"));
-let newPayedInt = payed.value;
-
-let payBack= document.getElementById("payBack");
-
-const calculate = ()=>{
-
-  payBack = (cost-payed);
-} 
-
-payed.addEventListener(oninput, ()=> calculate()); */
+// när inputden förändras så kallar den funktionen ovanför
+payed.addEventListener("input", moneyBack);
