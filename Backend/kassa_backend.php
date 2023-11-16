@@ -26,13 +26,14 @@ $endCart = array_count_values($_SESSION['cart']);
                 // Writes out       the price          and                 the amount
                 echo '<td>' . $data[0]['price'] * $val . 'kr</td>' . '<td>' . $val . 'st</td>' . '<td>';
 
-                // Form to remove the item from the 
-                echo '<form action="" method="POST">'
+                // Form to remove the item from the cart
+                echo '<form action="" method="POST">' // Value is the $key/product_name
                     . '<button name="rm-item" value="'.$key.'">'
     			        .    '<i class="fa-solid fa-trash"></i>'
                     . '</button>'
     			. '</form>';
 
+                // End of td and tr
                 echo '</td>' . '</tr>';
             }
 
