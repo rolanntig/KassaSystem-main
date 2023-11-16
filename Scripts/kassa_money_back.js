@@ -15,7 +15,6 @@ function moneyBack() {
   //En array med alla slags kontanter som finns (i vår kod) + det högsta numret, så att man kan modulus 200 och få 200 :D
   let moneyType = [1,5,10,20,50,100,200,Math.pow(10,1000)];
   // lagar alla errors(ultimate fix)
-
   try {
   /* */
     if (price <= payed.value) {
@@ -36,9 +35,7 @@ function moneyBack() {
       }
   
     }
-  } catch (error) {
-    console.clear();
-  }
+ 
   if (price <= payed.value) {
     payBack.textContent = "Växel: " + växel + "kr";
     checkoutBtn.disabled = false;
@@ -58,6 +55,9 @@ function moneyBack() {
     }
 
   }
+} catch (error) {
+  console.clear();
+}
 
 }
 
