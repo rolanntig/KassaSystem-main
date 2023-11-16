@@ -82,7 +82,7 @@ body{
 }
 
 /* Aligns the test of the cashier list to the start, but the button div stays centered */
-.cashierTable td:not(:last-child), .cashierTable th:not(:last-child){
+.cashierTable td:not(:last-child), .cashierTable th:not(:last-child), .table td{
     text-align: start !important;
 }
 
