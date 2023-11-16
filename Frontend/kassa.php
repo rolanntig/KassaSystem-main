@@ -100,8 +100,39 @@
 						    </h4>
 						</div>
 						<p>
-							Ger: <input type="text" name="tillbaka" id="payed">
+							Ger: <input type="number" name="tillbaka" id="payed">
 							<p id="payBack"></p>
+							<div class="moneyCon">
+								<div class="singularMoneyDiv">
+									<p id="kr1">Some text here</p>
+									<img src="../Images/1kr.png" alt="Image Description">
+								</div>
+								<div class="singularMoneyDiv">
+									<p id="kr5">Some text here</p>
+									<img src="../Images/5kr.png" alt="Image Description">
+								</div>
+								<div class="singularMoneyDiv">
+									<p id="kr10">Some text here</p>
+									<img src="../Images/10kr.png" alt="Image Description">
+								</div>
+								<div class="singularMoneyDiv">
+									<p id="kr20">Some text here</p>
+									<img src="../Images/20kr.png" alt="Image Description">
+								</div>
+								<div class="singularMoneyDiv">
+									<p id="kr50">Some text here</p>
+									<img src="../Images/50kr.png" alt="Image Description">
+								</div>
+								<div class="singularMoneyDiv">
+									<p id="kr100">Some text here</p>
+									<img src="../Images/100kr.png" alt="Image Description">
+								</div>
+								<div class="singularMoneyDiv">
+									<p id="kr200">Some text here</p>
+									<img src="../Images/200kr.png" alt="Image Description">
+								</div>
+							</div>
+							<p id="bills"></p>
 
 						
 						<button class="checkout-btn" name="checkout-btn">
