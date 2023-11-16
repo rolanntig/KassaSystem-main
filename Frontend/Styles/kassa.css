@@ -102,10 +102,14 @@ body:not(input){
   color: white;
   width: 100%;
   padding: 5px 0;
-  border: solid 1px;
 }
 
-
+.itemContainer>form>div>button :first-child:not(u){
+  border-bottom: solid 1px;
+}
+.itemContainer>form>div>button :last-child:not(u){
+  border-top: solid 1px;
+}
 /* LEFT DIV END LEFT DIV END LEFT DIVEND LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END  */
 
 /* RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START  */
@@ -198,11 +202,12 @@ body:not(input){
 #kontantDiv{
   display: none;
 }
-
+/* Needs flex separetely because is changed in backend (default) */
 #swishDiv
 {
   display: flex;
 }
+/* Different divs depending of what chooses, (swish or kontant) */
 #kontantDiv, #swishDiv{
   height: 93%;
   flex-direction: column;
@@ -256,7 +261,7 @@ body:not(input){
   border-radius: 20px;
   background-position: center;
 }
-
+/* margin for delete button */
 .emptyBtn{
   margin: 20px;
 }
@@ -291,7 +296,7 @@ body:not(input){
   width: 100%;
 }
 
-.carttd, th {
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
