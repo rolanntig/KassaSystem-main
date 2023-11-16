@@ -2,6 +2,23 @@
   margin:0;
   padding: 0;
 }
+.rightDiv button{
+  display: inline-block;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #e74c3c; 
+  border-radius: 5px;
+  color: #f6f6f6; 
+  background-color: rgb(255, 0, 0);
+  transition: background-color 0.3s, color 0.3s;
+  
+}
+.rightDiv button:hover{
+  background-color: #ffffff;
+  color: rgb(255, 0, 0);
+}
 body:not(input){
   color: white;
 }
@@ -17,7 +34,6 @@ body:not(input){
   width: 60%;
   height: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
   
 }
@@ -28,7 +44,6 @@ body:not(input){
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
 }
 
 /* LEFT DIV START LEFT DIV START LEFT DIV START LEFT DIV START LEFT DIV START LEFT DIV START LEFT DIV START  */
@@ -43,7 +58,6 @@ body:not(input){
   gap: 2px;
   border-radius: 5px;
   background-color: #333333;
-  border: solid 1px;
   padding: 15px 0;
 }
 
@@ -103,10 +117,7 @@ body:not(input){
   background-color: #333333;
   margin-bottom: 10px;
   border-radius: 5px;
-  overflow-y: overlay;
-  overflow-x: none;
-  border: solid 1px;
-
+  justify-content: space-between;
 }
 
 .cart-items:nth-child(1){
@@ -120,34 +131,25 @@ body:not(input){
 .Empty-btn{
   display: flex;
   justify-content: center;
+
+  border-top: solid 1px;
+  align-items: center;
+  width: 100%;
 }
 
 /* TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING  */
-.cart-items{
-  width: 100%;
-  
-}
-.cart-contain{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: center;
-}
 
-.cart-contain{
-  width: 100%;
+.cart table{
   margin-top: 5px;
+  overflow-y: overlay;
+  overflow-x: none;
 }
-.cart-contain table{
-  width: 100%;
-  display: subgrid;
-}
-.cart-contain td{
-  width: calc((1/3)*100%);
+.cart td{
+  width: 25%;
   word-break: break-all;
   border: 1px solid;
   border-radius: 4px;
+  padding: 10px 20px;
 }
 
 
@@ -165,7 +167,6 @@ body:not(input){
   width: 92.5%;
   border-radius: 5px;
   background-color: #333333;
-  border: solid 1px;
 }
 /* form for swish radiobutton and kontant radiobutton */
 #swishKonForm{
@@ -247,19 +248,17 @@ body:not(input){
   border-radius: 20px;
   background-position: center;
 }
-/* .drink{
-  background-image: url("../../Images/cocaCola.jpeg");
-}
-.snacks{
-  background-image: url("../../Images/chips.avif");
-}
-.food{
-  background-image: url("../../Images/grilledCheese.avif");
-}
-.verktyg{
-  background-image: url("../../Images/bookAndPen.jpeg");
-} */
-
 nav{
   border-bottom: solid 1px;
+}
+.emptyBtn{
+  margin: 20px;
+}
+.cartDiv {
+  overflow-y: overlay;
+  overflow-x: none;
+  width: 99%;
+  margin: auto;
+  text-align: center;
+
 }

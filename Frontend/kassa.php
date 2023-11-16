@@ -6,6 +6,7 @@
 	<title>Kassa</title>
 	<link rel="stylesheet" href="./Styles/kassa.css">
 	<link rel="stylesheet" href="./Styles/main.css">
+	<script src="https://kit.fontawesome.com/f5139ef0fc.js" crossorigin="anonymous"></script>
 	<!-- add header -->
 	<?php include "../Frontend/header.php"?>
 	<!-- container -->
@@ -32,22 +33,23 @@
 		<!-- right container -->
 		<div class="rightDiv">
 			<div class="cart">
-				<table>
-					<?php 
-					echo '<tr>' .'<th>' .'ITEMS' .'</th>' .'<th>' .'PRICES' .'</th>' .'<th>' .'AMOUNT' .'</th>' .'</tr>';
-        			$id = $_POST['item'];
-        			if ( isset($_POST['item'])){
-        			   include '../Backend/kassa_cart.php';
-        			}if(isset($_POST['rm-item'])){
-						$_SESSION['cart'] = array_filter($_SESSION['cart'], function($v) { return $v != $_POST['rm-item']; });
-						include '../Backend/kassa_backend.php';
-					}
-    				?>
-				</table>
-			</div>
-			<div class="Empty-btn">
+				<div class="cartDiv">
+					<table>
+						<?php 
+						echo '<tr>' .'<th>' .'ITEMS' .'</th>' .'<th>' .'PRICES' .'</th>' .'<th>' .'AMOUNT' .'</th>' .'</tr>';
+						$id = $_POST['item'];
+						if ( isset($_POST['item'])){
+						include '../Backend/kassa_cart.php';
+						}if(isset($_POST['rm-item'])){
+							$_SESSION['cart'] = array_filter($_SESSION['cart'], function($v) { return $v != $_POST['rm-item']; });
+							include '../Backend/kassa_backend.php';
+						}
+						?>
+					</table>
+				</div>
+					<div class="Empty-btn">
 				<form action="" method="POST">
-					<button name="close">
+					<button name="close" class="emptyBtn">
 						Empty Cart
 					</button>
     			</form>
@@ -59,7 +61,7 @@
     			    }
     			?>
 			</div>
-
+			</div>
 			<div class="payment">
 				<form action="#" id="swishKonForm">
 					<div id="buttonDiv">
@@ -74,7 +76,7 @@
 					</div>
 					<div id="swishDiv">
 
-						<div class="">
+						<div class="cartDiv">
 						    <h4>
 						        <?php
 						        global $finalPrice;
