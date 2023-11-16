@@ -80,8 +80,7 @@
 						    <h4>
 						        <?php
 						        global $finalPrice;
-						        echo "$finalPrice";
-						        echo " " ."kr :-";
+						        echo "<p id='hello'>"."$finalPrice"." kr :-</p>";
 						        ?>
 						    </h4>
 						</div>
@@ -107,7 +106,7 @@
 							tillbaka:30kr
 						</div>
 						
-						<button name="checkout-btn">
+						<button class="checkout-btn" name="checkout-btn">
 							Checkout
 						</button>
 						<?php include'../Backend/kassa_checkout.php'?>
@@ -119,8 +118,8 @@
 	</div>
 	<!-- script to cancel sumbit for barcode and category select -->
 	<script>var p = false;</script>
-	<script src="../Scripts/kassa_money_back.js"></script>
 	<script src="../Scripts/kassa_select_item.js"></script>
 	<script src="../Scripts/kassa_radioHide.js"></script>
+	<script src="../Scripts/kassa_money_back.js"></script>
 </body>
 </html>
