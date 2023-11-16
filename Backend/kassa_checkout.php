@@ -8,10 +8,12 @@ include '../Backend/credentials.php';
 
 $endCart = array_count_values($_SESSION['cart']);
 session_destroy();
+
 $mysqlCheck = FALSE;
 $radio_val = $_POST['radio-btn'];
 foreach($endCart as $key => $val){
-//echo $key. " " . $val ." " . $date;
+//echo "<script>console.log('".$key. " " . $val ."')</script>";
+
 
 // Create connection
 $conn = mysqli_connect($server, $username, $password, $dbname, $port);
