@@ -1,8 +1,8 @@
 let cost = document.getElementById("cost");
-let newCostInt = Number((cost.slice(cost.search(" "),cost.search("kr"))));
+let newCostInt = Number((0,cost.search("kr")));
 
-let payed = document.getElementById("payed");
-let newPayedInt=Number((payed.slice(payed.search(" "),payed.search("kr"))));
+let payed = Number(document.getElementById("payed"));
+let newPayedInt = payed.value;
 
 let payBack= document.getElementById("payBack");
 
