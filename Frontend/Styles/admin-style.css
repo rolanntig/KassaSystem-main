@@ -50,6 +50,10 @@
     border-radius: 8px;
 }
 
+#summary-manad:hover {
+    background-color: rgb(204, 151, 202);
+}
+
 .rapport {
     background-color: rgb(121, 70, 146);
 }
@@ -67,26 +71,28 @@
 }
 
 /* Adds a border to the bottom of registration page such to make register and cashiers not blend together */
-#otherForm{
+#otherForm {
     border-bottom: 1px solid black;
 }
 
 /* On eye icon hover change the cursor to a pointer because its a kind of button */
-.eye>i:hover{
+.eye>i:hover {
     cursor: pointer;
 }
 
 /* Changes the width to fit the current styling (not a great fix but works for now) */
-body{
+body {
     width: 100% !important;
 }
 
 /* Aligns the test of the cashier list to the start, but the button div stays centered */
-.cashierTable td:not(:last-child), .cashierTable th:not(:last-child), .table td{
+.cashierTable td:not(:last-child),
+.cashierTable th:not(:last-child),
+.table td {
     text-align: start !important;
 }
 
 /* Changes the margin for the cashier list such that it doees not have a huge gap */
-.cashierTable{
+.cashierTable {
     margin-top: 0.5rem;
 }

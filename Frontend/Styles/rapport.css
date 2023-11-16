@@ -18,9 +18,7 @@ html, body {
   border-radius: 8px;
 }
 
-#summary-manad:hover {
-  background-color: rgb(204, 151, 202);
-}
+
 
 /* REMOVE IF BREAK */
 a:link {
