@@ -4,6 +4,9 @@ let price = parseFloat(document.getElementById("price").textContent.split(' ')[0
 let payBack = document.getElementById("payBack");
 // sätter en variabel på input i kontant diven
 let payed = document.getElementById("payed");
+// 
+let checkoutBtn = document.getElementById("checkout-btn-kontant");
+checkoutBtn.disabled = true;
 
 // funktion som sätter en string i paragrafen (payed)
 function moneyBack() {
@@ -38,6 +41,7 @@ function moneyBack() {
   }
   if (price <= payed.value) {
     payBack.textContent = "Växel: " + växel + "kr";
+    checkoutBtn.disabled = false;
 
     for(i=0;i <= moneyType.length;i++){
 
