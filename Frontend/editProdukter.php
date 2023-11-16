@@ -20,8 +20,8 @@
             <div class="form-group col-8">
                 <div class="parent1">
                 <div class="div1"><label>Barcode:</label> <input name="barcode" type="text" class="form-control mb-3" placeholder="Produktens streckkod som ska ändras"required></div>
-                <div class="div2"><label>Produkt:</label> <input name="newProduct"type="text" class="form-control mb-3" placeholder="Vilken produkt ska ändras?"></div>
-                <div class="div3"><label for="type">Typ:</label>
+                <div class="div7"><label>Uppdatera:</label> <button type="submit" name="update2" class="form-control btn text-white mb-3 btn">Uppdatera</button></div>
+                <div class="div5"><label for="type">Typ:</label>
                         <select name="newType" id="type" class="form-control mb-3" required>
                             <option value="" disabled selected>Vilken typ av produkt det är det?</option>
                             <option value="drink">Dricka</option>
@@ -30,10 +30,9 @@
                             <option value="verktyg">Verktyg</option>
                         </select></div>
                 <div class="div6"><label>Bäst Före:</label> <input name="newExpire" type="datetime-local" class="form-control mb-3"></div>
-                <div class="div4"><label>Antal</label> <input name="newAmount" type="number" class="form-control mb-3" required placeholder="Hur många av den produkten?"></div>
-                <div class="div5"><label>Pris:</label> <input name="newPrice" type="number" class="form-control mb-3" required placeholder="kr"></div>
-                <div class="div7"><label for="image">Bild</label> <input type="file" accept="image/*" class="form-control" id="image" name="image" required></div>
-                <button type="submit" name="update2" class="mb-3 btn">Uppdatera</button> 
+                <div class="div2"><label>Antal</label> <input name="newAmount" type="number" class="form-control mb-3" required placeholder="Hur många av den produkten?"></div>
+                <div class="div3"><label>Pris:</label> <input name="newPrice" type="number" class="form-control mb-3" required placeholder="kr"></div>
+                <div class="div4"><label for="image">Bild</label> <input type="file" accept="image/*" class="form-control" id="image" name="image" required></div>
             </div>
             </form>
     <?php 
