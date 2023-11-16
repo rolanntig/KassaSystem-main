@@ -33,7 +33,7 @@
 		<!-- right container -->
 		<div class="rightDiv">
 			<div class="cart">
-				<div class="">
+				<div class="cartDiv">
 					<table>
 						<?php 
 						echo '<tr>' .'<th>' .'ITEMS' .'</th>' .'<th>' .'PRICES' .'</th>' .'<th>' .'AMOUNT' .'</th>' .'</tr>';
