@@ -37,10 +37,12 @@
     background-color: rgb(121, 70, 146);
     color: white;
     border-radius: 8px;
+
 }
 
 #summary-idag:hover {
     background-color: rgb(204, 151, 202);
+
 }
 
 #summary-manad {
@@ -58,6 +60,10 @@
     background-color: rgb(121, 70, 146);
 }
 
+
+a:link {
+    text-decoration: none;
+}
 
 /* Removes the text decoration of an link and changes color to black */
 .productTable {

@@ -133,7 +133,7 @@
 
         <!-- Rapport of income during day/month -->
         <div class="container-fluid rounded">
-            <a href="rapport.php">
+            <a  class= "link " href="rapport.php">
                 <div class="bg-white bg-primary d-flex justify-content-around align-items-center rounded p-3" id="Rapport">
                     <div class="col-5  text-center p-3 my-auto fs-2" id="summary-idag">
                         <?php
