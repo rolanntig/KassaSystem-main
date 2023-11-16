@@ -47,4 +47,4 @@ function handleCategoryChange() {
 selectElement.addEventListener("change", handleCategoryChange);
 
 // calls the funtion when barcode input has detected a change
-elemByBarcode.addEventListener("change", handleCategoryChange);
+elemByBarcode.addEventListener("input", handleCategoryChange);
