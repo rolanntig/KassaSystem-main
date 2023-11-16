@@ -2,6 +2,7 @@
   margin:0;
   padding: 0;
 }
+
 .rightDiv button{
   display: inline-block;
   padding: 5px 10px;
@@ -160,7 +161,6 @@ body:not(input){
 .cartItem:last-child{
   margin-bottom: 5px;
 }
-
 /* payment div */
 .payment{
   height: 100%;
@@ -171,10 +171,15 @@ body:not(input){
 /* form for swish radiobutton and kontant radiobutton */
 #swishKonForm{
   width: 100%;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+}
+
+#swishKonForm h4, #swishKonForm button, #swishKonForm p{
+  font-size: 1.5em;
 }
 /* Div that holds swish and kontant button */
 #buttonDiv{
@@ -194,13 +199,13 @@ body:not(input){
 #swishDiv
 {
   display: flex;
-
 }
 #kontantDiv, #swishDiv{
   height: 93%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 /* RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END  */
 
@@ -262,3 +267,4 @@ body:not(input){
   align-items: stretch;
   padding: 20px;
 }
+

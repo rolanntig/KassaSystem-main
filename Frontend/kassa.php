@@ -99,12 +99,12 @@
 						        ?>
 						    </h4>
 						</div>
-						<div>
+						<p>
 							Ger: <input type="text" name="tillbaka" id="payed">
-						</div>
-						<div id="payBack">
+						</p>
+						<p id="payBack">
 							tillbaka:30kr
-						</div>
+						</p>
 						
 						<button class="checkout-btn" name="checkout-btn">
 							Checkout
