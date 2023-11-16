@@ -2,6 +2,7 @@
 
 // Function for getting all usernames and last logins from the database for use in the admin page
 // Works by sending an array which was gotten through the database
+// echo(s) a large string in the form of table rows
 function getCashiers($persons)
 {
     $string = "";
@@ -19,6 +20,8 @@ function getCashiers($persons)
                 </form>
             </td>
         </tr>";
+
+        // Two unused buttons, which im saving incase of later use. (goes next to the other one)
         // <button type='' class='btn btn-success' id='showBtn' name='showBtn'>Show</button>
         // <button type='' class='btn btn-primary' id='editBtn' name='editBtn'>Edit</button>
     }
@@ -72,6 +75,7 @@ function connectToDb($sql)
 }
 
 // Function for fetching all of the products sold during current day
+// echo(s) all of the data thats fetched as one big string
 function getDailyRapport()
 {
     $total = 0;
@@ -87,7 +91,7 @@ function getDailyRapport()
                         WHERE DAY(payment_date) = '$day' AND MONTH(payment_date) = '$month' 
                         AND YEAR(payment_date) = '$year'");
 
-    if ($array != NULL) {
+    if ($array != NULL) { // Checks so that there is any data returned from the request
         foreach ($array as $row) {
             $amountSold = $row['amount_sold'];
             $prodName = $row['product_name'];
@@ -119,6 +123,7 @@ function getDailyRapport()
 
 
 // Function for fetching all of the products sold during current month
+// echo(s) all of the data thats fetched as one big string
 function getMonthlyRapport()
 {
     $total = 0;
@@ -131,7 +136,8 @@ function getMonthlyRapport()
     // works by checking so that month and year matches
     $array = connectToDb("SELECT product_name, amount_sold, payment_method FROM Payment 
                         WHERE MONTH(payment_date) = '$month' AND YEAR(payment_date) = '$year'");
-    if ($array != NULL) {
+    
+    if ($array != NULL) { // Checks so that there is any data returned from the request
         foreach ($array as $row) { // Goes through each product sold and adds it to a total
             $amountSold = $row['amount_sold'];
             $prodName = $row['product_name'];
@@ -163,6 +169,7 @@ function getMonthlyRapport()
 
 
 // Function for fetching all of the products in the product table inside the database
+// echo(s) all of the data thats fetched as a table row
 function getAllProductsAdmin($conn)
 {
     try {

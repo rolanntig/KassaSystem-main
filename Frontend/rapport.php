@@ -21,7 +21,10 @@
 <body>
 
     <?php
+    // Adds the header.php file so the site gets a header
     include 'header.php';
+
+    // Adds the getRapport.php file with all the functions for fetching the data for the table
     include '../Backend/getRapport.php';
     ?>
     <div id="headerrep">

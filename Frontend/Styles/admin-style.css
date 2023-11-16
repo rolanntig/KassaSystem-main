@@ -76,13 +76,17 @@
     cursor: pointer;
 }
 
+/* Changes the width to fit the current styling (not a great fix but works for now) */
 body{
     width: 100% !important;
 }
 
+/* Aligns the test of the cashier list to the start, but the button div stays centered */
 .cashierTable td:not(:last-child), .cashierTable th:not(:last-child){
     text-align: start !important;
 }
+
+/* Changes the margin for the cashier list such that it doees not have a huge gap */
 .cashierTable{
     margin-top: 0.5rem;
 }
