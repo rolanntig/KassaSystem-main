@@ -101,13 +101,14 @@
 						</div>
 						<p>
 							Ger: <input type="text" name="tillbaka" id="payed">
-						</div>
-						<p id="payBack"></p>
+							<p id="payBack"></p>
 
 						
 						<button class="checkout-btn" name="checkout-btn">
 							Checkout
 						</button>
+						</div>
+						
 						<?php include'../Backend/kassa_checkout.php'?>
 					</div>
 				</form>
