@@ -256,3 +256,6 @@ nav{
 .emptyBtn{
   margin: 20px;
 }
+.cartDiv {
+  overflow-y: overlay;
+}

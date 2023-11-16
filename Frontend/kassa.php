@@ -75,7 +75,7 @@
 					</div>
 					<div id="swishDiv">
 
-						<div class="">
+						<div class="cartDiv">
 						    <h4>
 						        <?php
 						        global $finalPrice;
