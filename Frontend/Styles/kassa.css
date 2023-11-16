@@ -49,7 +49,7 @@ body:not(input){
 /* LEFT DIV START LEFT DIV START LEFT DIV START LEFT DIV START LEFT DIV START LEFT DIV START LEFT DIV START  */
 /* item container */
 .itemContainer{
-  height: 90%;
+  height: 100%;
   overflow-y: overlay;
   width: 90%;
   display: flex;
@@ -131,8 +131,7 @@ body:not(input){
 .Empty-btn{
   display: flex;
   justify-content: center;
-
-  border-top: solid 1px;
+  border-top: solid #636262 1px;
   align-items: center;
   width: 100%;
 }
@@ -143,9 +142,9 @@ body:not(input){
   margin-top: 5px;
   overflow-y: overlay;
   overflow-x: none;
+  width: 100%;
 }
 .cart td{
-  width: 25%;
   word-break: break-all;
   border: 1px solid;
   border-radius: 4px;
@@ -163,7 +162,7 @@ body:not(input){
 
 /* payment div */
 .payment{
-  height: 34.4%;
+  height: 100%;
   width: 92.5%;
   border-radius: 5px;
   background-color: #333333;
@@ -258,7 +257,9 @@ nav{
   overflow-y: overlay;
   overflow-x: none;
   width: 99%;
-  margin: auto;
   text-align: center;
-
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 20px;
 }
