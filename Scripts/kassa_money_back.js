@@ -26,7 +26,7 @@ function moneyBack() {
 
   } else {
     payBack.textContent = "Växel: 0kr";
-
+  
     //makes empty string for = 0
     for(i=0;i <= moneyType.length;i++){
       document.getElementById(`kr${moneyType[i]}`).textContent="";

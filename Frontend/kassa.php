@@ -135,7 +135,7 @@
 							<p id="bills"></p>
 
 						
-						<button class="checkout-btn" name="checkout-btn">
+						<button class="checkout-btn" id="checkout-btn-kontant" name="checkout-btn">
 							Checkout
 						</button>
 						</div>
