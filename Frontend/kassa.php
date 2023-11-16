@@ -36,7 +36,7 @@
 				<div class="cartDiv">
 					<table>
 						<?php 
-						echo '<tr>' .'<th>' .'ITEMS' .'</th>' .'<th>' .'PRICES' .'</th>' .'<th>' .'AMOUNT' .'</th>' .'</tr>';
+						echo '<tr>' .'<th>' .'ITEMS' .'</th>' .'<th>' .'PRICES' .'</th>' .'<th>' .'AMOUNT' .'</th>' . '<th>' .'OPTION' .'</th>' .'</tr>';
 						$id = $_POST['item'];
 						if ( isset($_POST['item'])){
 						include '../Backend/kassa_cart.php';
@@ -104,31 +104,31 @@
 							<p id="payBack"></p>
 							<div class="moneyCon">
 								<div class="singularMoneyDiv">
-									<p id="kr1">Some text here</p>
+									<p id="kr1">0</p>
 									<img src="../Images/1kr.png" alt="Image Description">
 								</div>
 								<div class="singularMoneyDiv">
-									<p id="kr5">Some text here</p>
+									<p id="kr5">0</p>
 									<img src="../Images/5kr.png" alt="Image Description">
 								</div>
 								<div class="singularMoneyDiv">
-									<p id="kr10">Some text here</p>
+									<p id="kr10">0</p>
 									<img src="../Images/10kr.png" alt="Image Description">
 								</div>
 								<div class="singularMoneyDiv">
-									<p id="kr20">Some text here</p>
+									<p id="kr20">0</p>
 									<img src="../Images/20kr.png" alt="Image Description">
 								</div>
 								<div class="singularMoneyDiv">
-									<p id="kr50">Some text here</p>
+									<p id="kr50">0</p>
 									<img src="../Images/50kr.png" alt="Image Description">
 								</div>
 								<div class="singularMoneyDiv">
-									<p id="kr100">Some text here</p>
+									<p id="kr100">0</p>
 									<img src="../Images/100kr.png" alt="Image Description">
 								</div>
 								<div class="singularMoneyDiv">
-									<p id="kr200">Some text here</p>
+									<p id="kr200">0</p>
 									<img src="../Images/200kr.png" alt="Image Description">
 								</div>
 							</div>
