@@ -99,8 +99,8 @@
 						        ?>
 						    </h4>
 						</div>
-						<p>
-							Ger: <input type="number" name="tillbaka" id="payed">
+
+							<div style="display:flex;text-align: center;"><div class="ger">Ger:</div><input type="number" name="tillbaka" id="payed"></div>
 							<p id="payBack"></p>
 							<div class="moneyCon">
 								<div class="singularMoneyDiv">
@@ -135,7 +135,7 @@
 							<p id="bills"></p>
 
 						
-						<button class="checkout-btn" name="checkout-btn">
+						<button class="checkout-btn" id="checkout-btn-kontant" name="checkout-btn">
 							Checkout
 						</button>
 						</div>

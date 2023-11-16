@@ -305,3 +305,31 @@ body:not(input){
 .cart th {
   text-align: center;
 }
+
+input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+select {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+option {
+  font-size: 16px;
+}
+.ger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  background-color: #646464;
+  padding: 5px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}

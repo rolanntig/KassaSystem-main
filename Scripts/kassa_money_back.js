@@ -4,19 +4,44 @@ let price = parseFloat(document.getElementById("price").textContent.split(' ')[0
 let payBack = document.getElementById("payBack");
 // sätter en variabel på input i kontant diven
 let payed = document.getElementById("payed");
-
-let bills = document.getElementById("bills");
+// 
+let checkoutBtn = document.getElementById("checkout-btn-kontant");
+checkoutBtn.disabled = true;
 
 // funktion som sätter en string i paragrafen (payed)
 function moneyBack() {
+  //skillnad mellan penagr som betalats och priset
   let växel = payed.value - price;
-  let moneyType = [1,5,10,20,50,100,200,100000000000000000000000];
+  //En array med alla slags kontanter som finns (i vår kod) + det högsta numret, så att man kan modulus 200 och få 200 :D
+  let moneyType = [1,5,10,20,50,100,200,Math.pow(10,1000)];
+  // lagar alla errors(ultimate fix)
+
+  try {
+  /* */
+    if (price <= payed.value) {
+      payBack.textContent = "Växel: " + växel + "kr";
+  
+      for(i=0;i <= moneyType.length;i++){
+  
+        document.getElementById(`kr${moneyType[i]}`).textContent=Math.floor((växel%moneyType[i+1])/moneyType[i]);
+  
+      }
+  
+    } else {
+      payBack.textContent = "Växel: 0kr";
+  
+      //makes empty string for = 0
+      for(i=0;i <= moneyType.length;i++){
+        document.getElementById(`kr${moneyType[i]}`).textContent="";
+      }
+  
+    }
+  } catch (error) {
+    console.clear();
+  }
   if (price <= payed.value) {
     payBack.textContent = "Växel: " + växel + "kr";
-    // bills.textContent = Math.floor(växel/200) + "*200kr " + Math.floor((växel%200)/100) + "*100kr " + 
-    // Math.floor((växel%100)/50) + "*50kr " + Math.floor((växel%50)/20) + "*20kr " + 
-    // Math.floor((växel%20)/10) + "*10kr " + Math.floor((växel%10)/5) + "*5kr "
-    // + " + " +växel % 5 + "kr";
+    checkoutBtn.disabled = false;
 
     for(i=0;i <= moneyType.length;i++){
 
@@ -26,16 +51,12 @@ function moneyBack() {
 
   } else {
     payBack.textContent = "Växel: 0kr";
-
+  
     //makes empty string for = 0
     for(i=0;i <= moneyType.length;i++){
       document.getElementById(`kr${moneyType[i]}`).textContent="";
     }
 
-  }
-
-  if (document.getElementById(`kr${moneyType[i]}`)==0){
-    document.getElementById(`kr${moneyType[i]}`).textContent="";
   }
 
 }
