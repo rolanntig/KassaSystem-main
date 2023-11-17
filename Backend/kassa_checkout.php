@@ -71,6 +71,7 @@ $mysqlCheck = false;
 // Then close the mysqli connection
 mysqli_close($conn);
 }
+
 // IF the check variable is flase then show an error
 if( $mysqlCheck === FALSE){
   echo '<script type="text/javascript">';
