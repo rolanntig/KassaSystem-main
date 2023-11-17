@@ -24,8 +24,8 @@ body {
     width: 25vw;
     height: 60vh;
     border-radius: 19px;
-    background: rgba(231, 41, 225, 0.634);
-    background: linear-gradient(137deg, rgba(231, 41, 225, 0.478) 0%, rgba(233, 54, 54, 0.46) 100%);
+    background: rgb(249,143,199);
+    background: linear-gradient(137deg, rgba(249,143,199,1) 0%, rgba(235,0,0,1) 100%);
     box-shadow: rgba(0, 0, 0, 0.072) 0px 3px 6px, rgba(0, 0, 0, 0.12) 0px 3px 6px;
 }
 
@@ -36,18 +36,25 @@ input {
     padding: 5px 33px;
     margin: 30px;
     width: 15vw;
-    border-radius: 15px;
     font-size: 20px;
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 .inputs {
     outline: none;
     border: none;
+    background-color: transparent;
+    color: white;
+    border-bottom: 2px solid rgb(47, 47, 47);
+}
+
+.inputs:focus {
+    border: none;
+    color: white;
+    border-bottom: 2px solid rgb(255, 255, 255);
 }
 
 input::placeholder {
-    color: rgb(93, 93, 93);
+    color: rgb(214, 214, 214);
 }
 
 #sign-in {
@@ -56,7 +63,13 @@ input::placeholder {
     align-items: center;
     border-radius: 15px;
     border: none;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    transition: all 0.3s ease-in-out;
+}
 
+#sign-in:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    background-color: rgb(166, 90, 236);
 }
 
 .password-container{
@@ -74,4 +87,11 @@ input::placeholder {
     right: 13%;
     cursor: pointer;
     color: rgb(0, 0, 0);
+}
+
+.login-fail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: ;
 }
