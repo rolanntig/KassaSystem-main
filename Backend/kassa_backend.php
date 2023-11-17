@@ -20,7 +20,7 @@ $endCart = array_count_values($_SESSION['cart']);
                 }
                 $itemName = $data[0]['product_name'];
 
-                sleep(0.25);
+                // Sets the $val to the value of the cookie of each item in the $endCart array
                 $val = $_COOKIE[$itemName."_counter"];
 
                 // Make it so the $finalPrice is the added price from every loop
@@ -29,7 +29,9 @@ $endCart = array_count_values($_SESSION['cart']);
                 $maxAmount = $data[0]['amount'];
                 $priceThing = $data[0]['price'];
 
-                // Writes out       the price          and                 the amount
+                // Writes out the price and the amount
+                // Prints based on the value of the specified items cookie value because
+                // Certain values made loading errors where there were no fix to be found (yet)
                 if($val == 0){
                     echo "<td id='".$itemName."_prices'>" . $priceThing * (1) . 'kr</td>' . "<td><input class='kassaAmountInput' name='$priceThing' id='".$itemName."_counter' type='number' min='1' max='$maxAmount' value='".(1)."'>st</input></td>" . '<td>';
                 }else{

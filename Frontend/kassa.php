@@ -41,7 +41,6 @@
 						echo '<tr>' . '<th>' . 'ITEMS' . '</th>' . '<th>' . 'PRICES' . '</th>' . '<th>' . 'AMOUNT' . '</th>' . '<th>' . 'OPTION' . '</th>' . '</tr>';
 						$id = $_POST['item'];
 						if (isset($_POST['item'])) {
-							unset($_POST['item']);
 							include '../Backend/kassa_cart.php';
 						}
 						if (isset($_POST['rm-item'])) {
