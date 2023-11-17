@@ -26,7 +26,7 @@ $endCart = array_count_values($_SESSION['cart']);
                 $maxAmount = $data[0]['amount'];
 
                 // Writes out       the price          and                 the amount
-                echo '<td>' . $data[0]['price'] * $val . 'kr</td>' . "<td><input type='number' min='1' max='$maxAmount' value='$val'>st</input></td>" . '<td>';
+                echo '<td>' . $data[0]['price'] * $val . 'kr</td>' . "<td><input type='number' min='1' max='$maxAmount' value='$val'></input></td>" . '<td>';
 
                 // Form to remove the item from the cart
                 echo '<form action="" method="POST">' // Value is the $key/product_name
