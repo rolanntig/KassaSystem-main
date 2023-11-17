@@ -2,7 +2,9 @@
   margin:0;
   padding: 0;
 }
-
+html{
+  overflow: none;
+}
 .rightDiv button{
   display: inline-block;
   padding: 5px 10px;
