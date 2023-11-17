@@ -1,8 +1,9 @@
 <?php
-    //Include credentials for the entire database. This file is ignored to keep it secret.
+    // Include credentials for the entire database. This file is ignored to keep it secret.
     include "../Backend/credentials.php";
     include "../Backend/console.php";
-   
+
+       
     // // Function to register a new admin to AdminTable
     // function RegisterAdmin($username, $password) {
     //     $sqliRegisterAdminQuery = "INSERT INTO `Admin`(`username`, `password`) VALUES ('$username', '$password')";
@@ -12,21 +13,27 @@
    
 
     class DatabaseHandler {
-        
-        //create a secure database connection
+        // create a secure database connection
         public static function dbconnect(){
+            global $server, $username, $password, $dbname, $port;
+
             try{
-                $connection=mysqli_connect($server, $username, $password, $dbname, $port);
+                $connection = mysqli_connect($server, $username, $password, $dbname, $port);
+
                 if(!$connection){
-                    console("Connection failed: " . mysqli_connect_error()); die;
+                    console("Connection failed: " . mysqli_connect_error()); 
+                    die;
                 }
+
                 return $connection;
-            }catch(Exception $e){
+            } catch(Exception $e){
                 echo "Error: " . $e->getMessage();
             }
+            return $connection;
         }
-        //fetch data securely and prevent sql injection
-        public static function fetchData($sqlquery,$connection){
+
+        // fetch data securely and prevent SQL injection
+        public static function fetchData($sqlquery, $connection){
             try {
                 $stmt = $connection->prepare($sqlquery);
                 $stmt->execute();
@@ -47,6 +54,5 @@
             $connection->close();
             return $products;
         }
-
     }
 ?>
