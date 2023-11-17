@@ -100,8 +100,7 @@
 						    </h4>
 						</div>
 
-							<div style="display:flex;text-align: center;"><div class="ger">Ger:</div><input type="number" name="tillbaka" id="payed"></div>
-							<p id="payBack"></p>
+							<div style="display:flex;text-align: center;"><div class="ger">Ger:</div><input type="number" name="tillbaka" id="payed"><div class="ger rightGer" id="payBack"></div></div>
 							<div class="moneyCon">
 								<div class="singularMoneyDiv">
 									<p id="kr1"></p>
@@ -132,8 +131,6 @@
 									<img src="../Images/200kr.png" alt="Image Description">
 								</div>
 							</div>
-							<p id="bills"></p>
-
 						
 						<button class="checkout-btn" id="checkout-btn-kontant" name="checkout-btn">
 							Checkout

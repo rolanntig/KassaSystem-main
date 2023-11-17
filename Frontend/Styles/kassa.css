@@ -117,7 +117,9 @@ body:not(input){
 /* RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START  */
 /* cart */
 .cart{
+  height: 40%;
   min-height: 40%;
+  max-height: 40%;
   width: 92.5%;
   display: flex;
   flex-direction: column;
@@ -289,7 +291,7 @@ body:not(input){
   padding: 7px;
 }
 .singularMoneyDiv img {
-  height: 40px;
+  height: 33px;
 }
 
 .cart table {
@@ -339,4 +341,10 @@ option {
   padding: 5px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
+}
+.rightGer {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
