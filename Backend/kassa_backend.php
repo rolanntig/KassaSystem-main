@@ -33,12 +33,12 @@ $endCart = array_count_values($_SESSION['cart']);
                 // Prints based on the value of the specified items cookie value because
                 // Certain values made loading errors where there were no fix to be found (yet)
                 if($val == 0){
-                    echo "<td id='".$itemName."_prices'>" . $priceThing * (1) . 'kr</td>' . "<td><input class='kassaAmountInput' name='$priceThing' id='".$itemName."_counter' type='number' min='1' max='$maxAmount' value='".(1)."'>st</input></td>" . '<td>';
+                    echo "<td id='".$itemName."_prices'>" . $priceThing * (1) . 'kr</td>' . "<td><input class='kassaAmountInput' name='$priceThing' id='".$itemName."_counter' type='number' min='1' max='$maxAmount' value='".(1)."'></input></td>" . '<td>';
                 }else{
                     if($val != $maxAmount){
-                        echo "<td id='".$itemName."_prices'>" . $priceThing * ($val+1) . 'kr</td>' . "<td><input class='kassaAmountInput' name='$priceThing' id='".$itemName."_counter' type='number' min='1' max='$maxAmount' value='".($val+1)."'>st</input></td>" . '<td>';
+                        echo "<td id='".$itemName."_prices'>" . $priceThing * ($val+1) . 'kr</td>' . "<td><input class='kassaAmountInput' name='$priceThing' id='".$itemName."_counter' type='number' min='1' max='$maxAmount' value='".($val+1)."'></input></td>" . '<td>';
                     }else{
-                        echo "<td id='".$itemName."_prices'>" . $priceThing * ($val) . 'kr</td>' . "<td><input class='kassaAmountInput' name='$priceThing' id='".$itemName."_counter' type='number' min='1' max='$maxAmount' value='".($val)."'>st</input></td>" . '<td>';
+                        echo "<td id='".$itemName."_prices'>" . $priceThing * ($val) . 'kr</td>' . "<td><input class='kassaAmountInput' name='$priceThing' id='".$itemName."_counter' type='number' min='1' max='$maxAmount' value='".($val)."'></input></td>" . '<td>';
                     }
                 }
 

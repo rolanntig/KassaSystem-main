@@ -57,7 +57,7 @@ function moneyBack() {
 
   }
 } catch (error) {
-  console.clear();
+  
 }
 
 }
