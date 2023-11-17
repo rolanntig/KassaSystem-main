@@ -27,9 +27,9 @@ if (isset($_POST['submit'])) {
                     //verifies password
                     if (password_verify($adminUserPass, $adminCheckData['password'])) {
                         echo '<div class="card border-0 shadow rounded-3 br1em mt-5 text-center bg-success text-white w-50 mx-auto align-middle">
-                                <p class="login-succ">
-                                    Login successful
-                                </p>
+                                <script>
+                                    console.log("Login successful")
+                                </script>
                             </div>';
 
                         $_SESSION["inloggad"] = true;
@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
             } else {
                 console("No rows fetched for the given username!");
                 echo '<div class="card border-0 shadow rounded-3 br1em mt-5 text-center bg-danger text-white w-50 mx-auto align-middle">
-                        <p class="login">
+                        <p class="login-fail2">
                             Incorrect username or password
                         </p>
                     </div>';
@@ -70,3 +70,24 @@ if (isset($_POST['submit'])) {
     }
 }
 ?>
+<style>
+    .login-fail {
+        position: absolute;
+        top: 90px;
+        right: 41.5%;
+        padding: 15px;
+        margin: 5px;
+        border-radius: 9px;
+        background-color: red;
+    }
+
+    .login-fail2 {
+        position: absolute;
+        top: 90px;
+        right: 41.5%;
+        padding: 15px;
+        margin: 5px;
+        border-radius: 9px;
+        background-color: red;
+    }
+</style>
