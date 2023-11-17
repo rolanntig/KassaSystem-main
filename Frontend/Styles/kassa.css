@@ -5,6 +5,7 @@
 html{
   overflow: none;
 }
+/* nice, red buttons :)  */
 .rightDiv button{
   display: inline-block;
   padding: 5px 10px;
@@ -18,10 +19,12 @@ html{
   transition: background-color 0.3s, color 0.3s;
   
 }
+/* :D */
 .rightDiv button:hover{
   background-color: #ffffff;
   color: rgb(255, 0, 0);
 }
+/* All white except input */
 body:not(input){
   color: white;
 }
@@ -73,6 +76,7 @@ body:not(input){
   justify-content: center;
   gap: 15px;
 }
+/* items in the itemContainer */
 .itemContainer>form>div{
   border: solid 1px;
   width: 150px;
@@ -85,10 +89,11 @@ body:not(input){
   align-items: center;
   transition: ease-in-out 400ms;
 }
-
+/* animation to above */
 .itemContainer>form>div:hover{
   transform: scale(1.1);
 }
+/* The buttons inside the items, that make the form work */
 .itemContainer>form>div>button{
   display: flex;
   flex-direction: column;
@@ -99,18 +104,32 @@ body:not(input){
   width: 100%;
   height: 100%;
 }
+/* labeling inside items */
 .itemContainer>form>div>button>p{
   background-color: rgb(57, 57, 57);
   color: white;
   width: 100%;
   padding: 5px 0;
 }
-
+/* removing some double-border, hehe */
 .itemContainer>form>div>button :first-child:not(u){
   border-bottom: solid 1px;
 }
+/* removing some double-border, hehe */
+
 .itemContainer>form>div>button :last-child:not(u){
   border-top: solid 1px;
+}
+/* The select in .leftDiv */
+select {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+/* The options inside the select */
+option {
+  font-size: 16px;
 }
 /* LEFT DIV END LEFT DIV END LEFT DIVEND LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END  */
 
@@ -130,14 +149,7 @@ body:not(input){
   justify-content: space-between;
 }
 
-.cart-items:nth-child(1){
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-grow: 10;
-  flex-shrink: 1;
-}
-
+/* div for the emtpy button */
 .Empty-btn{
   display: flex;
   justify-content: center;
@@ -148,19 +160,38 @@ body:not(input){
 
 /* TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING  */
 
+/* The table */
 .cart table{
   margin-top: 5px;
   overflow-y: overlay;
   overflow-x: none;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
   width: 100%;
 }
+/* number in table */
+.cart input[type="number"] {
+  width: 35px;
+  padding: 4px;
+}
+/* the tablerow */
 .cart td{
   word-break: break-all;
   border: 1px solid;
   border-radius: 4px;
   padding: 10px 20px;
 }
-
+/* The div for the cart table */
+.cartDiv {
+  overflow-y: overlay;
+  overflow-x: none;
+  width: 99%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 20px;
+}
 
 /* items inside of cart */
 .cartItem:first-child{
@@ -169,6 +200,23 @@ body:not(input){
 .cartItem:last-child{
   margin-bottom: 5px;
 }
+/* Table styling th (table head) */
+.cart th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+
+}
+/* every other gray in table */
+.cart tr{
+  background-color: #646464;
+}
+/* every other black in table */
+.cart tr:nth-child(even) {
+  background-color: #000000;
+}
+/* TABLE STYLING END TABLE STYLING END TABLE STYLING END TABLE STYLING END TABLE STYLING END TABLE STYLING END  */
 /* payment div */
 .payment{
   height: 100%;
@@ -219,6 +267,24 @@ body:not(input){
   align-items: center;
   gap: 20px;
 }
+/* The div with "Ger:" inside payment */
+.ger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  background-color: #646464;
+  padding: 5px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+/* The växel: kr */
+.rightGer {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
 /* RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END  */
 
 /* SCROLLBAR START SCROLLBAR START SCROLLBAR START SCROLLBAR START SCROLLBAR START SCROLLBAR START  */
@@ -240,9 +306,6 @@ body:not(input){
 
 /* catecory div */
 .categoryForm{
-  width: 100%;
-  display: flex;
-  justify-content: center ;
   gap: 5px !important;
 }
 /* category */
@@ -269,82 +332,28 @@ body:not(input){
 .emptyBtn{
   margin: 20px;
 }
-.cartDiv {
-  overflow-y: overlay;
-  overflow-x: none;
-  width: 99%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  padding: 20px;
-}
+/* Container for money pictures */
 .moneyCon {
   display: flex;
   justify-content: space-around;
   text-align: center;
   gap: 5px;
 }
+
+/* gray behind money */
 .singularMoneyDiv {
   background-color: #646464;
   border-radius: 4px;
   padding: 7px;
 }
+/* the image size (money) */
 .singularMoneyDiv img {
   height: 33px;
 }
-
-.cart table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-.cart tr{
-  background-color: #646464;
-}
-.cart tr:nth-child(even) {
-  background-color: #000000;
-}
-.cart th {
-  text-align: center;
-}
-
+/* The input in kontant */
 input[type="number"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-}
-
-select {
-  padding: 4px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-option {
-  font-size: 16px;
-}
-.ger {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5em;
-  background-color: #646464;
-  padding: 5px;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-}
-.rightGer {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
 }
