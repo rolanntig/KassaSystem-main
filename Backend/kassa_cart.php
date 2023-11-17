@@ -10,7 +10,13 @@ $endCart = array_count_values($_SESSION['cart']);
 
 // Session arrays gets the $data that is needed two show the right information in the cart.
 
-if ($endCart[$data[0]['product_name']] <= ($data[0]['amount'] - 1)) {
+if ($_COOKIE[$data[0]['product_name']."_counter"] <= ($data[0]['amount'] - 1)) {
+    $prodCount = $endCart[$data[0]['product_name']];
+    if($_COOKIE[$data[0]['product_name']."_counter"] == NULL){
+        echo "<script>document.cookie = '".$data[0]['product_name']."_counter=1';</script>";
+    }else{
+        echo "<script>document.cookie = '".$data[0]['product_name']."_counter=".($_COOKIE[$data[0]['product_name']."_counter"]+1)."';</script>";
+    }
     array_push($_SESSION['cart'], $data[0]['product_name']);
 }else{
     echo "<script>alert('Max amount of item!');</script>";
