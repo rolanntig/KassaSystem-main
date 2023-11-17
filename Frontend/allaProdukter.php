@@ -14,6 +14,7 @@
     <?php include "../Backend/header.php" ?>
     <div class="container">
         <div class="bg-white p-3 br1em">
+            <!-- Tar in navbar för produkt delarna -->
             <?php include "../Backend/produktNav.php" ?>    
             <h1 class="text-center">Produkter</h1>
             <form method="get" enctype="multipart/form-data" class="d-flex justify-content-center w-100 my-4 p-4 border">
@@ -21,8 +22,9 @@
                     <div class="row">
                         <div class="col-md-6 offset-md-3 mt-3 p-2 g-col-6">
                             <div class="input-group-lg ">
+                                <!-- Search button -->
                                 <input type="text" name="search" class="form-control" placeholder="Search for products">
-                                <!-- Dropdown for filtering -->
+                                <!-- Dropdown för filtering -->
                                 <select name="filter" class="custom-select">
                                     <option value="" disabled selected>filter</option>
                                     <option value="drink">Dricka</option>
@@ -40,7 +42,7 @@
                 </div>
             </form>
             <script>
-                // JavaScript function to reset the form
+                // JavaScript function för att restara form
                 function resetForm() {
                     document.querySelector('form').reset();
                     // Reset the URL to remove query parameters
@@ -48,7 +50,7 @@
                 }
             </script>
             <?php 
-                //includes the php code to view the products
+                //includes php code to view the products
                 include '../Backend/Product_view.php';
             ?>
         </div>

@@ -24,6 +24,7 @@
             <h1 class="mb-4 mt-3 text-center">Registrera produkt</h1>
             <form action="#"class="d-flex justify-content-center w-100" method="post" enctype="multipart/form-data">
             <div class="form-group col-8">
+            <!-- Form där du fyller i information till produkter som sen kommer in i backend -->
                 <div class="parent1">
                     <div class="div1"><label>Produkt:</label> <input name="product"type="text" class="form-control mb-3" required placeholder="Vad för produkt?"> </div>
                     <div class="div4"><label>Antal:</label> <input name="amount" type="number" class="form-control mb-3" required placeholder="Hur många av den produkten?"> </div>
@@ -39,12 +40,13 @@
                             <option value="verktyg">Verktyg</option>
                         </select>
                     </div> 
+                    <!-- Button för att registera produkten -->
                     <div class="div7"><label for="image">Bild</label> <input type="file" accept="image/*" class="form-control" id="image" name="image" required></div>
                     <button name="submit" type="submit" class="btn text-white mb-3 btn">Registrera varan</button>
                     </div>
                     <?php
                         include "../Backend/credentials.php";                  
-                        //Registering a product
+                        //Registerar en produkt
                         $product    = $_POST['product'];
                         $amount     = $_POST['amount'];
                         $price      = $_POST['price'];

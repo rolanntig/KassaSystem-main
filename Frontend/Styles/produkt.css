@@ -108,7 +108,7 @@
   }
   
   
-  /* Parent 1 css */
+  /* Parent 1 css display grid */
   .parent1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

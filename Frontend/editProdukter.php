@@ -14,10 +14,12 @@
     <?php include "../Backend/header.php" ?>
     <div class="container">
         <div class="bg-white p-3 br1em">
+        <!-- Tar in navbar för produkt delarna -->
         <?php include "../Backend/produktNav.php"?>
             <h1 class="mb-4 mt-3 text-center">Ändra information på produkt</h1>
             <form method="post" enctype="multipart/form-data" class="d-flex justify-content-center w-100"class="my-4 p-4 border">
             <div class="form-group col-8">
+                <!-- Form där du fyller i information till produkter som ska ändras-->
                 <div class="parent1">
                 <div class="div1"><label>Barcode:</label> <input name="barcode" type="text" class="form-control mb-3" placeholder="Produktens streckkod som ska ändras"required></div>
                 <div class="div7"><label>Uppdatera:</label> <button type="submit" name="update2" class="form-control btn text-white mb-3 btn">Uppdatera</button></div>
@@ -35,6 +37,7 @@
                 <div class="div4"><label for="image">Bild</label> <input type="file" accept="image/*" class="form-control" id="image" name="image" required></div>
             </div>
             </form>
+    <!-- Tar in delar till backend från form -->
     <?php 
     if (isset($_POST['update2'])){
     $newProduct = $_POST['newProduct'];
