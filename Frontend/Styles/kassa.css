@@ -307,6 +307,7 @@ option {
 /* catecory div */
 .categoryForm{
   gap: 5px !important;
+  margin: 2.5px 0;
 }
 /* category */
 #category{
