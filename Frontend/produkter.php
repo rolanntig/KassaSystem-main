@@ -15,9 +15,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./Styles/navbar.css"> 
     <link rel="stylesheet" type="text/css" href="./Styles/produkt.css"> 
+    <link rel="stylesheet" type="text/css" href="./Styles/main.css"> 
     <title>Produkter</title>
 </head>
 <body>
+    <?php include "../Backend/header.php" ?>
     <div class="container">
         <div class="bg-white p-3 br1em">
         <?php include "../Backend/produktNav.php" ?>
