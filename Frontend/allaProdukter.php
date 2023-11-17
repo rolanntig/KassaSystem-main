@@ -12,7 +12,7 @@
     <title>Produkter</title>
 </head>
 <body> 
-    <?php include "../Backend/header.php" ?>
+    <?php include "../Frontend/header.php" ?>
     <div class="container">
         <div class="bg-white p-3 br1em">
             <!-- Tar in navbar för produkt delarna -->
