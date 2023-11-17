@@ -17,7 +17,7 @@
             <!-- Tar in navbar för produkt delarna -->
             <?php include "../Backend/produktNav.php" ?>    
             <h1 class="text-center">Produkter</h1>
-            <form method="get" enctype="multipart/form-data" class="d-flex justify-content-center w-100 my-4 p-4 border">
+            <form method="get" enctype="multipart/form-data" class="d-flex justify-content-center w-100 my-4 p-4">
                 <div class="form-group col-8">
                     <div class="row">
                         <div class="col-md-6 offset-md-3 mt-3 p-2 g-col-6">
