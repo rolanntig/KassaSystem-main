@@ -171,7 +171,7 @@ option {
 }
 /* number in table */
 .cart input[type="number"] {
-  width: 35px;
+  width: 75px;
   padding: 4px;
 }
 /* the tablerow */
