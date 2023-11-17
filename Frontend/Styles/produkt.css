@@ -124,3 +124,7 @@
     .div5 { grid-area: 3 / 2 / 4 / 3; }
     .div6 { grid-area: 4 / 1 / 5 / 2; }
     .div7 { grid-area: 4 / 2 / 5 / 3; }
+
+    .navbar {
+      font-family: Source code pro;
+      background-color: rgb(255 255 255);}
