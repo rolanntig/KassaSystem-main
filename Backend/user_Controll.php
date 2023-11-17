@@ -27,18 +27,22 @@ if (isset($_POST['submit'])) {
                     //verifies password
                     if (password_verify($adminUserPass, $adminCheckData['password'])) {
                         echo '<div class="card border-0 shadow rounded-3 br1em mt-5 text-center bg-success text-white w-50 mx-auto align-middle">
-                                <p class="p-2 pt-4">
+                                <p class="login-succ">
                                     Login successful
                                 </p>
                             </div>';
 
                         $_SESSION["inloggad"] = true;
+
+                        $query = "UPDATE Admin SET last_login=now() WHERE username = '$adminUserName'";
+                        $adminUserCheck = DatabaseHandler::fetchData($query, DatabaseHandler::dbconnect());
+
                         header("Refresh:2; url=admin.php");
                         exit;
                     } else {
                         console("Password does not match!");
                         echo '<div class="card border-0 shadow rounded-3 br1em mt-5 text-center bg-danger text-white w-50 mx-auto align-middle">
-                                <p class="p-2 pt-4">
+                                <p class="login-fail">
                                     Incorrect username or password
                                 </p>
                             </div>';
@@ -50,7 +54,7 @@ if (isset($_POST['submit'])) {
             } else {
                 console("No rows fetched for the given username!");
                 echo '<div class="card border-0 shadow rounded-3 br1em mt-5 text-center bg-danger text-white w-50 mx-auto align-middle">
-                        <p class="p-2 pt-4">
+                        <p class="login">
                             Incorrect username or password
                         </p>
                     </div>';

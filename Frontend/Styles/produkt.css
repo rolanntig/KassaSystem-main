@@ -1,0 +1,130 @@
+* body {
+    background-color: #c182e0 !important;
+    background: linear-gradient(to right, rgb(208, 165, 233), #c779f5) !important;
+  }
+  
+  .textwall {
+    color: white;
+    margin-right: calc(2em + 36vw);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  
+  .container {
+    border-radius: 8px;
+    margin-top: 5vw;
+  }
+  
+  
+  .flex-container {
+    display: flex;
+    background-color: red;
+  }
+  
+  
+  .flex-container > div {
+    margin: 10px;
+  }
+
+  button {
+    background-color: rgb(121, 70, 146) !important;
+    color: white !important;
+  }
+  .btn {
+    position: relative;
+    background-color: rgb(121, 70, 146) !important;
+    min-width: 8vh;
+    transition-duration: 0.2s;
+  }
+  .btn:hover {
+    background-color: rgb(204, 151, 202) !important;
+    color: white;
+  }
+  
+  .amountinput {
+    width: 20% !important;
+  }
+  
+  .grid-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto auto;
+  
+    grid-gap: 20%;
+  
+    padding: 10px;
+  }
+
+  ul {
+    list-style: none;
+  }
+  
+  form {
+    height: 100%;
+  }
+  
+  #justify-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: -5%;
+  }
+  
+  #Rapport {
+    width: 70vw;
+    height: 30vh;
+    border-radius: 1em;
+    display: block;
+    margin: auto;
+  }
+  a {
+    color: black;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  .br1em {
+    border-radius: 1em;
+  }
+  
+  .bottom-br1em {
+   border-bottom-left-radius: 1em;
+   border-bottom-right-radius: 1em; 
+  
+  }
+  .top-br1em {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em; 
+   }
+
+  .flex-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  
+  /* Parent 1 css display grid */
+  .parent1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    }
+    
+    .div1 { grid-area: 1 / 1 / 2 / 3; } 
+    .div2 { grid-area: 2 / 1 / 3 / 2; }
+    .div3 { grid-area: 2 / 2 / 3 / 3; }
+    .div4 { grid-area: 3 / 1 / 4 / 2; }
+    .div5 { grid-area: 3 / 2 / 4 / 3; }
+    .div6 { grid-area: 4 / 1 / 5 / 2; }
+    .div7 { grid-area: 4 / 2 / 5 / 3; }
+
+    .navbar {
+      font-family: Source code pro;
+      background-color: rgb(255 255 255);}

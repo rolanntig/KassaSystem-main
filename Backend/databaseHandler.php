@@ -29,6 +29,7 @@
             } catch(Exception $e){
                 echo "Error: " . $e->getMessage();
             }
+            return $connection;
         }
 
         // fetch data securely and prevent SQL injection

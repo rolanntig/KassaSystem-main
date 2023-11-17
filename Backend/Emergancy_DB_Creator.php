@@ -12,7 +12,7 @@
                 `password`  VARCHAR(150)NOT NULL,
                 `last_login`VARCHAR(40) NOT NULL,
                 `user_agent`VARCHAR(100)NOT NULL,
-                `reg_date`TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+                `reg_date`TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )";
             return $sqliTableAdminCreate;
         }
@@ -43,6 +43,8 @@
             )";  
             return $sqliTablePaymentCreateQuery;      
         }
+
     }
+
 
 ?>

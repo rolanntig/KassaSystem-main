@@ -21,7 +21,6 @@
     <title>Kassa</title>
 </head>
 <body>
-	 <?php include "../Backend/header.php" ?>
   	<div class="container">
 		<div class="ItemAdded"><a>Tillagd i varukorgen</a></div>  
     	<div class="row">
