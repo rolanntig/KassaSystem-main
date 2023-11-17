@@ -1,7 +1,8 @@
 <?php
 // Error checking for mysli query
-// ini_set('display_errors', '1');
-// error_reporting(E_ALL);
+
+ini_set('display_errors', '1');
+error_reporting(E_ALL); 
 
   // Checks for the checkout button sending a post request
 if(isset($_POST['checkout-btn'])){
@@ -9,7 +10,6 @@ if(isset($_POST['checkout-btn'])){
 
 // Gets the variables from credentials
 include '../Backend/credentials.php';
-
 
 
 // Makes the Session array into a count_values array and then destory the session
@@ -53,7 +53,9 @@ if (mysqli_query($conn, $sql)) {
     $mysqlCheck = True;
 } else {
   // If the query failes the variable for MysqlCheck to flase
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  echo '<script type="text/javascript">';
+  echo 'alert("Error:"' . $sql . '"<br>"' . mysqli_error($conn). ');';
+  echo '</script>';
   $mysqlCheck = false;
 }
 
@@ -64,8 +66,25 @@ if (mysqli_query($conn, $sql)) {
   $mysqlCheck = True;
 } else {
      // If the query failes the variable for MysqlCheck to flase
-echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-$mysqlCheck = false;
+  echo '<script type="text/javascript">';
+  echo 'alert("Error:"' . $sql . '"<br>"' . mysqli_error($conn). ');';
+  echo '</script>';
+  $mysqlCheck = false;
+}
+
+$result = mysqli_query($conn,"SELECT * FROM Products WHERE `product_name`='$key'");
+$data = $result->fetch_all(MYSQLI_ASSOC);
+if($data[0]['amount'] == 0){
+  $sql = "DELETE FROM Products WHERE `product_name`='$key'";
+  if (mysqli_query($conn, $sql)) {
+    $mysqlCheck = True;
+  } else {
+  // If the query failes the variable for MysqlCheck to flase
+  echo '<script type="text/javascript">';
+  echo 'alert("Error:"' . $sql . '"<br>"' . mysqli_error($conn). ');';
+  echo '</script>';
+  $mysqlCheck = false;
+}
 }
 
 // Then close the mysqli connection
