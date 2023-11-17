@@ -1,259 +1,360 @@
-.textwall {
-  color: white;
-  margin-right: calc(2em + 36vw);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-
-.container {
-  border-radius: 8px;
-  margin-top: 5vw;
-}
-
-
-.flex-container {
-  display: flex;
-  background-color: red;
-}
-
-
-.flex-container > div {
-  margin: 10px;
-}
-/* Create a column layout with Flexbox */
-/* .row {
-  display: flex;
-} */
-
-/* Left column (menu) */
-.left {
-  flex: 35%;
-  padding: 15px 0;
-  background-color: rgb(121, 70, 146);
-  color: white;
-  height: 80vh;
-  padding: 2em;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  overflow: scroll;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-.left h2 {
-  padding-left: 8px;
-}
-
-/* Right column (page content) */
-.right {
-  flex: 65%;
-  padding: 15px;
-  background-color: white;
-  height: 80vh;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  overflow: scroll;
-  overflow-x: hidden;
-}
-
-/* Style the search box */
-#mySearch {
-  width: 50%;
-  font-size: 10px;
-  padding: 2px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-/* Style the navigation menu inside the left column */
-#myMenu {
-  list-style-type: none;
+*{
+  margin:0;
   padding: 0;
-  margin: 0;
-  border-radius: 10px;
 }
-
-#myMenu li a {
-  padding: 12px;
+html{
+  overflow: none;
+}
+/* nice, red buttons :)  */
+.rightDiv button{
+  display: inline-block;
+  padding: 5px 10px;
+  text-align: center;
   text-decoration: none;
-  color: white;
-  display: block;
+  cursor: pointer;
+  border: 2px solid #e74c3c; 
+  border-radius: 5px;
+  color: #f6f6f6; 
+  background-color: rgb(255, 0, 0);
+  transition: background-color 0.3s, color 0.3s;
+  
 }
-
-#myMenu li a:hover {
-  background-color: rgb(204, 151, 202);
+/* :D */
+.rightDiv button:hover{
+  background-color: #ffffff;
+  color: rgb(255, 0, 0);
 }
-
-#mySearch2 {
-  width: 80%;
-  font-size: 18px;
-  padding: 11px;
-  border: 1px solid #ddd;
-}
-
-#kassa-div{
-  overflow-y: scroll;
-}
-
-/* .under {
-  position: absolute;
-  bottom: 0;
-} */
-
-.lista {
-  height: 10%;
-
-  color: rgb(0, 0, 0);
-}
-button {
-  background-color: rgb(121, 70, 146) !important;
-  color: white !important;
-}
-.btn {
-  position: relative;
-  background-color: rgb(121, 70, 146) !important;
-  min-width: 8vh;
-  transition-duration: 0.2s;
-}
-.btn:hover {
-  background-color: rgb(204, 151, 202) !important;
+/* All white except input */
+body:not(input){
   color: white;
 }
+/* main container */
+.fullDiv{
+  width: 100%;
+  height: 83vh;
+  display: flex;
+  padding: 20px;
 
-.amountinput {
-  width: 20% !important;
+}
+/* left container */
+.leftDiv{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  
+}
+/* right container */
+.rightDiv{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.grid-container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto auto auto auto;
-
-  grid-gap: 20%;
-
-  padding: 10px;
+/* LEFT DIV START LEFT DIV START LEFT DIV START LEFT DIV START LEFT DIV START LEFT DIV START LEFT DIV START  */
+/* item container */
+.itemContainer{
+  height: 100%;
+  overflow-y: overlay;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px;
+  border-radius: 5px;
+  background-color: #333333;
+  padding: 15px 0;
 }
 
-/* .choose{
-  display: -ms-grid;
-  display: grid;
-  justify-content: end;
-  justify-items: end;
-} */
-/*
+/* Images inside of item container */
+.itemContainer>form{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+/* items in the itemContainer */
+.itemContainer>form>div{
+  border: solid 1px;
+  width: 150px;
+  height: 200px;
+  background-size: 100%;
+  background-position: 200px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: ease-in-out 400ms;
+}
+/* animation to above */
+.itemContainer>form>div:hover{
+  transform: scale(1.1);
+}
+/* The buttons inside the items, that make the form work */
+.itemContainer>form>div>button{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap:20px;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+/* labeling inside items */
+.itemContainer>form>div>button>p{
+  background-color: rgb(57, 57, 57);
+  color: white;
+  width: 100%;
+  padding: 5px 0;
+}
+/* removing some double-border, hehe */
+.itemContainer>form>div>button :first-child:not(u){
+  border-bottom: solid 1px;
+}
+/* removing some double-border, hehe */
 
-Start
-Login hemsidan
+.itemContainer>form>div>button :last-child:not(u){
+  border-top: solid 1px;
+}
+/* The select in .leftDiv */
+select {
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+/* The options inside the select */
+option {
+  font-size: 16px;
+}
+/* LEFT DIV END LEFT DIV END LEFT DIVEND LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END LEFT DIV END  */
 
-*/
-
-.btn-login {
-  font-size: 0.9rem;
-  letter-spacing: 0.05rem;
-  padding: 0.75rem 1rem;
+/* RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START RIGHT DIV START  */
+/* cart */
+.cart{
+  height: 40%;
+  min-height: 40%;
+  max-height: 40%;
+  width: 92.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #333333;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  justify-content: space-between;
 }
 
-.btn-google {
-  color: white !important;
-  background-color: #ea4335;
+/* div for the emtpy button */
+.Empty-btn{
+  display: flex;
+  justify-content: center;
+  border-top: solid #636262 1px;
+  align-items: center;
+  width: 100%;
 }
 
-.btn-facebook {
-  color: white !important;
-  background-color: #3b5998;
+/* TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING TABLE STYLING  */
+
+/* The table */
+.cart table{
+  margin-top: 5px;
+  overflow-y: overlay;
+  overflow-x: none;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+/* number in table */
+.cart input[type="number"] {
+  width: 35px;
+  padding: 4px;
+}
+/* the tablerow */
+.cart td{
+  word-break: break-all;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 10px 20px;
+}
+/* The div for the cart table */
+.cartDiv {
+  overflow-y: overlay;
+  overflow-x: none;
+  width: 99%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 20px;
 }
 
-/*
-
-End
-Login hemsidan
-
-*/
-
-ul {
-  list-style: none;
+/* items inside of cart */
+.cartItem:first-child{
+  margin-top: 5px;
 }
+.cartItem:last-child{
+  margin-bottom: 5px;
+}
+/* Table styling th (table head) */
+.cart th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  text-align: center;
 
-/*
-
-Start
-Admin hemsidan
-
-*/
-form {
+}
+/* every other gray in table */
+.cart tr{
+  background-color: #646464;
+}
+/* every other black in table */
+.cart tr:nth-child(even) {
+  background-color: #000000;
+}
+/* TABLE STYLING END TABLE STYLING END TABLE STYLING END TABLE STYLING END TABLE STYLING END TABLE STYLING END  */
+/* payment div */
+.payment{
+  height: 100%;
+  width: 92.5%;
+  border-radius: 5px;
+  background-color: #333333;
+}
+/* form for swish radiobutton and kontant radiobutton */
+#swishKonForm{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
 }
 
-#justify-content {
+/* Make bigger font for swishKonForm div */
+#swishKonForm h4, #swishKonForm button, #swishKonForm p{
+  font-size: 1.5em;
+}
+/* Div that holds swish and kontant button */
+#buttonDiv{
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: -5%;
+  justify-content: space-around;
+  align-items: center;
+  height: 7%;
 }
-
-#Registrera-Kassör {
-  width: 50vw;
-  height: 45vh;
-  border-radius: 1em;
-  margin-bottom: 5%;
-  margin-right: 4%;
+/* Gives some margin to swish and kontant buttons */
+#buttonDiv>div{
+  margin-top: 5px;
+  text-align: center;
 }
-
-#Produkter {
-  width: 20vw;
-  height: 45vh;
-  border-radius: 1em;
-  margin-bottom: 5%;
-  overflow: scroll;
-  overflow-x: hidden;
-  text-decoration: none;
+/* kontantDiv */
+#kontantDiv{
+  display: none;
 }
-
-#Rapport {
-  width: 70vw;
-  height: 30vh;
-  border-radius: 1em;
-  display: block;
-  margin: auto;
-}
-a {
-  color: black;
-}
-
-a:hover {
-  text-decoration: none;
-}
-.br1em {
-  border-radius: 1em;
-}
-
-.bottom-br1em {
- border-bottom-left-radius: 1em;
- border-bottom-right-radius: 1em; 
-
-}
-.top-br1em {
-  border-top-left-radius: 1em;
-  border-top-right-radius: 1em; 
- }
-/*
-
-End
-Admin hemsidan
-
-*/ ;
-
-
-.w{
-width: 25vw;
-height: 30vh;
-}
-
-.flex-container{
+/* Needs flex separetely because is changed in backend (default) */
+#swishDiv
+{
   display: flex;
+}
+/* Different divs depending of what chooses, (swish or kontant) */
+#kontantDiv, #swishDiv{
+  height: 93%;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+/* The div with "Ger:" inside payment */
+.ger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  background-color: #646464;
+  padding: 5px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+/* The växel: kr */
+.rightGer {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+/* RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END RIGHT DIV END  */
+
+/* SCROLLBAR START SCROLLBAR START SCROLLBAR START SCROLLBAR START SCROLLBAR START SCROLLBAR START  */
+/* scrollbar design  */
+::-webkit-scrollbar{
+  width: 12px;
+  visibility: hidden;
+}
+
+/* scrollbar thumb design  */
+::-webkit-scrollbar-thumb{
+  width: 10px;
+  background-color: rgba(0, 0, 0, 0.463);
+  border-radius: 20px;
+}
+/* SCROLLBAR END SCROLLBAR END SCROLLBAR END SCROLLBAR END SCROLLBAR END SCROLLBAR END  */
+
+/* SELECT START SELECT START SELECT START SELECT START SELECT START SELECT START SELECT START  */
+
+/* catecory div */
+.categoryForm{
+  gap: 5px !important;
+  margin: 2.5px 0;
+}
+/* category */
+#category{
+  width:10%;
+  max-height: 30px;
+  text-align: center;
+}
+/* BARCODE STYLING */
+#barcode{
+  width: 60%;
+  max-height: 30px;
+}
+
+/* SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END SELECT END  */
+
+/* ITEM STYLING */
+.drink, .snacks, .food, .verktyg{
+  background-size: cover;
+  border-radius: 20px;
+  background-position: center;
+}
+/* margin for delete button */
+.emptyBtn{
+  margin: 20px;
+}
+/* Container for money pictures */
+.moneyCon {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  gap: 5px;
+}
+
+/* gray behind money */
+.singularMoneyDiv {
+  background-color: #646464;
+  border-radius: 4px;
+  padding: 7px;
+}
+/* the image size (money) */
+.singularMoneyDiv img {
+  height: 33px;
+}
+/* The input in kontant */
+input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
 }
