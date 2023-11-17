@@ -169,6 +169,11 @@ option {
   border-collapse: collapse;
   width: 100%;
 }
+/* number in table */
+.cart input[type="number"] {
+  width: 35px;
+  padding: 4px;
+}
 /* the tablerow */
 .cart td{
   word-break: break-all;
